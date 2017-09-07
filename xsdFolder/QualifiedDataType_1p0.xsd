@@ -1,0 +1,2217 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited by Standard ,ETDA  -->
+<!-- ====================================================================== -->
+<!-- =====        ETDA Qualified DataType Schema                                                       ===== -->
+<!-- ====================================================================== -->
+<!--
+Schema agency:  ETDA
+Schema version: 1.0
+Schema date:    Aug 2015
+
+© Copyright ETDA, 2015
+
+This XML Schema Definition file was developed as a subset profile of the UN/CEFACT Qualified DataType Schema, version 16.0.
+
+-->
+<!-- ====================================================================== -->
+<!-- ===== Qualified Data Type Schema Module                          ===== -->
+<!-- ====================================================================== -->
+<!--
+Schema agency:  UN/CEFACT
+Schema version: 16.0
+Schema date:    15 Nov 2014
+
+Copyright (C) UN/CEFACT (2014). All Rights Reserved.
+
+This document and translations of it may be copied and furnished to others, and derivative works that comment on or otherwise explain it or assist in its implementation may be prepared, copied, published and distributed, in whole or in part, without restriction of any kind, provided that the above copyright notice and this paragraph are included on all such copies and derivative works. However, this document itself may not be modified in any way, such as by removing the copyright notice or references to UN/CEFACT, except as needed for the purpose of developing UN/CEFACT specifications, in which case the procedures for copyrights defined in the UN/CEFACT Intellectual Property Rights document must be followed, or as required to translate it into languages other than English.
+
+The limited permissions granted above are perpetual and will not be revoked by UN/CEFACT or its successors or assigns.
+
+This document and the information contained herein is provided on an "AS IS" basis and UN/CEFACT DISCLAIMS ALL WARRANTIES, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO ANY WARRANTY THAT THE USE OF THE INFORMATION HEREIN WILL NOT INFRINGE ANY RIGHTS OR ANY IMPLIED WARRANTIES OF MERCHANTABILITY OR FITNESS FOR A PARTICULAR PURPOSE.
+-->
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+  xmlns:qdt="urn:etda:uncefact:data:standard:QualifiedDataType:1"
+  xmlns:ccts="urn:un:unece:uncefact:documentation:standard:CoreComponentsTechnicalSpecification:2"
+  xmlns:udt="urn:un:unece:uncefact:data:standard:UnqualifiedDataType:16"
+  xmlns:clm60133="urn:un:unece:uncefact:codelist:standard:6:0133:40106"
+  xmlns:clmIANACharacterSetCode="urn:un:unece:uncefact:codelist:standard:IANA:CharacterSetCode:2013-01-23"
+  xmlns:clmIANAMIMEMediaType="urn:un:unece:uncefact:codelist:standard:IANA:MIMEMediaType:2014-06-11"
+  xmlns:clm5ISO63912A="urn:un:unece:uncefact:codelist:standard:ISO:ISO2AlphaLanguageCode:2006-10-27"
+  xmlns:clm5ISO42173A="urn:un:unece:uncefact:codelist:standard:ISO:ISO3AlphaCurrencyCode:2012-08-31"
+  xmlns:clm61229LineStatusCode="urn:un:unece:uncefact:codelist:standard:UNECE:ActionCode:D14A"
+  xmlns:clm63131="urn:un:unece:uncefact:codelist:standard:UNECE:AddressType:D14A"
+  xmlns:clm64465="urn:un:unece:uncefact:codelist:standard:UNECE:AdjustmentReasonDescriptionCode:D14A"
+  xmlns:clm64465AdjustmentReasonCodeFinancial="urn:un:unece:uncefact:codelist:standard:UNECE:AdjustmentReasonDescriptionCode_Financial:D14A"
+  xmlns:clm63055="urn:un:unece:uncefact:codelist:standard:UNECE:AgencyIdentificationCode:D14A"
+  xmlns:clm65189AllowanceChargeID="urn:un:unece:uncefact:codelist:standard:UNECE:AllowanceChargeIdentificationCode:D14A"
+  xmlns:clm64465AllowanceChargeReasonCode="urn:un:unece:uncefact:codelist:standard:UNECE:AllowanceChargeReasonCode:D14A"
+  xmlns:clm67233AutomaticDataCaptureMethodCode="urn:un:unece:uncefact:codelist:standard:UNECE:AutomaticDataCaptureMethodCode:D14A"
+  xmlns:clm67085b="urn:un:unece:uncefact:codelist:standard:UNECE:CargoOperationalCategoryCode:D14A"
+  xmlns:clm67085="urn:un:unece:uncefact:codelist:standard:UNECE:CargoTypeClassificationCode:D14A"
+  xmlns:clm6Recommendation21AnnexI="urn:un:unece:uncefact:codelist:standard:UNECE:CargoTypeCode:1996Rev2Final"
+  xmlns:clm67357="urn:un:unece:uncefact:codelist:standard:UNECE:CommodityIdentificationCode:D14A"
+  xmlns:clm63155CommunicationChannelCode="urn:un:unece:uncefact:codelist:standard:UNECE:CommunicationMeansTypeCode:D14A"
+  xmlns:clm63139ContactTypeCode="urn:un:unece:uncefact:codelist:standard:UNECE:ContactFunctionCode:D14A"
+  xmlns:clm69651="urn:un:unece:uncefact:codelist:standard:UNECE:ContractTypeCode:D10B"
+  xmlns:clm6ContractorType="urn:un:unece:uncefact:codelist:standard:UNECE:ContractorType:D10B"
+  xmlns:clm69653="urn:un:unece:uncefact:codelist:standard:UNECE:CostManagementCode:D10B"
+  xmlns:clm69655="urn:un:unece:uncefact:codelist:standard:UNECE:CostReportingCode:D10B"
+  xmlns:clm68339="urn:un:unece:uncefact:codelist:standard:UNECE:DangerousGoodsPackingCode:D14A"
+  xmlns:clm68273="urn:un:unece:uncefact:codelist:standard:UNECE:DangerousGoodsRegulationCode:D14A"
+  xmlns:clm64017CommitmentLevelCode="urn:un:unece:uncefact:codelist:standard:UNECE:DeliveryPlanCommitmentLevelCode:D14A"
+  xmlns:clm64053="urn:un:unece:uncefact:codelist:standard:UNECE:DeliveryTermsCode:2010"
+  xmlns:clm66145="urn:un:unece:uncefact:codelist:standard:UNECE:DimensionTypeCode:D14A"
+  xmlns:clm61001="urn:un:unece:uncefact:codelist:standard:UNECE:DocumentNameCode:D14A"
+  xmlns:clm61001Invoice="urn:etda:uncefact:codelist:standard:ThaiDocumentNameCode_Invoice:1"
+  xmlns:rd1225="urn:un:unece:uncefact:codelist:standard:ETDA:ThaiMessageFunctionCode:2560"
+  xmlns:clm61001DocumentTypeCodeQuotation="urn:un:unece:uncefact:codelist:standard:UNECE:DocumentNameCode_Quotation:D14A"
+  xmlns:clm61001DocumentTypeCodeRemittance="urn:un:unece:uncefact:codelist:standard:UNECE:DocumentNameCode_Remittance:D14A"
+  xmlns:clm61001DocumentTypeCodeScheduling="urn:un:unece:uncefact:codelist:standard:UNECE:DocumentNameCode_Scheduling:D14A"
+  xmlns:clm61373="urn:un:unece:uncefact:codelist:standard:UNECE:DocumentStatusCode:D14A"
+  xmlns:clm65153="urn:un:unece:uncefact:codelist:standard:UNECE:DutyTaxFeeTypeCode:D14A"
+  xmlns:clm65305="urn:un:unece:uncefact:codelist:standard:UNECE:DutyorTaxorFeeCategoryCode:D14A"
+  xmlns:clm69657="urn:un:unece:uncefact:codelist:standard:UNECE:EarnedValueCalculationMethod:D10B"
+  xmlns:clm68155="urn:un:unece:uncefact:codelist:standard:UNECE:EquipmentSizeTypeDescriptionCode:D14A"
+  xmlns:clm62475="urn:un:unece:uncefact:codelist:standard:UNECE:EventTimeReferenceCode:D14A"
+  xmlns:clm62475PaymentTermsEvent="urn:un:unece:uncefact:codelist:standard:UNECE:EventTimeReferenceCodePaymentTermsEvent:D14A"
+  xmlns:clm6TDED6131="urn:un:unece:uncefact:codelist:standard:UNECE:FreightChargeQuantityUnitBasisCode:D14A"
+  xmlns:clm65243="urn:un:unece:uncefact:codelist:standard:UNECE:FreightChargeTariffCode:D14A"
+  xmlns:clm69659="urn:un:unece:uncefact:codelist:standard:UNECE:FundingTypeCode:D10B"
+  xmlns:clm6TDED7357="urn:un:unece:uncefact:codelist:standard:UNECE:GoodsTypeCode:D14A"
+  xmlns:clm6TDED7361="urn:un:unece:uncefact:codelist:standard:UNECE:GoodsTypeExtensionCode:D14A"
+  xmlns:clm69417="urn:un:unece:uncefact:codelist:standard:UNECE:GovernmentActionCode:D14A"
+  xmlns:clm69661="urn:un:unece:uncefact:codelist:standard:UNECE:HierarchicalStructureTypeCode:D10B"
+  xmlns:clm63227="urn:un:unece:uncefact:codelist:standard:UNECE:LocationFunctionCode:D14A"
+  xmlns:clm64233="urn:un:unece:uncefact:codelist:standard:UNECE:MarkingInstructionCode:D14A"
+  xmlns:clm66313="urn:un:unece:uncefact:codelist:standard:UNECE:MeasuredAttributeCode:D14A"
+  xmlns:clm6Recommendation20Duration="urn:un:unece:uncefact:codelist:standard:UNECE:MeasurementUnitCommonCodeDuration:4"
+  xmlns:clm6Recommendation20Linear="urn:un:unece:uncefact:codelist:standard:UNECE:MeasurementUnitCommonCodeLinear:4"
+  xmlns:clm6Recommendation20Temperature="urn:un:unece:uncefact:codelist:standard:UNECE:MeasurementUnitCommonCodeTemperature:4"
+  xmlns:clm6Recommendation20Volume="urn:un:unece:uncefact:codelist:standard:UNECE:MeasurementUnitCommonCodeVolume:4"
+  xmlns:clm6Recommendation20Weight="urn:un:unece:uncefact:codelist:standard:UNECE:MeasurementUnitCommonCodeWeight:4"
+  xmlns:clm6Recommendation20Airflow="urn:un:unece:uncefact:codelist:standard:UNECE:MeasurementUnitCommonCode_Airflow:4"
+  xmlns:clm6Recommendation20FileSize="urn:un:unece:uncefact:codelist:standard:UNECE:MeasurementUnitCommonCode_FileSize:4"
+  xmlns:clm61225MessageFunctionTypeCode="urn:un:unece:uncefact:codelist:standard:UNECE:MessageFunctionCode:D14A"
+  xmlns:clm61225Acknowledgement="urn:un:unece:uncefact:codelist:standard:UNECE:MessageFunctionCode_Acknowledgement:D14A"
+  xmlns:clm67065="urn:un:unece:uncefact:codelist:standard:UNECE:PackageTypeCode:2006"
+  xmlns:clm67075="urn:un:unece:uncefact:codelist:standard:UNECE:PackagingLevelCode:D14A"
+  xmlns:clm67233PackagingMarkingCode="urn:un:unece:uncefact:codelist:standard:UNECE:PackagingMarkingCode:D14A"
+  xmlns:clm63035="urn:un:unece:uncefact:codelist:standard:UNECE:PartyRoleCode:D14A"
+  xmlns:clm63035ChargePaying="urn:un:unece:uncefact:codelist:standard:UNECE:PartyRoleCode_ChargePaying:D14A"
+  xmlns:clm64431="urn:un:unece:uncefact:codelist:standard:UNECE:PaymentGuaranteeMeansCode:D14A"
+  xmlns:clm64435="urn:un:unece:uncefact:codelist:standard:UNECE:PaymentMeansChannelCode:D14A"
+  xmlns:clm64461="urn:un:unece:uncefact:codelist:standard:UNECE:PaymentMeansCode:D14A"
+  xmlns:clm64439="urn:un:unece:uncefact:codelist:standard:UNECE:PaymentMethodCode:D14A"
+  xmlns:clm64279="urn:un:unece:uncefact:codelist:standard:UNECE:PaymentTermsTypeCode:D14A"
+  xmlns:clm6PlanningLevel="urn:un:unece:uncefact:codelist:standard:UNECE:PlanningLevel:D10B"
+  xmlns:clm65375="urn:un:unece:uncefact:codelist:standard:UNECE:PriceTypeCode:D14A"
+  xmlns:clm64037PriorityDescriptionCode="urn:un:unece:uncefact:codelist:standard:UNECE:PriorityDescriptionCode:D14A"
+  xmlns:clm67187="urn:un:unece:uncefact:codelist:standard:UNECE:ProcessTypeCode:D14A"
+  xmlns:clm69665="urn:un:unece:uncefact:codelist:standard:UNECE:ProjectTypeCode:D10B"
+  xmlns:clm61153ReferenceTypeCode="urn:un:unece:uncefact:codelist:standard:UNECE:ReferenceTypeCode:D14A"
+  xmlns:clm69667="urn:un:unece:uncefact:codelist:standard:UNECE:ReportingThresholdTriggerType:D10B"
+  xmlns:clm69669="urn:un:unece:uncefact:codelist:standard:UNECE:ResourceCostCategory:D10B"
+  xmlns:clm69671="urn:un:unece:uncefact:codelist:standard:UNECE:ResourcePlanMeasureType:D10B"
+  xmlns:clm64343ResponseTypeCode="urn:un:unece:uncefact:codelist:standard:UNECE:ResponseTypeCode:D14A"
+  xmlns:clm69673="urn:un:unece:uncefact:codelist:standard:UNECE:ScheduleTaskRelationshipType:D10B"
+  xmlns:clm69675="urn:un:unece:uncefact:codelist:standard:UNECE:ScheduleTaskType:D10B"
+  xmlns:clm6ScheduleTypeCode="urn:un:unece:uncefact:codelist:standard:UNECE:ScheduleTypeCode:D10B"
+  xmlns:clm69677="urn:un:unece:uncefact:codelist:standard:UNECE:SecurityClassificationType:D10B"
+  xmlns:clm64405="urn:un:unece:uncefact:codelist:standard:UNECE:StatusCode:D14A"
+  xmlns:clm64405AccountingDebitCredit="urn:un:unece:uncefact:codelist:standard:UNECE:StatusDescriptionCode_AccountingDebitCredit:D14A"
+  xmlns:clm64405StatusCodeWorkflow="urn:un:unece:uncefact:codelist:standard:UNECE:StatusDescriptionCode_Workflow:D14A"
+  xmlns:clm66245="urn:un:unece:uncefact:codelist:standard:UNECE:TemperatureTypeCode:D14A"
+  xmlns:clm68053="urn:un:unece:uncefact:codelist:standard:UNECE:TransportEquipmentCategoryCode:D14A"
+  xmlns:clm68169="urn:un:unece:uncefact:codelist:standard:UNECE:TransportEquipmentFullnessCode:D14A"
+  xmlns:clm6Recommendation28="urn:un:unece:uncefact:codelist:standard:UNECE:TransportMeansTypeCode:2007"
+  xmlns:clm6Recommendation19="urn:un:unece:uncefact:codelist:standard:UNECE:TransportModeCode:2"
+  xmlns:clm68051="urn:un:unece:uncefact:codelist:standard:UNECE:TransportMovementStageCode:D14A"
+  xmlns:ids5ISO316612A="urn:un:unece:uncefact:identifierlist:standard:ISO:ISOTwo-letterCountryCode:SecondEdition2006"
+  xmlns:ids6Recommendation23="urn:un:unece:uncefact:identifierlist:standard:UNECE:FreightCostCode:4"
+  xmlns:TISI1099CitySubDivision="urn:un:unece:uncefact:identifierlist:standard:CitySubDivisionNameFromTISI1099_2548"
+  xmlns:TISI1099City="urn:un:unece:uncefact:identifierlist:standard:CityNameFromTISI1099_2548"
+  xmlns:ids64277="urn:un:unece:uncefact:identifierlist:standard:UNECE:PaymentTermsDescriptionIdentifier:D14A"
+  targetNamespace="urn:etda:uncefact:data:standard:QualifiedDataType:1"
+  elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0"
+  xmlns:clm64465ReasonCode="urn:un:unece:uncefact:codelist:standard:UNECE:AllowanceChargeReasonCode:D15B">
+  <!-- ======================================================================= -->
+  <!-- ===== Imports                                                     ===== -->
+  <!-- ======================================================================= -->
+  <!-- ===== Imports of Code Lists                                       ===== -->
+  <!-- ======================================================================= -->
+  <xsd:import namespace="urn:un:unece:uncefact:data:standard:UnqualifiedDataType:16"
+    schemaLocation="UnqualifiedDataType_16p0.xsd"/>
+  <xsd:import namespace="urn:etda:uncefact:codelist:standard:ThaiDocumentNameCode_Invoice:1"
+    schemaLocation="ThaiDocumentNameCode_Invoice_1p0.xsd"/>
+  <xsd:import
+    namespace="urn:un:unece:uncefact:codelist:standard:ISO:ISO2AlphaLanguageCode:2006-10-27"
+    schemaLocation="ISO_ISO2AlphaLanguageCode_2006-10-27.xsd"/>
+  <xsd:import
+    namespace="urn:un:unece:uncefact:codelist:standard:ISO:ISO3AlphaCurrencyCode:2012-08-31"
+    schemaLocation="ISO_ISO3AlphaCurrencyCode_2012-08-31.xsd"/>
+  <xsd:import namespace="urn:un:unece:uncefact:codelist:standard:UNECE:AddressType:D14A"
+    schemaLocation="UNECE_AddressType_D14A.xsd"/>
+  <xsd:import
+    namespace="urn:un:unece:uncefact:codelist:standard:UNECE:AllowanceChargeIdentificationCode:D14A"
+    schemaLocation="UNECE_AllowanceChargeIdentificationCode_D14A.xsd"/>
+  <xsd:import namespace="urn:un:unece:uncefact:codelist:standard:UNECE:DeliveryTermsCode:2010"
+    schemaLocation="UNECE_DeliveryTermsCode_2010.xsd"/>
+  <xsd:import namespace="urn:un:unece:uncefact:codelist:standard:UNECE:DutyTaxFeeTypeCode:D14A"
+    schemaLocation="UNECE_DutyTaxFeeTypeCode_D14A.xsd"/>
+  <xsd:import namespace="urn:un:unece:uncefact:codelist:standard:UNECE:MessageFunctionCode:D14A"
+    schemaLocation="unece/UNECE_MessageFunctionCode_D14A.xsd"/>
+  <xsd:import namespace="urn:un:unece:uncefact:codelist:standard:UNECE:PaymentTermsTypeCode:D14A"
+    schemaLocation="UNECE_PaymentTermsTypeCode_D14A.xsd"/>
+  <xsd:import namespace="urn:un:unece:uncefact:codelist:standard:UNECE:ReferenceTypeCode:D14A"
+    schemaLocation="UNECE_ReferenceTypeCode_D14A.xsd"/>
+  <xsd:import
+    namespace="urn:un:unece:uncefact:identifierlist:standard:ISO:ISOTwo-letterCountryCode:SecondEdition2006"
+    schemaLocation="ISO_ISOTwo-letterCountryCode_SecondEdition2006.xsd"/>
+  <xsd:import namespace="urn:un:unece:uncefact:codelist:standard:ETDA:ThaiMessageFunctionCode:2560"
+    schemaLocation="th/Thai_MessageFunctionCode_1p0.xsd"/>
+  <xsd:import namespace="urn:un:unece:uncefact:identifierlist:standard:UNECE:FreightCostCode:4"
+    schemaLocation="UNECE_FreightCostCode_4.xsd"/>
+  <xsd:import
+    namespace="urn:un:unece:uncefact:identifierlist:standard:UNECE:PaymentTermsDescriptionIdentifier:D14A"
+    schemaLocation="UNECE_PaymentTermsDescriptionIdentifier_D14A.xsd"/>
+
+  <xsd:import namespace="urn:un:unece:uncefact:identifierlist:standard:CityNameFromTISI1099_2548"
+    schemaLocation="TISICityName_1p0.xsd"/>
+  <xsd:import
+    namespace="urn:un:unece:uncefact:codelist:standard:UNECE:AllowanceChargeReasonCode:D15B"
+    schemaLocation="UNECE_AllowanceChargeReasonCode_D15B.xsd"
+    id="clm64465"/>
+  <xsd:import
+    namespace="urn:un:unece:uncefact:identifierlist:standard:CitySubDivisionNameFromTISI1099_2548"
+    schemaLocation="TISICitySubDivisionName_1p0.xsd"
+    id="TISICitySubDivisionName"/>
+  <!-- ================================================================== -->
+  <!-- ===== Type Definitions                                       ===== -->
+  <!-- ================================================================== -->
+  <!-- ===== Type Definition: AccessRightsTypeCodeType              ===== -->
+  <!-- ================================================================== -->
+  <!-- ================================================================== -->
+  <!-- ===== Type Definition: AccountingAccountBalanceReopeningTypeCodeType ===== -->
+  <!-- ================================================================== -->
+  <!-- ================================================================== -->
+  <!-- ===== Type Definition: AccountingAccountClassificationCodeType ===== -->
+  <!-- ================================================================== -->
+  <!-- ================================================================== -->
+  <!-- ===== Type Definition: AccountingAccountNatureTypeCodeType   ===== -->
+  <!-- ================================================================== -->
+  <!-- ================================================================== -->
+  <!-- ===== Type Definition: AccountingAccountStatusCodeType       ===== -->
+  <!-- ================================================================== -->
+  <!-- ================================================================== -->
+  <!-- ===== Type Definition: AccountingAccountTypeCodeType         ===== -->
+  <!-- ================================================================== -->
+  <!-- ================================================================== -->
+  <!-- ===== Type Definition: AccountingAmountQualifierCodeType     ===== -->
+  <!-- ================================================================== -->
+  <!-- ================================================================== -->
+  <!-- ===== Type Definition: AccountingAmountTypeCodeType          ===== -->
+  <!-- ================================================================== -->
+  <!-- ================================================================== -->
+  <!-- ===== Type Definition: AccountingContactCodeType             ===== -->
+  <!-- ================================================================== -->
+  <!-- ================================================================== -->
+  <!-- ===== Type Definition: AccountingDebitCreditStatusCodeType   ===== -->
+  <!-- ================================================================== -->
+  <!-- ================================================================== -->
+  <!-- ===== Type Definition: AccountingDocumentCodeType            ===== -->
+  <!-- ================================================================== -->
+  <!-- ================================================================== -->
+  <!-- ===== Type Definition: AccountingDocumentTypeCodeType        ===== -->
+  <!-- ================================================================== -->
+  <!-- ================================================================== -->
+  <!-- ===== Type Definition: AccountingEntryCategoryCodeType       ===== -->
+  <!-- ================================================================== -->
+  <!-- ================================================================== -->
+  <!-- ===== Type Definition: AccountingEntryLineCategoryCodeType   ===== -->
+  <!-- ================================================================== -->
+  <!-- ================================================================== -->
+  <!-- ===== Type Definition: AccountingEntryLineSourceCodeType     ===== -->
+  <!-- ================================================================== -->
+  <!-- ================================================================== -->
+  <!-- ===== Type Definition: AccountingEntryProcessingCodeType     ===== -->
+  <!-- ================================================================== -->
+  <!-- ================================================================== -->
+  <!-- ===== Type Definition: AccountingJournalCategoryCodeType     ===== -->
+  <!-- ================================================================== -->
+  <!-- ================================================================== -->
+  <!-- ===== Type Definition: AccountingJournalCodeType             ===== -->
+  <!-- ================================================================== -->
+  <!-- ================================================================== -->
+  <!-- ===== Type Definition: AccountingPeriodFunctionCodeType      ===== -->
+  <!-- ================================================================== -->
+  <!-- ================================================================== -->
+  <!-- ===== Type Definition: AccountingPerquisiteCodeType          ===== -->
+  <!-- ================================================================== -->
+  <!-- ================================================================== -->
+  <!-- ===== Type Definition: AccountingVoucherMediumCodeType       ===== -->
+  <!-- ================================================================== -->
+  <!-- ================================================================== -->
+  <!-- ===== Type Definition: AcknowledgementCodeType               ===== -->
+  <!-- ================================================================== -->
+  <!-- ================================================================== -->
+  <!-- ===== Type Definition: AdditionalPostponementCodeType        ===== -->
+  <!-- ================================================================== -->
+  <!-- ================================================================== -->
+  <!-- ===== Type Definition: AddressFormatTypeCodeType             ===== -->
+  <!-- ================================================================== -->
+  <!-- ================================================================== -->
+  <!-- ===== Type Definition: AddressTypeCodeType                   ===== -->
+  <!-- ================================================================== -->
+  <xsd:complexType name="AddressTypeCodeType">
+    <xsd:annotation>
+      <xsd:documentation xml:lang="en">
+        <ccts:UniqueID>UN02000039</ccts:UniqueID>
+        <ccts:Acronym>QDT</ccts:Acronym>
+        <ccts:DictionaryEntryName>Address Type_ Code. Type</ccts:DictionaryEntryName>
+        <ccts:Version>1.0</ccts:Version>
+        <ccts:Definition>A character string used to represent or replace an address type.</ccts:Definition>
+        <ccts:PrimaryRepresentationTerm>Code</ccts:PrimaryRepresentationTerm>
+        <ccts:PrimitiveType>String</ccts:PrimitiveType>
+        <ccts:DataTypeQualifierTerm>Address Type</ccts:DataTypeQualifierTerm>
+      </xsd:documentation>
+    </xsd:annotation>
+    <xsd:simpleContent>
+      <xsd:extension base="clm63131:AddressTypeContentType">
+        <xsd:attribute name="listID" type="xsd:token" fixed="3131" use="optional">
+          <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+              <ccts:Acronym>SC</ccts:Acronym>
+              <ccts:Name>Code List. Identifier</ccts:Name>
+              <ccts:Definition>The identification of a list of codes</ccts:Definition>
+              <ccts:Cardinality>0..1</ccts:Cardinality>
+              <ccts:PropertyTerm>Identifier</ccts:PropertyTerm>
+            </xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+        <xsd:attribute name="listAgencyID" type="xsd:token" fixed="6" use="optional">
+          <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+              <ccts:Acronym>SC</ccts:Acronym>
+              <ccts:Name>Code List. Agency. Identifier</ccts:Name>
+              <ccts:Definition>An agency that maintains one or more code lists.</ccts:Definition>
+              <ccts:Cardinality>0..1</ccts:Cardinality>
+              <ccts:PropertyTerm>Agency</ccts:PropertyTerm>
+            </xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+        <xsd:attribute name="listVersionID" type="xsd:token" fixed="D14A" use="optional">
+          <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+              <ccts:Acronym>SC</ccts:Acronym>
+              <ccts:Name>Code List. Version. Identifier</ccts:Name>
+              <ccts:Definition>The Version of the code list.</ccts:Definition>
+              <ccts:Cardinality>0..1</ccts:Cardinality>
+              <ccts:PropertyTerm>Version</ccts:PropertyTerm>
+            </xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+        <xsd:attribute name="name" type="xsd:string" use="optional">
+          <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+              <ccts:Acronym>SC</ccts:Acronym>
+              <ccts:Name>Code. Name. Text</ccts:Name>
+              <ccts:Definition>The textual equivalent of the code content.</ccts:Definition>
+              <ccts:Cardinality>0..1</ccts:Cardinality>
+              <ccts:PropertyTerm>Name</ccts:PropertyTerm>
+            </xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+      </xsd:extension>
+    </xsd:simpleContent>
+  </xsd:complexType>
+  <!-- ================================================================== -->
+  <!-- ===== Type Definition: AdjustmentReasonCodeType              ===== -->
+  <!-- ================================================================== -->
+  <!-- ================================================================== -->
+  <!-- ===== Type Definition: AirFlowUnitMeasureType                ===== -->
+  <!-- ================================================================== -->
+  <!-- ================================================================== -->
+  <!-- ===== Type Definition: AllowanceChargeIdentificationCodeType ===== -->
+  <!-- ================================================================== -->
+  <xsd:complexType name="AllowanceChargeIdentificationCodeType">
+    <xsd:annotation>
+      <xsd:documentation xml:lang="en">
+        <ccts:UniqueID>UN02000134</ccts:UniqueID>
+        <ccts:Acronym>QDT</ccts:Acronym>
+        <ccts:DictionaryEntryName>Allowance Charge Identification_ Code. Type</ccts:DictionaryEntryName>
+        <ccts:Version>1.0</ccts:Version>
+        <ccts:Definition>A character string used to identify a type of allowance or charge.</ccts:Definition>
+        <ccts:PrimaryRepresentationTerm>Code</ccts:PrimaryRepresentationTerm>
+        <ccts:PrimitiveType>String</ccts:PrimitiveType>
+        <ccts:DataTypeQualifierTerm>Allowance Charge Identification</ccts:DataTypeQualifierTerm>
+      </xsd:documentation>
+    </xsd:annotation>
+    <xsd:simpleContent>
+      <xsd:extension base="clm65189AllowanceChargeID:AllowanceChargeIdentificationCodeContentType">
+        <xsd:attribute name="listID" type="xsd:token" fixed="5189_AllowanceChargeID" use="optional">
+          <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+              <ccts:Acronym>SC</ccts:Acronym>
+              <ccts:Name>Code List. Identifier</ccts:Name>
+              <ccts:Definition>The identification of a list of codes.</ccts:Definition>
+              <ccts:Cardinality>0..1</ccts:Cardinality>
+              <ccts:PropertyTerm>Identifier</ccts:PropertyTerm>
+            </xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+        <xsd:attribute name="listAgencyID" type="xsd:token" fixed="6" use="optional">
+          <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+              <ccts:Acronym>SC</ccts:Acronym>
+              <ccts:Name>Code List. Agency. Identifier</ccts:Name>
+              <ccts:Definition>An agency that maintains one or more code lists.</ccts:Definition>
+              <ccts:Cardinality>0..1</ccts:Cardinality>
+              <ccts:PropertyTerm>Agency</ccts:PropertyTerm>
+            </xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+        <xsd:attribute name="listVersionID" type="xsd:token" fixed="D14A" use="optional">
+          <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+              <ccts:Acronym>SC</ccts:Acronym>
+              <ccts:Name>Code List. Version. Identifier</ccts:Name>
+              <ccts:Definition>The version of the code list.</ccts:Definition>
+              <ccts:Cardinality>0..1</ccts:Cardinality>
+              <ccts:PropertyTerm>Version</ccts:PropertyTerm>
+            </xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+        <xsd:attribute name="listURI" type="xsd:anyURI" use="optional">
+          <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+              <ccts:Acronym>SC</ccts:Acronym>
+              <ccts:Name>Code List. Uniform Resource. Identifier</ccts:Name>
+              <ccts:Definition>The Uniform Resource Identifier that identifies where the code list is located.</ccts:Definition>
+              <ccts:Cardinality>0..1</ccts:Cardinality>
+              <ccts:PropertyTerm>Uniform Resource</ccts:PropertyTerm>
+            </xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+      </xsd:extension>
+    </xsd:simpleContent>
+  </xsd:complexType>
+  <!-- ================================================================== -->
+  <!-- ===== Type Definition: AllowanceChargeReasonCodeType         ===== -->
+  <!-- ================================================================== -->
+  <!-- ================================================================== -->
+  <!-- ===== Type Definition: AlternateCurrencyAmountTypeCodeType   ===== -->
+  <!-- ================================================================== -->
+  <!-- ================================================================== -->
+  <!-- ===== Type Definition: AmortizationMethodCodeType            ===== -->
+  <!-- ================================================================== -->
+  <!-- ================================================================== -->
+  <!-- ===== Type Definition: AmountWeightTypeCodeType              ===== -->
+  <!-- ================================================================== -->
+  <!-- ================================================================== -->
+  <!-- ===== Type Definition: AutomaticDataCaptureMethodCodeType    ===== -->
+  <!-- ================================================================== -->
+  <!-- ================================================================== -->
+  <!-- ===== Type Definition: BinaryObjectCharacterSetCodeType      ===== -->
+  <!-- ================================================================== -->
+  <!-- ================================================================== -->
+  <!-- ===== Type Definition: BinaryObjectEncodingCodeType          ===== -->
+  <!-- ================================================================== -->
+  <!-- ================================================================== -->
+  <!-- ===== Type Definition: CargoCategoryCodeType                 ===== -->
+  <!-- ================================================================== -->
+  <!-- ================================================================== -->
+  <!-- ===== Type Definition: CargoCommodityCategoryCodeType        ===== -->
+  <!-- ================================================================== -->
+  <!-- ================================================================== -->
+  <!-- ===== Type Definition: CargoOperationalCategoryCodeType      ===== -->
+  <!-- ================================================================== -->
+  <!-- ================================================================== -->
+  <!-- ===== Type Definition: CargoTypeClassificationCodeType       ===== -->
+  <!-- ================================================================== -->
+  <!-- ================================================================== -->
+  <!-- ===== Type Definition: CertificateTypeCodeType               ===== -->
+  <!-- ================================================================== -->
+  <!-- ================================================================== -->
+  <!-- ===== Type Definition: ChargePayingPartyRoleCodeType         ===== -->
+  <!-- ================================================================== -->
+  <!-- ================================================================== -->
+  <!-- ===== Type Definition: CodeListResponsibleAgencyCodeType     ===== -->
+  <!-- ================================================================== -->
+  <!-- ================================================================== -->
+  <!-- ===== Type Definition: CommitmentLevelCodeType               ===== -->
+  <!-- ================================================================== -->
+  <!-- ================================================================== -->
+  <!-- ===== Type Definition: CommunicationChannelCodeType          ===== -->
+  <!-- ================================================================== -->
+  <!-- ================================================================== -->
+  <!-- ===== Type Definition: ContactTypeCodeType                   ===== -->
+  <!-- ================================================================== -->
+  <!-- ================================================================== -->
+  <!-- ===== Type Definition: ContractorTypeCodeType                ===== -->
+  <!-- ================================================================== -->
+  <!-- ================================================================== -->
+  <!-- ===== Type Definition: ContractTypeCodeType                  ===== -->
+  <!-- ================================================================== -->
+  <!-- ================================================================== -->
+  <!-- ===== Type Definition: CostManagementCodeType                ===== -->
+  <!-- ================================================================== -->
+  <!-- ================================================================== -->
+  <!-- ===== Type Definition: CostReportingCodeType                 ===== -->
+  <!-- ================================================================== -->
+  <!-- ================================================================== -->
+  <!-- ===== Type Definition: CountryIDType                         ===== -->
+  <!-- ================================================================== -->
+  <xsd:complexType name="CountryIDType">
+    <xsd:annotation>
+      <xsd:documentation xml:lang="en">
+        <ccts:UniqueID>UN02000003</ccts:UniqueID>
+        <ccts:Acronym>QDT</ccts:Acronym>
+        <ccts:DictionaryEntryName>Country_ Identifier. Type</ccts:DictionaryEntryName>
+        <ccts:Version>1.0</ccts:Version>
+        <ccts:Definition>A character string to identify and distinguish uniquely, one instance of a country in an identification scheme from all other objects within the same scheme.</ccts:Definition>
+        <ccts:PrimaryRepresentationTerm>Identifier</ccts:PrimaryRepresentationTerm>
+        <ccts:PrimitiveType>String</ccts:PrimitiveType>
+        <ccts:DataTypeQualifierTerm>Country</ccts:DataTypeQualifierTerm>
+      </xsd:documentation>
+    </xsd:annotation>
+    <xsd:simpleContent>
+      <xsd:extension base="ids5ISO316612A:ISOTwoletterCountryCodeContentType">
+        <xsd:attribute name="schemeID" type="xsd:token" use="optional">
+          <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+              <ccts:Acronym>SC</ccts:Acronym>
+              <ccts:Name>Identification Scheme. Identifier</ccts:Name>
+              <ccts:Definition>The identification of the identification scheme.</ccts:Definition>
+              <ccts:Cardinality>0..1</ccts:Cardinality>
+              <ccts:PropertyTerm>Identifier</ccts:PropertyTerm>
+            </xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+        <xsd:attribute name="schemeAgencyID" type="xsd:token" use="optional">
+          <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+              <ccts:Acronym>SC</ccts:Acronym>
+              <ccts:Name>Identification Scheme Agency. Identifier</ccts:Name>
+              <ccts:Definition>The identification of the agency that maintains the identification scheme.</ccts:Definition>
+              <ccts:Cardinality>0..1</ccts:Cardinality>
+              <ccts:PropertyTerm>Identifier</ccts:PropertyTerm>
+            </xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+        <xsd:attribute name="schemeVersionID" type="xsd:token" fixed="second edition 2006"
+          use="optional">
+          <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+              <ccts:Acronym>SC</ccts:Acronym>
+              <ccts:Name>Identification Scheme. Version. Identifier</ccts:Name>
+              <ccts:Definition>The Version of the identification scheme.</ccts:Definition>
+              <ccts:Cardinality>0..1</ccts:Cardinality>
+              <ccts:PropertyTerm>Version</ccts:PropertyTerm>
+            </xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+      </xsd:extension>
+    </xsd:simpleContent>
+  </xsd:complexType>
+  <!-- ================================================================== -->
+  <!-- ===== Type Definition: CurrencyCodeType                      ===== -->
+  <!-- ================================================================== -->
+  <xsd:complexType name="CurrencyCodeType">
+    <xsd:annotation>
+      <xsd:documentation xml:lang="en">
+        <ccts:UniqueID>UN02000004</ccts:UniqueID>
+        <ccts:Acronym>QDT</ccts:Acronym>
+        <ccts:DictionaryEntryName>Currency_ Code. Type</ccts:DictionaryEntryName>
+        <ccts:Version>1.1</ccts:Version>
+        <ccts:Definition>A character string used to represent a currency.</ccts:Definition>
+        <ccts:PrimaryRepresentationTerm>Code</ccts:PrimaryRepresentationTerm>
+        <ccts:PrimitiveType>String</ccts:PrimitiveType>
+        <ccts:DataTypeQualifierTerm>Currency</ccts:DataTypeQualifierTerm>
+      </xsd:documentation>
+    </xsd:annotation>
+    <xsd:simpleContent>
+      <xsd:extension base="clm5ISO42173A:ISO3AlphaCurrencyCodeContentType">
+        <xsd:attribute name="listID" type="xsd:token" fixed="ISO 4217 3A" use="optional">
+          <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+              <ccts:Acronym>SC</ccts:Acronym>
+              <ccts:Name>Code List. Identifier</ccts:Name>
+              <ccts:Definition>The identification of a list of codes</ccts:Definition>
+              <ccts:Cardinality>0..1</ccts:Cardinality>
+              <ccts:PropertyTerm>Identifier</ccts:PropertyTerm>
+            </xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+        <xsd:attribute name="listAgencyID" type="xsd:token" fixed="5" use="optional">
+          <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+              <ccts:Acronym>SC</ccts:Acronym>
+              <ccts:Name>Code List. Agency. Identifier</ccts:Name>
+              <ccts:Definition>An agency that maintains one or more code lists.</ccts:Definition>
+              <ccts:Cardinality>0..1</ccts:Cardinality>
+              <ccts:PropertyTerm>Agency</ccts:PropertyTerm>
+            </xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+        <xsd:attribute name="listVersionID" type="xsd:token" fixed="2012-08-31" use="optional">
+          <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+              <ccts:Acronym>SC</ccts:Acronym>
+              <ccts:Name>Code List. Version. Identifier</ccts:Name>
+              <ccts:Definition>The Version of the code list.</ccts:Definition>
+              <ccts:Cardinality>0..1</ccts:Cardinality>
+              <ccts:PropertyTerm>Version</ccts:PropertyTerm>
+            </xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+        <xsd:attribute name="listURI" type="xsd:anyURI" use="optional">
+          <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+              <ccts:Acronym>SC</ccts:Acronym>
+              <ccts:Name>Code List. Uniform Resource. Identifier</ccts:Name>
+              <ccts:Definition>The Uniform Resource Identifier that identifies where the code list is located.</ccts:Definition>
+              <ccts:Cardinality>0..1</ccts:Cardinality>
+              <ccts:PropertyTerm>Uniform Resource</ccts:PropertyTerm>
+            </xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+      </xsd:extension>
+    </xsd:simpleContent>
+  </xsd:complexType>
+  <!-- ================================================================== -->
+  <!-- ===== Type Definition: DangerousGoodsPackagingLevelCodeType  ===== -->
+  <!-- ================================================================== -->
+  <!-- ================================================================== -->
+  <!-- ===== Type Definition: DangerousGoodsRegulationCodeType      ===== -->
+  <!-- ================================================================== -->
+  <!-- ================================================================== -->
+  <!-- ===== Type Definition: DateMandatoryDateTimeType             ===== -->
+  <!-- ================================================================== -->
+  <xsd:simpleType name="DateMandatoryDateTimeType">
+    <xsd:annotation>
+      <xsd:documentation xml:lang="en">
+        <ccts:UniqueID>UN02000019</ccts:UniqueID>
+        <ccts:Acronym>QDT</ccts:Acronym>
+        <ccts:DictionaryEntryName>Date Mandatory_ Date Time. Type</ccts:DictionaryEntryName>
+        <ccts:Version>1.0</ccts:Version>
+        <ccts:Definition>A particular point in the progression of time defined by a mandatory date and an optional time component.</ccts:Definition>
+        <ccts:PrimaryRepresentationTerm>Date Time</ccts:PrimaryRepresentationTerm>
+        <ccts:PrimitiveType>String</ccts:PrimitiveType>
+        <ccts:DataTypeQualifierTerm>Date Mandatory</ccts:DataTypeQualifierTerm>
+      </xsd:documentation>
+    </xsd:annotation>
+    <xsd:union memberTypes="xsd:dateTime xsd:date"/>
+  </xsd:simpleType>
+  <!-- ================================================================== -->
+  <!-- ===== Type Definition: DeliveryTermsCodeType                 ===== -->
+  <!-- ================================================================== -->
+  <xsd:complexType name="DeliveryTermsCodeType">
+    <xsd:annotation>
+      <xsd:documentation xml:lang="en">
+        <ccts:UniqueID>UN02000005</ccts:UniqueID>
+        <ccts:Acronym>QDT</ccts:Acronym>
+        <ccts:DictionaryEntryName>Delivery Terms_ Code. Type</ccts:DictionaryEntryName>
+        <ccts:Version>1.1</ccts:Version>
+        <ccts:Definition>A character string used to represent delivery terms.</ccts:Definition>
+        <ccts:PrimaryRepresentationTerm>Code</ccts:PrimaryRepresentationTerm>
+        <ccts:PrimitiveType>String</ccts:PrimitiveType>
+        <ccts:DataTypeQualifierTerm>Delivery Terms</ccts:DataTypeQualifierTerm>
+      </xsd:documentation>
+    </xsd:annotation>
+    <xsd:simpleContent>
+      <xsd:extension base="clm64053:DeliveryTermsCodeContentType">
+        <xsd:attribute name="listID" type="xsd:token" fixed="4053" use="optional">
+          <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+              <ccts:Acronym>SC</ccts:Acronym>
+              <ccts:Name>Code List. Identifier</ccts:Name>
+              <ccts:Definition>The identification of a list of codes</ccts:Definition>
+              <ccts:Cardinality>0..1</ccts:Cardinality>
+              <ccts:PropertyTerm>Identifier</ccts:PropertyTerm>
+            </xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+        <xsd:attribute name="listAgencyID" type="xsd:token" fixed="6" use="optional">
+          <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+              <ccts:Acronym>SC</ccts:Acronym>
+              <ccts:Name>Code List. Agency. Identifier</ccts:Name>
+              <ccts:Definition>An agency that maintains one or more code lists.</ccts:Definition>
+              <ccts:Cardinality>0..1</ccts:Cardinality>
+              <ccts:PropertyTerm>Agency</ccts:PropertyTerm>
+            </xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+        <xsd:attribute name="listVersionID" type="xsd:token" fixed="2010" use="optional">
+          <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+              <ccts:Acronym>SC</ccts:Acronym>
+              <ccts:Name>Code List. Version. Identifier</ccts:Name>
+              <ccts:Definition>The Version of the code list.</ccts:Definition>
+              <ccts:Cardinality>0..1</ccts:Cardinality>
+              <ccts:PropertyTerm>Version</ccts:PropertyTerm>
+            </xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+      </xsd:extension>
+    </xsd:simpleContent>
+  </xsd:complexType>
+  <!-- ================================================================== -->
+  <!-- ===== Type Definition: DimensionTypeCodeType                 ===== -->
+  <!-- ================================================================== -->
+  <!-- ================================================================== -->
+  <!-- ===== Type Definition: DocumentCodeType                      ===== -->
+  <!-- ================================================================== -->
+  <!-- ================================================================== -->
+  <!-- ===== Type Definition: DocumentStatusCodeType                ===== -->
+  <!-- ================================================================== -->
+  <!-- ================================================================== -->
+  <!-- ===== Type Definition: DurationUnitMeasureType               ===== -->
+  <!-- ================================================================== -->
+  <!-- ================================================================== -->
+  <!-- ===== Type Definition: EarnedValueCalculationMethodCodeType  ===== -->
+  <!-- ================================================================== -->
+  <!-- ================================================================== -->
+  <!-- ===== Type Definition: FileSizeUnitMeasureType               ===== -->
+  <!-- ================================================================== -->
+  <!-- ================================================================== -->
+  <!-- ===== Type Definition: FinancialAccountTypeCodeType          ===== -->
+  <!-- ================================================================== -->
+  <!-- ================================================================== -->
+  <!-- ===== Type Definition: FinancialAdjustmentReasonCodeType     ===== -->
+  <!-- ================================================================== -->
+  <!-- ================================================================== -->
+  <!-- ===== Type Definition: FinancialInstitutionRoleCodeType      ===== -->
+  <!-- ================================================================== -->
+  <!-- ================================================================== -->
+  <!-- ===== Type Definition: FormattedDateTimeType                 ===== -->
+  <!-- ================================================================== -->
+  <xsd:complexType name="FormattedDateTimeType">
+    <xsd:annotation>
+      <xsd:documentation xml:lang="en">
+        <ccts:UniqueID>UN02000153</ccts:UniqueID>
+        <ccts:Acronym>QDT</ccts:Acronym>
+        <ccts:DictionaryEntryName>Formatted_ Date Time. Type</ccts:DictionaryEntryName>
+        <ccts:Version>1.0</ccts:Version>
+        <ccts:Definition>A formatted point in the progression of time.</ccts:Definition>
+        <ccts:PrimaryRepresentationTerm>Date Time</ccts:PrimaryRepresentationTerm>
+        <ccts:PrimitiveType>String</ccts:PrimitiveType>
+        <ccts:DataTypeQualifierTerm>Formatted</ccts:DataTypeQualifierTerm>
+      </xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element name="DateTimeString">
+        <xsd:complexType>
+          <xsd:simpleContent>
+            <xsd:extension base="xsd:string">
+              <xsd:attribute name="format" type="xsd:string" use="optional">
+                <xsd:annotation>
+                  <xsd:documentation xml:lang="en">
+                          <ccts:Acronym>SC</ccts:Acronym>
+                    <ccts:DictionaryEntryName>Date Time. Format. Text</ccts:DictionaryEntryName>
+                    <ccts:Definition>The format of the date/time content.</ccts:Definition>
+                    <ccts:ObjectClassTerm>Date Time</ccts:ObjectClassTerm>
+                    <ccts:PropertyTerm>Format</ccts:PropertyTerm>
+                  </xsd:documentation>
+                </xsd:annotation>
+              </xsd:attribute>
+            </xsd:extension>
+          </xsd:simpleContent>
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <!-- ================================================================== -->
+  <!-- ===== Type Definition: FreightChargeTariffClassCodeType      ===== -->
+  <!-- ================================================================== -->
+  <!-- ================================================================== -->
+  <!-- ===== Type Definition: FreightChargeTypeIDType               ===== -->
+  <!-- ================================================================== -->
+  <xsd:complexType name="FreightChargeTypeIDType">
+    <xsd:annotation>
+      <xsd:documentation xml:lang="en">
+        <ccts:UniqueID>UN02000097</ccts:UniqueID>
+        <ccts:Acronym>QDT</ccts:Acronym>
+        <ccts:DictionaryEntryName>Freight Charge Type_ Identifier. Type</ccts:DictionaryEntryName>
+        <ccts:Version>1.2</ccts:Version>
+        <ccts:Definition>A character string used to represent the freight charge type.</ccts:Definition>
+        <ccts:PrimaryRepresentationTerm>Identifier</ccts:PrimaryRepresentationTerm>
+        <ccts:PrimitiveType>String</ccts:PrimitiveType>
+        <ccts:DataTypeQualifierTerm>Freight Charge Type</ccts:DataTypeQualifierTerm>
+      </xsd:documentation>
+    </xsd:annotation>
+    <xsd:simpleContent>
+      <xsd:extension base="ids6Recommendation23:FreightCostCodeContentType">
+        <xsd:attribute name="schemeID" type="xsd:token" use="optional">
+          <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+              <ccts:Acronym>SC</ccts:Acronym>
+              <ccts:Name>Identification Scheme. Identifier</ccts:Name>
+              <ccts:Definition>The identification of the identification scheme.</ccts:Definition>
+              <ccts:Cardinality>0..1</ccts:Cardinality>
+              <ccts:PropertyTerm>Identifier</ccts:PropertyTerm>
+            </xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+        <xsd:attribute name="schemeAgencyID" type="xsd:token" use="optional">
+          <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+              <ccts:Acronym>SC</ccts:Acronym>
+              <ccts:Name>Identification Scheme Agency. Identifier</ccts:Name>
+              <ccts:Definition>The identification of the agency that maintains the identification scheme.</ccts:Definition>
+              <ccts:Cardinality>0..1</ccts:Cardinality>
+              <ccts:PropertyTerm>Identifier</ccts:PropertyTerm>
+            </xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+        <xsd:attribute name="schemeVersionID" type="xsd:token" use="optional">
+          <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+              <ccts:Acronym>SC</ccts:Acronym>
+              <ccts:Name>Identification Scheme. Version. Identifier</ccts:Name>
+              <ccts:Definition>The Version of the identification scheme.</ccts:Definition>
+              <ccts:Cardinality>0..1</ccts:Cardinality>
+              <ccts:PropertyTerm>Version</ccts:PropertyTerm>
+            </xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+      </xsd:extension>
+    </xsd:simpleContent>
+  </xsd:complexType>
+  <!-- ================================================================== -->
+  <!-- ===== Type Definition: FundingTypeCodeType                   ===== -->
+  <!-- ================================================================== -->
+  <!-- ================================================================== -->
+  <!-- ===== Type Definition: GoodsTypeCodeType                     ===== -->
+  <!-- ================================================================== -->
+  <!-- ================================================================== -->
+  <!-- ===== Type Definition: GoodsTypeExtensionCodeType            ===== -->
+  <!-- ================================================================== -->
+  <!-- ================================================================== -->
+  <!-- ===== Type Definition: GovernmentActionCodeType              ===== -->
+  <!-- ================================================================== -->
+  <!-- ================================================================== -->
+  <!-- ===== Type Definition: HierarchicalStructureTypeCodeType     ===== -->
+  <!-- ================================================================== -->
+  <!-- ================================================================== -->
+  <!-- ===== Type Definition: InvoiceDocumentCodeType               ===== -->
+  <!-- ================================================================== -->
+  <!-- ================================================================== -->
+  <!-- ===== Type Definition: LanguageCodeType                      ===== -->
+  <!-- ================================================================== -->
+  <xsd:complexType name="LanguageCodeType">
+    <xsd:annotation>
+      <xsd:documentation xml:lang="en">
+        <ccts:UniqueID>UN02000144</ccts:UniqueID>
+        <ccts:Acronym>QDT</ccts:Acronym>
+        <ccts:DictionaryEntryName>Language_ Code. Type</ccts:DictionaryEntryName>
+        <ccts:Version>1.0</ccts:Version>
+        <ccts:Definition>A character string used to represent a language.</ccts:Definition>
+        <ccts:PrimaryRepresentationTerm>Code</ccts:PrimaryRepresentationTerm>
+        <ccts:PrimitiveType>String</ccts:PrimitiveType>
+        <ccts:DataTypeQualifierTerm>Language</ccts:DataTypeQualifierTerm>
+      </xsd:documentation>
+    </xsd:annotation>
+    <xsd:simpleContent>
+      <xsd:extension base="clm5ISO63912A:ISO2AlphaLanguageCodeContentType">
+        <xsd:attribute name="listID" type="xsd:token" fixed="ISO 639-1 2A" use="optional">
+          <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+              <ccts:Acronym>SC</ccts:Acronym>
+              <ccts:Name>Code List. Identifier</ccts:Name>
+              <ccts:Definition>The identification of a list of codes</ccts:Definition>
+              <ccts:Cardinality>0..1</ccts:Cardinality>
+              <ccts:PropertyTerm>Identifier</ccts:PropertyTerm>
+            </xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+        <xsd:attribute name="listAgencyID" type="xsd:token" fixed="5" use="optional">
+          <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+              <ccts:Acronym>SC</ccts:Acronym>
+              <ccts:Name>Code List. Agency. Identifier</ccts:Name>
+              <ccts:Definition>An agency that maintains one or more code lists.</ccts:Definition>
+              <ccts:Cardinality>0..1</ccts:Cardinality>
+              <ccts:PropertyTerm>Agency</ccts:PropertyTerm>
+            </xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+        <xsd:attribute name="listVersionID" type="xsd:token" fixed="2006-10-27" use="optional">
+          <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+              <ccts:Acronym>SC</ccts:Acronym>
+              <ccts:Name>Code List. Version. Identifier</ccts:Name>
+              <ccts:Definition>The Version of the code list.</ccts:Definition>
+              <ccts:Cardinality>0..1</ccts:Cardinality>
+              <ccts:PropertyTerm>Version</ccts:PropertyTerm>
+            </xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+      </xsd:extension>
+    </xsd:simpleContent>
+  </xsd:complexType>
+  <!-- ================================================================== -->
+  <!-- ===== Type Definition: LifetimeEndCostCodeType               ===== -->
+  <!-- ================================================================== -->
+  <!-- ================================================================== -->
+  <!-- ===== Type Definition: LinearUnitMeasureType                 ===== -->
+  <!-- ================================================================== -->
+  <!-- ================================================================== -->
+  <!-- ===== Type Definition: LineStatusCodeType                    ===== -->
+  <!-- ================================================================== -->
+  <!-- ================================================================== -->
+  <!-- ===== Type Definition: LocationFunctionCodeType              ===== -->
+  <!-- ================================================================== -->
+  <!-- ================================================================== -->
+  <!-- ===== Type Definition: LogisticsChargeCalculationBasisCodeType ===== -->
+  <!-- ================================================================== -->
+  <!-- ================================================================== -->
+  <!-- ===== Type Definition: MarkingInstructionCodeType            ===== -->
+  <!-- ================================================================== -->
+  <!-- ================================================================== -->
+  <!-- ===== Type Definition: MeasuredAttributeCodeType             ===== -->
+  <!-- ================================================================== -->
+  <!-- ================================================================== -->
+  <!-- ===== Type Definition: MessageFunctionCodeType               ===== -->
+  <!-- ================================================================== -->
+  <xsd:complexType name="MessageFunctionCodeType">
+    <xsd:annotation>
+      <xsd:documentation xml:lang="en">
+        <ccts:UniqueID>UN02000125</ccts:UniqueID>
+        <ccts:Acronym>QDT</ccts:Acronym>
+        <ccts:DictionaryEntryName>Message Function_ Code. Type</ccts:DictionaryEntryName>
+        <ccts:Version>1.0</ccts:Version>
+        <ccts:Definition>A character string used to represent a message function.</ccts:Definition>
+        <ccts:PrimaryRepresentationTerm>Code</ccts:PrimaryRepresentationTerm>
+        <ccts:PrimitiveType>String</ccts:PrimitiveType>
+        <ccts:DataTypeQualifierTerm>Message Function</ccts:DataTypeQualifierTerm>
+      </xsd:documentation>
+    </xsd:annotation>
+    <xsd:simpleContent>
+      <xsd:extension base="clm61225MessageFunctionTypeCode:MessageFunctionCodeContentType">
+        <xsd:attribute name="listID" type="xsd:token" fixed="1225_MessageFunctionTypeCode"
+          use="optional">
+          <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+              <ccts:Acronym>SC</ccts:Acronym>
+              <ccts:Name>Code List. Identifier</ccts:Name>
+              <ccts:Definition>The identification of a list of codes.</ccts:Definition>
+              <ccts:Cardinality>0..1</ccts:Cardinality>
+              <ccts:PropertyTerm>Identifier</ccts:PropertyTerm>
+            </xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+        <xsd:attribute name="listAgencyID" type="xsd:token" fixed="6" use="optional">
+          <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+              <ccts:Acronym>SC</ccts:Acronym>
+              <ccts:Name>Code List. Agency. Identifier</ccts:Name>
+              <ccts:Definition>An agency that maintains one or more code lists.</ccts:Definition>
+              <ccts:Cardinality>0..1</ccts:Cardinality>
+              <ccts:PropertyTerm>Agency</ccts:PropertyTerm>
+            </xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+        <xsd:attribute name="listVersionID" type="xsd:token" fixed="D14A" use="optional">
+          <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+              <ccts:Acronym>SC</ccts:Acronym>
+              <ccts:Name>Code List. Version. Identifier</ccts:Name>
+              <ccts:Definition>The version of the code list.</ccts:Definition>
+              <ccts:Cardinality>0..1</ccts:Cardinality>
+              <ccts:PropertyTerm>Version</ccts:PropertyTerm>
+            </xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+        <xsd:attribute name="listURI" type="xsd:anyURI" use="optional">
+          <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+              <ccts:Acronym>SC</ccts:Acronym>
+              <ccts:Name>Code List. Uniform Resource. Identifier</ccts:Name>
+              <ccts:Definition>The Uniform Resource Identifier that identifies where the code list is located.</ccts:Definition>
+              <ccts:Cardinality>0..1</ccts:Cardinality>
+              <ccts:PropertyTerm>Uniform Resource</ccts:PropertyTerm>
+            </xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+      </xsd:extension>
+    </xsd:simpleContent>
+  </xsd:complexType>
+  <!-- ================================================================== -->
+  <!-- ===== Type Definition: MIMECodeType                          ===== -->
+  <!-- ================================================================== -->
+  <!-- ================================================================== -->
+  <!-- ===== Type Definition: OrganizationFunctionTypeCodeType      ===== -->
+  <!-- ================================================================== -->
+  <!-- ================================================================== -->
+  <!-- ===== Type Definition: PackageTypeCodeType                   ===== -->
+  <!-- ================================================================== -->
+  <!-- ================================================================== -->
+  <!-- ===== Type Definition: PackagingLevelCodeType                ===== -->
+  <!-- ================================================================== -->
+  <!-- ================================================================== -->
+  <!-- ===== Type Definition: PackagingMarkingCodeType              ===== -->
+  <!-- ================================================================== -->
+  <!-- ================================================================== -->
+  <!-- ===== Type Definition: PartyRoleCodeType                     ===== -->
+  <!-- ================================================================== -->
+  <!-- ================================================================== -->
+  <!-- ===== Type Definition: PartyTypeCodeType                     ===== -->
+  <!-- ================================================================== -->
+  <!-- ================================================================== -->
+  <!-- ===== Type Definition: PaymentGuaranteeMeansCodeType         ===== -->
+  <!-- ================================================================== -->
+  <!-- ================================================================== -->
+  <!-- ===== Type Definition: PaymentMeansChannelCodeType           ===== -->
+  <!-- ================================================================== -->
+  <!-- ================================================================== -->
+  <!-- ===== Type Definition: PaymentMeansCodeType                  ===== -->
+  <!-- ================================================================== -->
+  <!-- ================================================================== -->
+  <!-- ===== Type Definition: PaymentMethodCodeType                 ===== -->
+  <!-- ================================================================== -->
+  <!-- ================================================================== -->
+  <!-- ===== Type Definition: PaymentTermsEventTimeReferenceCodeType ===== -->
+  <!-- ================================================================== -->
+  <!-- ================================================================== -->
+  <!-- ===== Type Definition: PaymentTermsIDType                    ===== -->
+  <!-- ================================================================== -->
+  <xsd:complexType name="PaymentTermsIDType">
+    <xsd:annotation>
+      <xsd:documentation xml:lang="en">
+        <ccts:UniqueID>UN02000012</ccts:UniqueID>
+        <ccts:Acronym>QDT</ccts:Acronym>
+        <ccts:DictionaryEntryName>Payment Terms_ Identifier. Type</ccts:DictionaryEntryName>
+        <ccts:Version>1.0</ccts:Version>
+        <ccts:Definition>A character string used to represent a payment terms.</ccts:Definition>
+        <ccts:PrimaryRepresentationTerm>Identifier</ccts:PrimaryRepresentationTerm>
+        <ccts:PrimitiveType>String</ccts:PrimitiveType>
+        <ccts:DataTypeQualifierTerm>Payment Terms</ccts:DataTypeQualifierTerm>
+      </xsd:documentation>
+    </xsd:annotation>
+    <xsd:simpleContent>
+      <xsd:extension base="ids64277:PaymentTermsDescriptionIdentifierContentType">
+        <xsd:attribute name="schemeID" type="xsd:token" use="optional">
+          <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+              <ccts:Acronym>SC</ccts:Acronym>
+              <ccts:Name>Identification Scheme. Identifier</ccts:Name>
+              <ccts:Definition>The identification of the identification scheme.</ccts:Definition>
+              <ccts:Cardinality>0..1</ccts:Cardinality>
+              <ccts:PropertyTerm>Identifier</ccts:PropertyTerm>
+            </xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+        <xsd:attribute name="schemeAgencyID" type="xsd:token" use="optional">
+          <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+              <ccts:Acronym>SC</ccts:Acronym>
+              <ccts:Name>Identification Scheme Agency. Identifier</ccts:Name>
+              <ccts:Definition>The identification of the agency that maintains the identification scheme.</ccts:Definition>
+              <ccts:Cardinality>0..1</ccts:Cardinality>
+              <ccts:PropertyTerm>Identifier</ccts:PropertyTerm>
+            </xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+        <xsd:attribute name="schemeVersionID" type="xsd:token" use="optional">
+          <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+
+              <ccts:Acronym>SC</ccts:Acronym>
+              <ccts:Name>Identification Scheme. Version. Identifier</ccts:Name>
+              <ccts:Definition>The Version of the identification scheme.</ccts:Definition>
+              <ccts:Cardinality>0..1</ccts:Cardinality>
+              <ccts:PropertyTerm>Version</ccts:PropertyTerm>
+            </xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+      </xsd:extension>
+    </xsd:simpleContent>
+  </xsd:complexType>
+  <!-- ================================================================== -->
+  <!-- ===== Type Definition: PaymentTermsTypeCodeType              ===== -->
+  <!-- ================================================================== -->
+  <xsd:complexType name="PaymentTermsTypeCodeType">
+    <xsd:annotation>
+      <xsd:documentation xml:lang="en">
+        <ccts:UniqueID>UN02000083</ccts:UniqueID>
+        <ccts:Acronym>QDT</ccts:Acronym>
+        <ccts:DictionaryEntryName>Payment Terms Type_ Code. Type</ccts:DictionaryEntryName>
+        <ccts:Version>1.0</ccts:Version>
+        <ccts:Definition>A character string used to represent the payment terms type.</ccts:Definition>
+        <ccts:PrimaryRepresentationTerm>Code</ccts:PrimaryRepresentationTerm>
+        <ccts:PrimitiveType>String</ccts:PrimitiveType>
+        <ccts:DataTypeQualifierTerm>Payment Terms Type</ccts:DataTypeQualifierTerm>
+      </xsd:documentation>
+    </xsd:annotation>
+    <xsd:simpleContent>
+      <xsd:extension base="clm64279:PaymentTermsTypeCodeContentType">
+        <xsd:attribute name="listID" type="xsd:token" fixed="4279" use="optional">
+          <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+              <ccts:Acronym>SC</ccts:Acronym>
+              <ccts:Name>Code List. Identifier</ccts:Name>
+              <ccts:Definition>The identification of a list of codes</ccts:Definition>
+              <ccts:Cardinality>0..1</ccts:Cardinality>
+              <ccts:PropertyTerm>Identifier</ccts:PropertyTerm>
+            </xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+        <xsd:attribute name="listAgencyID" type="xsd:token" fixed="6" use="optional">
+          <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+              <ccts:Acronym>SC</ccts:Acronym>
+              <ccts:Name>Code List. Agency. Identifier</ccts:Name>
+              <ccts:Definition>An agency that maintains one or more code lists.</ccts:Definition>
+              <ccts:Cardinality>0..1</ccts:Cardinality>
+              <ccts:PropertyTerm>Agency</ccts:PropertyTerm>
+            </xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+        <xsd:attribute name="listVersionID" type="xsd:token" fixed="D14A" use="optional">
+          <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+              <ccts:Acronym>SC</ccts:Acronym>
+              <ccts:Name>Code List. Version. Identifier</ccts:Name>
+              <ccts:Definition>The Version of the code list.</ccts:Definition>
+              <ccts:Cardinality>0..1</ccts:Cardinality>
+              <ccts:PropertyTerm>Version</ccts:PropertyTerm>
+            </xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+        <xsd:attribute name="name" type="xsd:string" use="optional">
+          <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+              <ccts:Acronym>SC</ccts:Acronym>
+              <ccts:Name>Code. Name. Text</ccts:Name>
+              <ccts:Definition>The textual equivalent of the code content.</ccts:Definition>
+              <ccts:Cardinality>0..1</ccts:Cardinality>
+              <ccts:PropertyTerm>Name</ccts:PropertyTerm>
+            </xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+      </xsd:extension>
+    </xsd:simpleContent>
+  </xsd:complexType>
+  <!-- ================================================================== -->
+  <!-- ===== Type Definition: PlanningLevelCodeType                 ===== -->
+  <!-- ================================================================== -->
+  <!-- ================================================================== -->
+  <!-- ===== Type Definition: PriceTypeCodeType                     ===== -->
+  <!-- ================================================================== -->
+  <!-- ================================================================== -->
+  <!-- ===== Type Definition: PriorityDescriptionCodeType           ===== -->
+  <!-- ================================================================== -->
+  <!-- ================================================================== -->
+  <!-- ===== Type Definition: ProcessTypeCodeType                   ===== -->
+  <!-- ================================================================== -->
+  <!-- ================================================================== -->
+  <!-- ===== Type Definition: ProjectTypeCodeType                   ===== -->
+  <!-- ================================================================== -->
+  <!-- ================================================================== -->
+  <!-- ===== Type Definition: QuotationDocumentCodeType             ===== -->
+  <!-- ================================================================== -->
+  <!-- ================================================================== -->
+  <!-- ===== Type Definition: ReferenceCodeType                     ===== -->
+  <!-- ================================================================== -->
+  <xsd:complexType name="ReferenceCodeType">
+    <xsd:annotation>
+      <xsd:documentation xml:lang="en">
+        <ccts:UniqueID>UN02000048</ccts:UniqueID>
+        <ccts:Acronym>QDT</ccts:Acronym>
+        <ccts:DictionaryEntryName>Reference_ Code. Type</ccts:DictionaryEntryName>
+        <ccts:Version>1.0</ccts:Version>
+        <ccts:Definition>A character string used to represent a reference.</ccts:Definition>
+        <ccts:PrimaryRepresentationTerm>Code</ccts:PrimaryRepresentationTerm>
+        <ccts:PrimitiveType>String</ccts:PrimitiveType>
+        <ccts:DataTypeQualifierTerm>Reference</ccts:DataTypeQualifierTerm>
+      </xsd:documentation>
+    </xsd:annotation>
+    <xsd:simpleContent>
+      <xsd:extension base="clm61153ReferenceTypeCode:ReferenceTypeCodeContentType">
+        <xsd:attribute name="listID" type="xsd:token" fixed="1153_ReferenceTypeCode" use="optional">
+          <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+              <ccts:Acronym>SC</ccts:Acronym>
+              <ccts:Name>Code List. Identifier</ccts:Name>
+              <ccts:Definition>The identification of a list of codes</ccts:Definition>
+              <ccts:Cardinality>0..1</ccts:Cardinality>
+              <ccts:PropertyTerm>Identifier</ccts:PropertyTerm>
+            </xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+        <xsd:attribute name="listAgencyID" type="xsd:token" fixed="6" use="optional">
+          <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+              <ccts:Acronym>SC</ccts:Acronym>
+              <ccts:Name>Code List. Agency. Identifier</ccts:Name>
+              <ccts:Definition>An agency that maintains one or more code lists.</ccts:Definition>
+              <ccts:Cardinality>0..1</ccts:Cardinality>
+              <ccts:PropertyTerm>Agency</ccts:PropertyTerm>
+            </xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+        <xsd:attribute name="listVersionID" type="xsd:token" fixed="D14A" use="optional">
+          <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+              <ccts:Acronym>SC</ccts:Acronym>
+              <ccts:Name>Code List. Version. Identifier</ccts:Name>
+              <ccts:Definition>The Version of the code list.</ccts:Definition>
+              <ccts:Cardinality>0..1</ccts:Cardinality>
+              <ccts:PropertyTerm>Version</ccts:PropertyTerm>
+            </xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+        <xsd:attribute name="name" type="xsd:string" use="optional">
+          <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+              <ccts:Acronym>SC</ccts:Acronym>
+              <ccts:Name>Code. Name. Text</ccts:Name>
+              <ccts:Definition>The textual equivalent of the code content.</ccts:Definition>
+              <ccts:Cardinality>0..1</ccts:Cardinality>
+              <ccts:PropertyTerm>Name</ccts:PropertyTerm>
+            </xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+      </xsd:extension>
+    </xsd:simpleContent>
+  </xsd:complexType>
+  <!-- ================================================================== -->
+  <!-- ===== Type Definition: RefundMethodCodeType                  ===== -->
+  <!-- ================================================================== -->
+  <!-- ================================================================== -->
+  <!-- ===== Type Definition: RemittanceDocumentCodeType            ===== -->
+  <!-- ================================================================== -->
+  <!-- ================================================================== -->
+  <!-- ===== Type Definition: ReportingThresholdTriggerTypeCodeType ===== -->
+  <!-- ================================================================== -->
+  <!-- ================================================================== -->
+  <!-- ===== Type Definition: ResourceCostCategoryCodeType          ===== -->
+  <!-- ================================================================== -->
+  <!-- ================================================================== -->
+  <!-- ===== Type Definition: ResourcePlanMeasureTypeCodeType       ===== -->
+  <!-- ================================================================== -->
+  <!-- ================================================================== -->
+  <!-- ===== Type Definition: ResponseTypeCodeType                  ===== -->
+  <!-- ================================================================== -->
+  <!-- ================================================================== -->
+  <!-- ===== Type Definition: ScenarioTypeCodeType                  ===== -->
+  <!-- ================================================================== -->
+  <!-- ================================================================== -->
+  <!-- ===== Type Definition: ScheduleTaskRelationshipTypeCodeType  ===== -->
+  <!-- ================================================================== -->
+  <!-- ================================================================== -->
+  <!-- ===== Type Definition: ScheduleTaskTypeCodeType              ===== -->
+  <!-- ================================================================== -->
+  <!-- ================================================================== -->
+  <!-- ===== Type Definition: ScheduleTypeCodeType                  ===== -->
+  <!-- ================================================================== -->
+  <!-- ================================================================== -->
+  <!-- ===== Type Definition: SchedulingDocumentCodeType            ===== -->
+  <!-- ================================================================== -->
+  <!-- ================================================================== -->
+  <!-- ===== Type Definition: SecurityClassificationTypeCodeType    ===== -->
+  <!-- ================================================================== -->
+  <!-- ================================================================== -->
+  <!-- ===== Type Definition: SoftwareUserTypeCodeType              ===== -->
+  <!-- ================================================================== -->
+  <!-- ================================================================== -->
+  <!-- ===== Type Definition: StatusCodeType                        ===== -->
+  <!-- ================================================================== -->
+  <!-- ================================================================== -->
+  <!-- ===== Type Definition: SubjectCodeType                       ===== -->
+  <!-- ================================================================== -->
+  <xsd:complexType name="SubjectCodeType">
+    <xsd:annotation>
+      <xsd:documentation xml:lang="en">
+        <ccts:UniqueID>UN02000133</ccts:UniqueID>
+        <ccts:Acronym>QDT</ccts:Acronym>
+        <ccts:DictionaryEntryName>Subject_ Code. Type</ccts:DictionaryEntryName>
+        <ccts:Version>1.0</ccts:Version>
+        <ccts:Definition>A character string used to represent a subject code.</ccts:Definition>
+        <ccts:PrimaryRepresentationTerm>Code</ccts:PrimaryRepresentationTerm>
+        <ccts:PrimitiveType>String</ccts:PrimitiveType>
+        <ccts:DataTypeQualifierTerm>Subject</ccts:DataTypeQualifierTerm>
+      </xsd:documentation>
+    </xsd:annotation>
+    <xsd:simpleContent>
+      <xsd:extension base="xsd:token">
+        <xsd:attribute name="listID" type="xsd:token" fixed="4451" use="optional">
+          <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+              <ccts:Acronym>SC</ccts:Acronym>
+              <ccts:Name>Code List. Identifier</ccts:Name>
+              <ccts:Definition>The identification of a list of codes.</ccts:Definition>
+              <ccts:Cardinality>0..1</ccts:Cardinality>
+              <ccts:PropertyTerm>Identifier</ccts:PropertyTerm>
+            </xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+        <xsd:attribute name="listAgencyID" type="xsd:token" fixed="6" use="optional">
+          <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+              <ccts:Acronym>SC</ccts:Acronym>
+              <ccts:Name>Code List. Agency. Identifier</ccts:Name>
+              <ccts:Definition>An agency that maintains one or more code lists.</ccts:Definition>
+              <ccts:Cardinality>0..1</ccts:Cardinality>
+              <ccts:PropertyTerm>Agency</ccts:PropertyTerm>
+            </xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+        <xsd:attribute name="listVersionID" type="xsd:token" fixed="D10A" use="optional">
+          <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+              <ccts:Acronym>SC</ccts:Acronym>
+              <ccts:Name>Code List. Version. Identifier</ccts:Name>
+              <ccts:Definition>The version of the code list.</ccts:Definition>
+              <ccts:Cardinality>0..1</ccts:Cardinality>
+              <ccts:PropertyTerm>Version</ccts:PropertyTerm>
+            </xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+        <xsd:attribute name="listURI" type="xsd:anyURI" use="optional">
+          <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+              <ccts:Acronym>SC</ccts:Acronym>
+              <ccts:Name>Code List. Uniform Resource. Identifier</ccts:Name>
+              <ccts:Definition>The Uniform Resource Identifier that identifies where the code list is located.</ccts:Definition>
+              <ccts:Cardinality>0..1</ccts:Cardinality>
+              <ccts:PropertyTerm>Uniform Resource</ccts:PropertyTerm>
+            </xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+      </xsd:extension>
+    </xsd:simpleContent>
+  </xsd:complexType>
+  <!-- ================================================================== -->
+  <!-- ===== Type Definition: TaxCategoryCodeType                   ===== -->
+  <!-- ================================================================== -->
+  <!-- ================================================================== -->
+  <!-- ===== Type Definition: TaxExemptionReasonCodeType            ===== -->
+  <!-- ================================================================== -->
+  <!-- ================================================================== -->
+  <!-- ===== Type Definition: TaxTypeCodeType                       ===== -->
+  <!-- ================================================================== -->
+  <xsd:complexType name="TaxTypeCodeType">
+    <xsd:annotation>
+      <xsd:documentation xml:lang="en">
+        <ccts:UniqueID>UN02000015</ccts:UniqueID>
+        <ccts:Acronym>QDT</ccts:Acronym>
+        <ccts:DictionaryEntryName>Tax Type_ Code. Type</ccts:DictionaryEntryName>
+        <ccts:Version>1.1</ccts:Version>
+        <ccts:Definition>A character string used to represent or replace a tax type.</ccts:Definition>
+        <ccts:PrimaryRepresentationTerm>Code</ccts:PrimaryRepresentationTerm>
+        <ccts:PrimitiveType>String</ccts:PrimitiveType>
+        <ccts:DataTypeQualifierTerm>Tax Type</ccts:DataTypeQualifierTerm>
+      </xsd:documentation>
+    </xsd:annotation>
+    <xsd:simpleContent>
+      <xsd:extension base="clm65153:DutyTaxFeeTypeCodeContentType">
+        <xsd:attribute name="listID" type="xsd:token" fixed="5153" use="optional">
+          <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+              <ccts:Acronym>SC</ccts:Acronym>
+              <ccts:Name>Code List. Identifier</ccts:Name>
+              <ccts:Definition>The identification of a list of codes</ccts:Definition>
+              <ccts:Cardinality>0..1</ccts:Cardinality>
+              <ccts:PropertyTerm>Identifier</ccts:PropertyTerm>
+            </xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+        <xsd:attribute name="listAgencyID" type="xsd:token" fixed="6" use="optional">
+          <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+              <ccts:Acronym>SC</ccts:Acronym>
+              <ccts:Name>Code List. Agency. Identifier</ccts:Name>
+              <ccts:Definition>An agency that maintains one or more code lists.</ccts:Definition>
+              <ccts:Cardinality>0..1</ccts:Cardinality>
+              <ccts:PropertyTerm>Agency</ccts:PropertyTerm>
+            </xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+        <xsd:attribute name="listVersionID" type="xsd:token" fixed="D14A" use="optional">
+          <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+              <ccts:Acronym>SC</ccts:Acronym>
+              <ccts:Name>Code List. Version. Identifier</ccts:Name>
+              <ccts:Definition>The Version of the code list.</ccts:Definition>
+              <ccts:Cardinality>0..1</ccts:Cardinality>
+              <ccts:PropertyTerm>Version</ccts:PropertyTerm>
+            </xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+        <xsd:attribute name="listURI" type="xsd:anyURI" use="optional">
+          <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+              <ccts:Acronym>SC</ccts:Acronym>
+              <ccts:Name>Code List. Uniform Resource. Identifier</ccts:Name>
+              <ccts:Definition>The Uniform Resource Identifier that identifies where the code list is located.</ccts:Definition>
+              <ccts:Cardinality>0..1</ccts:Cardinality>
+              <ccts:PropertyTerm>Uniform Resource</ccts:PropertyTerm>
+            </xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+      </xsd:extension>
+    </xsd:simpleContent>
+  </xsd:complexType>
+  <!-- ================================================================== -->
+  <!-- ===== Type Definition: TemperatureTypeCodeType               ===== -->
+  <!-- ================================================================== -->
+  <!-- ================================================================== -->
+  <!-- ===== Type Definition: TemperatureUnitMeasureType            ===== -->
+  <!-- ================================================================== -->
+  <!-- ================================================================== -->
+  <!-- ===== Type Definition: TimeReferenceCodeType                 ===== -->
+  <!-- ================================================================== -->
+  <!-- ================================================================== -->
+  <!-- ===== Type Definition: TransportEquipmentCategoryCodeType    ===== -->
+  <!-- ================================================================== -->
+  <!-- ================================================================== -->
+  <!-- ===== Type Definition: TransportEquipmentFullnessCodeType    ===== -->
+  <!-- ================================================================== -->
+  <!-- ================================================================== -->
+  <!-- ===== Type Definition: TransportEquipmentSizeTypeCodeType    ===== -->
+  <!-- ================================================================== -->
+  <!-- ================================================================== -->
+  <!-- ===== Type Definition: TransportMeansTypeCodeType            ===== -->
+  <!-- ================================================================== -->
+  <!-- ================================================================== -->
+  <!-- ===== Type Definition: TransportModeCodeType                 ===== -->
+  <!-- ================================================================== -->
+  <!-- ================================================================== -->
+  <!-- ===== Type Definition: TransportMovementStageCodeType        ===== -->
+  <!-- ================================================================== -->
+  <!-- ================================================================== -->
+  <!-- ===== Type Definition: UnitMeasureType                       ===== -->
+  <!-- ================================================================== -->
+  <xsd:complexType name="UnitMeasureType">
+    <xsd:annotation>
+      <xsd:documentation xml:lang="en">
+        <ccts:UniqueID>UN02000181</ccts:UniqueID>
+        <ccts:Acronym>QDT</ccts:Acronym>
+        <ccts:DictionaryEntryName>Unit_ Measure. Type</ccts:DictionaryEntryName>
+        <ccts:Version>1.0</ccts:Version>
+        <ccts:Definition>A numeric value determined by measuring an object along with the specified unit of measure.</ccts:Definition>
+        <ccts:PrimaryRepresentationTerm>Measure</ccts:PrimaryRepresentationTerm>
+        <ccts:PrimitiveType>Decimal</ccts:PrimitiveType>
+        <ccts:DataTypeQualifierTerm>Unit</ccts:DataTypeQualifierTerm>
+      </xsd:documentation>
+    </xsd:annotation>
+    <xsd:simpleContent>
+      <xsd:extension base="xsd:decimal">
+        <xsd:attribute name="unitCode" type="xsd:token" use="optional">
+          <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+             <ccts:Acronym>SC</ccts:Acronym>
+              <ccts:Name>Measure Unit. Code</ccts:Name>
+              <ccts:Definition>A code specifying a unit of measure.</ccts:Definition>
+              <ccts:Cardinality>0..1</ccts:Cardinality>
+              <ccts:PropertyTerm>Code</ccts:PropertyTerm>
+            </xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+        <xsd:attribute name="unitCodeListVersionID" type="xsd:token" use="optional">
+          <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+              <ccts:Acronym>SC</ccts:Acronym>
+              <ccts:Name>Measure Unit. Code List Version. Identifier</ccts:Name>
+              <ccts:Definition>The Version of the measure unit code list.</ccts:Definition>
+              <ccts:Cardinality>0..1</ccts:Cardinality>
+              <ccts:PropertyTerm>Code List Version</ccts:PropertyTerm>
+            </xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+      </xsd:extension>
+    </xsd:simpleContent>
+  </xsd:complexType>
+  <!-- ================================================================== -->
+  <!-- ===== Type Definition: VolumeUnitMeasureType                 ===== -->
+  <!-- ================================================================== -->
+  <!-- ================================================================== -->
+  <!-- ===== Type Definition: WeightUnitMeasureType                 ===== -->
+  <!-- ================================================================== -->
+  <!-- ================================================================== -->
+  <!-- ===== Type Definition: WorkflowStatusCodeType                ===== -->
+  <!-- ================================================================== -->
+  <xsd:simpleType name="Max35Text">
+    <xsd:restriction base="xsd:token">
+      <xsd:minLength value="1"/>
+      <xsd:maxLength value="35"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="Max500Text">
+    <xsd:restriction base="xsd:token">
+      <xsd:minLength value="1"/>
+      <xsd:maxLength value="500"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:complexType name="Max35IDType">
+    <xsd:simpleContent>
+      <xsd:extension base="qdt:Max35Text">
+        <xsd:attribute name="schemeID" type="xsd:token" use="optional">
+          <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+              <ccts:Acronym>SC</ccts:Acronym>
+              <ccts:DictionaryEntryName>Identification Scheme. Identifier</ccts:DictionaryEntryName>
+              <ccts:Definition>The identification of the identification scheme.</ccts:Definition>
+              <ccts:ObjectClassTerm>Identification Scheme</ccts:ObjectClassTerm>
+              <ccts:PropertyTerm>Identifier</ccts:PropertyTerm>
+            </xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+        <xsd:attribute name="schemeName" type="xsd:string" use="optional">
+          <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+              <ccts:Acronym>SC</ccts:Acronym>
+              <ccts:DictionaryEntryName>Identification Scheme. Name. Text</ccts:DictionaryEntryName>
+              <ccts:Definition>The name of the identification scheme.</ccts:Definition>
+              <ccts:ObjectClassTerm>Identification Scheme</ccts:ObjectClassTerm>
+              <ccts:PropertyTerm>Name</ccts:PropertyTerm>
+            </xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+        <xsd:attribute name="schemeAgencyID" type="xsd:token" use="optional">
+          <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+              <ccts:Acronym>SC</ccts:Acronym>
+              <ccts:DictionaryEntryName>Identification Scheme Agency. Identifier</ccts:DictionaryEntryName>
+              <ccts:Definition>The identification of the agency that maintains the identification scheme.</ccts:Definition>
+              <ccts:ObjectClassTerm>Identification Scheme Agency</ccts:ObjectClassTerm>
+              <ccts:PropertyTerm>Identifier</ccts:PropertyTerm>
+            </xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+        <xsd:attribute name="schemeAgencyName" type="xsd:string" use="optional">
+          <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+              <ccts:Acronym>SC</ccts:Acronym>
+              <ccts:DictionaryEntryName>Identification Scheme. Agency Name. Text</ccts:DictionaryEntryName>
+              <ccts:Definition>The name of the agency that maintains the identification scheme.</ccts:Definition>
+              <ccts:ObjectClassTerm>Identification Scheme</ccts:ObjectClassTerm>
+              <ccts:PropertyTerm>Agency Name</ccts:PropertyTerm>
+            </xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+        <xsd:attribute name="schemeVersionID" type="xsd:token" use="optional">
+          <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+              <ccts:Acronym>SC</ccts:Acronym>
+              <ccts:DictionaryEntryName>Identification Scheme. Version. Identifier</ccts:DictionaryEntryName>
+              <ccts:Definition>The Version of the identification scheme.</ccts:Definition>
+              <ccts:ObjectClassTerm>Identification Scheme</ccts:ObjectClassTerm>
+              <ccts:PropertyTerm>Version</ccts:PropertyTerm>
+            </xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+        <xsd:attribute name="schemeDataURI" type="xsd:anyURI" use="optional">
+          <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+              <ccts:Acronym>SC</ccts:Acronym>
+              <ccts:DictionaryEntryName>Identification Scheme Data. Uniform Resource. Identifier</ccts:DictionaryEntryName>
+              <ccts:Definition>The Uniform Resource Identifier that identifies where the identification scheme data is located.</ccts:Definition>
+              <ccts:ObjectClassTerm>Identification Scheme Data</ccts:ObjectClassTerm>
+              <ccts:PropertyTerm>Uniform Resource</ccts:PropertyTerm>
+            </xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+        <xsd:attribute name="schemeURI" type="xsd:anyURI" use="optional">
+          <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+              <ccts:Acronym>SC</ccts:Acronym>
+              <ccts:DictionaryEntryName>Identification Scheme. Uniform Resource. Identifier</ccts:DictionaryEntryName>
+              <ccts:Definition>The Uniform Resource Identifier that identifies where the identification scheme is located.</ccts:Definition>
+              <ccts:ObjectClassTerm>Identification Scheme</ccts:ObjectClassTerm>
+              <ccts:PropertyTerm>Uniform Resource</ccts:PropertyTerm>
+            </xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+      </xsd:extension>
+    </xsd:simpleContent>
+  </xsd:complexType>
+  <xsd:complexType name="Max35TextType">
+    <xsd:simpleContent>
+      <xsd:extension base="qdt:Max35Text">
+        <xsd:attribute name="languageID" type="xsd:token" use="optional">
+          <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+              <ccts:Acronym>SC</ccts:Acronym>
+              <ccts:DictionaryEntryName>Language. Identifier</ccts:DictionaryEntryName>
+              <ccts:Definition>The identifier of the language used in the corresponding text string.</ccts:Definition>
+              <ccts:ObjectClassTerm>Language</ccts:ObjectClassTerm>
+              <ccts:PropertyTerm>Identifier</ccts:PropertyTerm>
+            </xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+        <xsd:attribute name="languageLocaleID" type="xsd:token" use="optional">
+          <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+              <ccts:Acronym>SC</ccts:Acronym>
+              <ccts:DictionaryEntryName>Language. Locale. Identifier</ccts:DictionaryEntryName>
+              <ccts:Definition>The identification of the locale of the language.</ccts:Definition>
+              <ccts:ObjectClassTerm>Language</ccts:ObjectClassTerm>
+              <ccts:PropertyTerm>Locale</ccts:PropertyTerm>
+            </xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+      </xsd:extension>
+    </xsd:simpleContent>
+  </xsd:complexType>
+  <xsd:complexType name="Max70IDType">
+    <xsd:simpleContent>
+      <xsd:extension base="qdt:Max70Text">
+        <xsd:attribute name="schemeID" type="xsd:token" use="optional">
+          <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+              <ccts:Acronym>SC</ccts:Acronym>
+              <ccts:DictionaryEntryName>Identification Scheme. Identifier</ccts:DictionaryEntryName>
+              <ccts:Definition>The identification of the identification scheme.</ccts:Definition>
+              <ccts:ObjectClassTerm>Identification Scheme</ccts:ObjectClassTerm>
+              <ccts:PropertyTerm>Identifier</ccts:PropertyTerm>
+            </xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+        <xsd:attribute name="schemeName" type="xsd:string" use="optional">
+          <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+              <ccts:Acronym>SC</ccts:Acronym>
+              <ccts:DictionaryEntryName>Identification Scheme. Name. Text</ccts:DictionaryEntryName>
+              <ccts:Definition>The name of the identification scheme.</ccts:Definition>
+              <ccts:ObjectClassTerm>Identification Scheme</ccts:ObjectClassTerm>
+              <ccts:PropertyTerm>Name</ccts:PropertyTerm>
+            </xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+        <xsd:attribute name="schemeAgencyID" type="xsd:token" use="optional">
+          <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+              <ccts:Acronym>SC</ccts:Acronym>
+              <ccts:DictionaryEntryName>Identification Scheme Agency. Identifier</ccts:DictionaryEntryName>
+              <ccts:Definition>The identification of the agency that maintains the identification scheme.</ccts:Definition>
+              <ccts:ObjectClassTerm>Identification Scheme Agency</ccts:ObjectClassTerm>
+              <ccts:PropertyTerm>Identifier</ccts:PropertyTerm>
+            </xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+        <xsd:attribute name="schemeAgencyName" type="xsd:string" use="optional">
+          <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+              <ccts:Acronym>SC</ccts:Acronym>
+              <ccts:DictionaryEntryName>Identification Scheme. Agency Name. Text</ccts:DictionaryEntryName>
+              <ccts:Definition>The name of the agency that maintains the identification scheme.</ccts:Definition>
+              <ccts:ObjectClassTerm>Identification Scheme</ccts:ObjectClassTerm>
+              <ccts:PropertyTerm>Agency Name</ccts:PropertyTerm>
+            </xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+        <xsd:attribute name="schemeVersionID" type="xsd:token" use="optional">
+          <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+              <ccts:Acronym>SC</ccts:Acronym>
+              <ccts:DictionaryEntryName>Identification Scheme. Version. Identifier</ccts:DictionaryEntryName>
+              <ccts:Definition>The Version of the identification scheme.</ccts:Definition>
+              <ccts:ObjectClassTerm>Identification Scheme</ccts:ObjectClassTerm>
+              <ccts:PropertyTerm>Version</ccts:PropertyTerm>
+            </xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+        <xsd:attribute name="schemeDataURI" type="xsd:anyURI" use="optional">
+          <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+              <ccts:Acronym>SC</ccts:Acronym>
+              <ccts:DictionaryEntryName>Identification Scheme Data. Uniform Resource. Identifier</ccts:DictionaryEntryName>
+              <ccts:Definition>The Uniform Resource Identifier that identifies where the identification scheme data is located.</ccts:Definition>
+              <ccts:ObjectClassTerm>Identification Scheme Data</ccts:ObjectClassTerm>
+              <ccts:PropertyTerm>Uniform Resource</ccts:PropertyTerm>
+            </xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+        <xsd:attribute name="schemeURI" type="xsd:anyURI" use="optional">
+          <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+              <ccts:Acronym>SC</ccts:Acronym>
+              <ccts:DictionaryEntryName>Identification Scheme. Uniform Resource. Identifier</ccts:DictionaryEntryName>
+              <ccts:Definition>The Uniform Resource Identifier that identifies where the identification scheme is located.</ccts:Definition>
+              <ccts:ObjectClassTerm>Identification Scheme</ccts:ObjectClassTerm>
+              <ccts:PropertyTerm>Uniform Resource</ccts:PropertyTerm>
+            </xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+      </xsd:extension>
+    </xsd:simpleContent>
+  </xsd:complexType>
+  <xsd:complexType name="Max500TextType">
+    <xsd:simpleContent>
+      <xsd:extension base="qdt:Max500Text">
+        <xsd:attribute name="languageID" type="xsd:token" use="optional">
+          <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+              <ccts:Acronym>SC</ccts:Acronym>
+              <ccts:DictionaryEntryName>Language. Identifier</ccts:DictionaryEntryName>
+              <ccts:Definition>The identifier of the language used in the corresponding text string.</ccts:Definition>
+              <ccts:ObjectClassTerm>Language</ccts:ObjectClassTerm>
+              <ccts:PropertyTerm>Identifier</ccts:PropertyTerm>
+            </xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+        <xsd:attribute name="languageLocaleID" type="xsd:token" use="optional">
+          <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+              <ccts:Acronym>SC</ccts:Acronym>
+              <ccts:DictionaryEntryName>Language. Locale. Identifier</ccts:DictionaryEntryName>
+              <ccts:Definition>The identification of the locale of the language.</ccts:Definition>
+              <ccts:ObjectClassTerm>Language</ccts:ObjectClassTerm>
+              <ccts:PropertyTerm>Locale</ccts:PropertyTerm>
+            </xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+      </xsd:extension>
+    </xsd:simpleContent>
+  </xsd:complexType>
+  <xsd:complexType name="Max140TextType">
+    <xsd:simpleContent>
+      <xsd:extension base="qdt:Max140Text">
+        <xsd:attribute name="languageID" type="xsd:token" use="optional">
+          <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+              <ccts:Acronym>SC</ccts:Acronym>
+              <ccts:DictionaryEntryName>Language. Identifier</ccts:DictionaryEntryName>
+              <ccts:Definition>The identifier of the language used in the corresponding text string.</ccts:Definition>
+              <ccts:ObjectClassTerm>Language</ccts:ObjectClassTerm>
+              <ccts:PropertyTerm>Identifier</ccts:PropertyTerm>
+            </xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+        <xsd:attribute name="languageLocaleID" type="xsd:token" use="optional">
+          <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+              <ccts:Acronym>SC</ccts:Acronym>
+              <ccts:DictionaryEntryName>Language. Locale. Identifier</ccts:DictionaryEntryName>
+              <ccts:Definition>The identification of the locale of the language.</ccts:Definition>
+              <ccts:ObjectClassTerm>Language</ccts:ObjectClassTerm>
+              <ccts:PropertyTerm>Locale</ccts:PropertyTerm>
+            </xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+      </xsd:extension>
+    </xsd:simpleContent>
+  </xsd:complexType>
+  <xsd:simpleType name="Max140Text">
+    <xsd:restriction base="xsd:token">
+      <xsd:minLength value="1"/>
+      <xsd:maxLength value="140"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:complexType name="Max2048TextType">
+    <xsd:simpleContent>
+      <xsd:extension base="qdt:Max2048Text">
+        <xsd:attribute name="languageID" type="xsd:token" use="optional">
+          <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+              <ccts:Acronym>SC</ccts:Acronym>
+              <ccts:DictionaryEntryName>Language. Identifier</ccts:DictionaryEntryName>
+              <ccts:Definition>The identifier of the language used in the corresponding text string.</ccts:Definition>
+              <ccts:ObjectClassTerm>Language</ccts:ObjectClassTerm>
+              <ccts:PropertyTerm>Identifier</ccts:PropertyTerm>
+            </xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+        <xsd:attribute name="languageLocaleID" type="xsd:token" use="optional">
+          <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+              <ccts:Acronym>SC</ccts:Acronym>
+              <ccts:DictionaryEntryName>Language. Locale. Identifier</ccts:DictionaryEntryName>
+              <ccts:Definition>The identification of the locale of the language.</ccts:Definition>
+              <ccts:ObjectClassTerm>Language</ccts:ObjectClassTerm>
+              <ccts:PropertyTerm>Locale</ccts:PropertyTerm>
+            </xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+      </xsd:extension>
+    </xsd:simpleContent>
+  </xsd:complexType>
+  <xsd:simpleType name="Max2048Text">
+    <xsd:restriction base="xsd:token">
+      <xsd:minLength value="1"/>
+      <xsd:maxLength value="2048"/>
+      <xsd:pattern value="[\w\.=-]+@[\w\.-]+\.[\w]{2,10}"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:complexType name="Max256IDType">
+    <xsd:simpleContent>
+      <xsd:extension base="qdt:Max256Text">
+        <xsd:attribute name="schemeID" type="xsd:token" use="optional">
+          <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+              <ccts:Acronym>SC</ccts:Acronym>
+              <ccts:DictionaryEntryName>Identification Scheme. Identifier</ccts:DictionaryEntryName>
+              <ccts:Definition>The identification of the identification scheme.</ccts:Definition>
+              <ccts:ObjectClassTerm>Identification Scheme</ccts:ObjectClassTerm>
+              <ccts:PropertyTerm>Identifier</ccts:PropertyTerm>
+            </xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+        <xsd:attribute name="schemeName" type="xsd:string" use="optional">
+          <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+              <ccts:Acronym>SC</ccts:Acronym>
+              <ccts:DictionaryEntryName>Identification Scheme. Name. Text</ccts:DictionaryEntryName>
+              <ccts:Definition>The name of the identification scheme.</ccts:Definition>
+              <ccts:ObjectClassTerm>Identification Scheme</ccts:ObjectClassTerm>
+              <ccts:PropertyTerm>Name</ccts:PropertyTerm>
+            </xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+        <xsd:attribute name="schemeAgencyID" type="xsd:token" use="optional">
+          <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+              <ccts:Acronym>SC</ccts:Acronym>
+              <ccts:DictionaryEntryName>Identification Scheme Agency. Identifier</ccts:DictionaryEntryName>
+              <ccts:Definition>The identification of the agency that maintains the identification scheme.</ccts:Definition>
+              <ccts:ObjectClassTerm>Identification Scheme Agency</ccts:ObjectClassTerm>
+              <ccts:PropertyTerm>Identifier</ccts:PropertyTerm>
+            </xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+        <xsd:attribute name="schemeAgencyName" type="xsd:string" use="optional">
+          <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+              <ccts:Acronym>SC</ccts:Acronym>
+              <ccts:DictionaryEntryName>Identification Scheme. Agency Name. Text</ccts:DictionaryEntryName>
+              <ccts:Definition>The name of the agency that maintains the identification scheme.</ccts:Definition>
+              <ccts:ObjectClassTerm>Identification Scheme</ccts:ObjectClassTerm>
+              <ccts:PropertyTerm>Agency Name</ccts:PropertyTerm>
+            </xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+        <xsd:attribute name="schemeVersionID" type="xsd:token" use="optional">
+          <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+              <ccts:Acronym>SC</ccts:Acronym>
+              <ccts:DictionaryEntryName>Identification Scheme. Version. Identifier</ccts:DictionaryEntryName>
+              <ccts:Definition>The Version of the identification scheme.</ccts:Definition>
+              <ccts:ObjectClassTerm>Identification Scheme</ccts:ObjectClassTerm>
+              <ccts:PropertyTerm>Version</ccts:PropertyTerm>
+            </xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+        <xsd:attribute name="schemeDataURI" type="xsd:anyURI" use="optional">
+          <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+              <ccts:Acronym>SC</ccts:Acronym>
+              <ccts:DictionaryEntryName>Identification Scheme Data. Uniform Resource. Identifier</ccts:DictionaryEntryName>
+              <ccts:Definition>The Uniform Resource Identifier that identifies where the identification scheme data is located.</ccts:Definition>
+              <ccts:ObjectClassTerm>Identification Scheme Data</ccts:ObjectClassTerm>
+              <ccts:PropertyTerm>Uniform Resource</ccts:PropertyTerm>
+            </xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+        <xsd:attribute name="schemeURI" type="xsd:anyURI" use="optional">
+          <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+              <ccts:Acronym>SC</ccts:Acronym>
+              <ccts:DictionaryEntryName>Identification Scheme. Uniform Resource. Identifier</ccts:DictionaryEntryName>
+              <ccts:Definition>The Uniform Resource Identifier that identifies where the identification scheme is located.</ccts:Definition>
+              <ccts:ObjectClassTerm>Identification Scheme</ccts:ObjectClassTerm>
+              <ccts:PropertyTerm>Uniform Resource</ccts:PropertyTerm>
+            </xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+      </xsd:extension>
+    </xsd:simpleContent>
+  </xsd:complexType>
+  <xsd:simpleType name="Max256Text">
+    <xsd:restriction base="xsd:token">
+      <xsd:minLength value="1"/>
+      <xsd:maxLength value="256"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:complexType name="Max16CodeType">
+    <xsd:annotation>
+      <xsd:documentation xml:lang="en"/>
+    </xsd:annotation>
+    <xsd:simpleContent>
+      <xsd:extension base="qdt:Max16Text">
+        <xsd:attribute name="listID" type="xsd:token" use="optional">
+          <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+              <ccts:Acronym>SC</ccts:Acronym>
+              <ccts:DictionaryEntryName>Code List. Identifier</ccts:DictionaryEntryName>
+              <ccts:Definition>The identification of a list of codes</ccts:Definition>
+              <ccts:ObjectClassTerm>Code List</ccts:ObjectClassTerm>
+              <ccts:PropertyTerm>Identifier</ccts:PropertyTerm>
+            </xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+        <xsd:attribute name="listAgencyID" type="xsd:token" use="optional">
+          <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+              <ccts:Acronym>SC</ccts:Acronym>
+              <ccts:DictionaryEntryName>Code List. Agency. Identifier</ccts:DictionaryEntryName>
+              <ccts:Definition>An agency that maintains one or more code lists.</ccts:Definition>
+              <ccts:ObjectClassTerm>Code List</ccts:ObjectClassTerm>
+              <ccts:PropertyTerm>Agency</ccts:PropertyTerm>
+            </xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+        <xsd:attribute name="listAgencyName" type="xsd:string" use="optional">
+          <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+              <ccts:Acronym>SC</ccts:Acronym>
+              <ccts:DictionaryEntryName>Code List. Agency Name. Text</ccts:DictionaryEntryName>
+              <ccts:Definition>The name of the agency that maintains the code list.</ccts:Definition>
+              <ccts:ObjectClassTerm>Code List</ccts:ObjectClassTerm>
+              <ccts:PropertyTerm>Agency Name</ccts:PropertyTerm>
+            </xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+        <xsd:attribute name="listName" type="xsd:string" use="optional">
+          <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+              <ccts:Acronym>SC</ccts:Acronym>
+              <ccts:DictionaryEntryName>Code List. Name. Text</ccts:DictionaryEntryName>
+              <ccts:Definition>The name of a list of codes.</ccts:Definition>
+              <ccts:ObjectClassTerm>Code List</ccts:ObjectClassTerm>
+              <ccts:PropertyTerm>Name</ccts:PropertyTerm>
+            </xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+        <xsd:attribute name="listVersionID" type="xsd:token" use="optional">
+          <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+              <ccts:Acronym>SC</ccts:Acronym>
+              <ccts:DictionaryEntryName>Code List. Version. Identifier</ccts:DictionaryEntryName>
+              <ccts:Definition>The Version of the code list.</ccts:Definition>
+              <ccts:ObjectClassTerm>Code List</ccts:ObjectClassTerm>
+              <ccts:PropertyTerm>Version</ccts:PropertyTerm>
+            </xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+        <xsd:attribute name="name" type="xsd:string" use="optional">
+          <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+              <ccts:Acronym>SC</ccts:Acronym>
+              <ccts:DictionaryEntryName>Code. Name. Text</ccts:DictionaryEntryName>
+              <ccts:Definition>The textual equivalent of the code content.</ccts:Definition>
+              <ccts:ObjectClassTerm>Code</ccts:ObjectClassTerm>
+              <ccts:PropertyTerm>Name</ccts:PropertyTerm>
+            </xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+        <xsd:attribute name="languageID" type="xsd:token" use="optional">
+          <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+              <ccts:Acronym>SC</ccts:Acronym>
+              <ccts:DictionaryEntryName>Language. Identifier</ccts:DictionaryEntryName>
+              <ccts:Definition>The identifier of the language used in the corresponding text string.</ccts:Definition>
+              <ccts:ObjectClassTerm>Language</ccts:ObjectClassTerm>
+              <ccts:PropertyTerm>Identifier</ccts:PropertyTerm>
+            </xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+        <xsd:attribute name="listURI" type="xsd:anyURI" use="optional">
+          <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+              <ccts:Acronym>SC</ccts:Acronym>
+              <ccts:DictionaryEntryName>Code List. Uniform Resource. Identifier</ccts:DictionaryEntryName>
+              <ccts:Definition>The Uniform Resource Identifier that identifies where the code list is located.</ccts:Definition>
+              <ccts:ObjectClassTerm>Code List</ccts:ObjectClassTerm>
+              <ccts:PropertyTerm>Uniform Resource</ccts:PropertyTerm>
+            </xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+        <xsd:attribute name="listSchemeURI" type="xsd:anyURI" use="optional">
+          <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+              <ccts:Acronym>SC</ccts:Acronym>
+              <ccts:DictionaryEntryName>Code List Scheme. Uniform Resource. Identifier</ccts:DictionaryEntryName>
+              <ccts:Definition>The Uniform Resource Identifier that identifies where the code list scheme is located.</ccts:Definition>
+              <ccts:ObjectClassTerm>Code List Scheme</ccts:ObjectClassTerm>
+              <ccts:PropertyTerm>Uniform Resource</ccts:PropertyTerm>
+            </xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+      </xsd:extension>
+    </xsd:simpleContent>
+  </xsd:complexType>
+  <xsd:simpleType name="Max16Text">
+    <xsd:restriction base="xsd:token">
+      <xsd:minLength value="1"/>
+      <xsd:maxLength value="16"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:complexType name="Max70TextType">
+    <xsd:simpleContent>
+      <xsd:extension base="qdt:Max70Text">
+        <xsd:attribute name="languageID" type="xsd:token" use="optional">
+          <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+              <ccts:Acronym>SC</ccts:Acronym>
+              <ccts:DictionaryEntryName>Language. Identifier</ccts:DictionaryEntryName>
+              <ccts:Definition>The identifier of the language used in the corresponding text string.</ccts:Definition>
+              <ccts:ObjectClassTerm>Language</ccts:ObjectClassTerm>
+              <ccts:PropertyTerm>Identifier</ccts:PropertyTerm>
+            </xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+        <xsd:attribute name="languageLocaleID" type="xsd:token" use="optional">
+          <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+              <ccts:Acronym>SC</ccts:Acronym>
+              <ccts:DictionaryEntryName>Language. Locale. Identifier</ccts:DictionaryEntryName>
+              <ccts:Definition>The identification of the locale of the language.</ccts:Definition>
+              <ccts:ObjectClassTerm>Language</ccts:ObjectClassTerm>
+              <ccts:PropertyTerm>Locale</ccts:PropertyTerm>
+            </xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+      </xsd:extension>
+    </xsd:simpleContent>
+  </xsd:complexType>
+  <xsd:simpleType name="Max70Text">
+    <xsd:restriction base="xsd:token">
+      <xsd:minLength value="1"/>
+      <xsd:maxLength value="70"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:complexType name="Max256TextType">
+    <xsd:simpleContent>
+      <xsd:extension base="qdt:Max256Text">
+        <xsd:attribute name="languageID" type="xsd:token" use="optional">
+          <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+              <ccts:Acronym>SC</ccts:Acronym>
+              <ccts:DictionaryEntryName>Language. Identifier</ccts:DictionaryEntryName>
+              <ccts:Definition>The identifier of the language used in the corresponding text string.</ccts:Definition>
+              <ccts:ObjectClassTerm>Language</ccts:ObjectClassTerm>
+              <ccts:PropertyTerm>Identifier</ccts:PropertyTerm>
+            </xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+        <xsd:attribute name="languageLocaleID" type="xsd:token" use="optional">
+          <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+              <ccts:Acronym>SC</ccts:Acronym>
+              <ccts:DictionaryEntryName>Language. Locale. Identifier</ccts:DictionaryEntryName>
+              <ccts:Definition>The identification of the locale of the language.</ccts:Definition>
+              <ccts:ObjectClassTerm>Language</ccts:ObjectClassTerm>
+              <ccts:PropertyTerm>Locale</ccts:PropertyTerm>
+            </xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+      </xsd:extension>
+    </xsd:simpleContent>
+  </xsd:complexType>
+  <xsd:complexType name="Max16TextType">
+    <xsd:simpleContent>
+      <xsd:extension base="qdt:Max16Text">
+        <xsd:attribute name="languageID" type="xsd:token" use="optional">
+          <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+              <ccts:Acronym>SC</ccts:Acronym>
+              <ccts:DictionaryEntryName>Language. Identifier</ccts:DictionaryEntryName>
+              <ccts:Definition>The identifier of the language used in the corresponding text string.</ccts:Definition>
+              <ccts:ObjectClassTerm>Language</ccts:ObjectClassTerm>
+              <ccts:PropertyTerm>Identifier</ccts:PropertyTerm>
+            </xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+        <xsd:attribute name="languageLocaleID" type="xsd:token" use="optional">
+          <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+              <ccts:Acronym>SC</ccts:Acronym>
+              <ccts:DictionaryEntryName>Language. Locale. Identifier</ccts:DictionaryEntryName>
+              <ccts:Definition>The identification of the locale of the language.</ccts:Definition>
+              <ccts:ObjectClassTerm>Language</ccts:ObjectClassTerm>
+              <ccts:PropertyTerm>Locale</ccts:PropertyTerm>
+            </xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+      </xsd:extension>
+    </xsd:simpleContent>
+  </xsd:complexType>
+  <xsd:simpleType name="PercentageRate">
+    <xsd:restriction base="xsd:decimal">
+      <xsd:fractionDigits value="10"/>
+      <xsd:totalDigits value="11"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="PhoneNumber">
+    <xsd:restriction base="xsd:string">
+      <xsd:pattern value="\+[0-9]{1,3}-[0-9()+\-]{1,30}"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:complexType name="ThaiMessageFunctionCodeType">
+    <xsd:simpleContent>
+      <xsd:extension base="rd1225:ThaiMessageFunctionCodeContentType"> </xsd:extension>
+    </xsd:simpleContent>
+  </xsd:complexType>
+  <xsd:complexType name="ThaiInvoiceDocumentCodeType">
+    <xsd:simpleContent>
+      <xsd:extension base="clm61001Invoice:ThaiDocumentNameCodeInvoiceContentType">
+        <xsd:attribute name="listID" type="xsd:token" use="optional">
+          <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+              <ccts:Acronym>SC</ccts:Acronym>
+              <ccts:Name>Code List. Identifier</ccts:Name>
+              <ccts:Definition>The identification of a list of codes.</ccts:Definition>
+              <ccts:Cardinality>0..1</ccts:Cardinality>
+              <ccts:PropertyTerm>Identifier</ccts:PropertyTerm>
+            </xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+        <xsd:attribute name="listAgencyID" type="xsd:token" use="optional">
+          <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+              <ccts:Acronym>SC</ccts:Acronym>
+              <ccts:Name>Code List. Agency. Identifier</ccts:Name>
+              <ccts:Definition>An agency that maintains one or more code lists.</ccts:Definition>
+              <ccts:Cardinality>0..1</ccts:Cardinality>
+              <ccts:PropertyTerm>Agency</ccts:PropertyTerm>
+            </xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+        <xsd:attribute name="listVersionID" type="xsd:token" use="optional">
+          <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+              <ccts:Acronym>SC</ccts:Acronym>
+              <ccts:Name>Code List. Version. Identifier</ccts:Name>
+              <ccts:Definition>The version of the code list.</ccts:Definition>
+              <ccts:Cardinality>0..1</ccts:Cardinality>
+              <ccts:PropertyTerm>Version</ccts:PropertyTerm>
+            </xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+        <xsd:attribute name="listURI" type="xsd:anyURI" use="optional">
+          <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+              <ccts:Acronym>SC</ccts:Acronym>
+              <ccts:Name>Code List. Uniform Resource. Identifier</ccts:Name>
+              <ccts:Definition>The Uniform Resource Identifier that identifies where the code list is located.</ccts:Definition>
+              <ccts:Cardinality>0..1</ccts:Cardinality>
+              <ccts:PropertyTerm>Uniform Resource</ccts:PropertyTerm>
+            </xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+      </xsd:extension>
+    </xsd:simpleContent>
+  </xsd:complexType>
+  <xsd:simpleType name="Amount">
+    <xsd:restriction base="xsd:decimal">
+      <xsd:fractionDigits value="5"/>
+      <xsd:totalDigits value="18"/>
+      <xsd:minInclusive value="0"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="Quantity">
+    <xsd:restriction base="xsd:decimal">
+      <xsd:fractionDigits value="17"/>
+      <xsd:totalDigits value="18"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="ISODateTime">
+    <xsd:restriction base="xsd:dateTime"/>
+  </xsd:simpleType>
+  <xsd:complexType name="AmountType">
+    <xsd:annotation>
+      <xsd:documentation xml:lang="en"/>
+    </xsd:annotation>
+    <xsd:simpleContent>
+      <xsd:extension base="qdt:Amount">
+        <xsd:attribute name="currencyID" type="clm5ISO42173A:ISO3AlphaCurrencyCodeContentType"
+          use="optional">
+          <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+              <ccts:Acronym>SC</ccts:Acronym>
+              <ccts:DictionaryEntryName>Amount Currency. Identifier</ccts:DictionaryEntryName>
+              <ccts:Definition>The currency of the amount.</ccts:Definition>
+              <ccts:ObjectClassTerm>Amount Currency</ccts:ObjectClassTerm>
+              <ccts:PropertyTerm>Identifier</ccts:PropertyTerm>
+            </xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+        <xsd:attribute name="currencyCodeListVersionID" type="xsd:token" use="optional">
+          <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+              <ccts:Acronym>SC</ccts:Acronym>
+              <ccts:DictionaryEntryName>Amount Currency. Code List Version. Identifier</ccts:DictionaryEntryName>
+              <ccts:Definition>The Version of the UN/ECE Rec.9 code list.</ccts:Definition>
+              <ccts:ObjectClassTerm>Amount Currency</ccts:ObjectClassTerm>
+              <ccts:PropertyTerm>Code List Version</ccts:PropertyTerm>
+            </xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+      </xsd:extension>
+    </xsd:simpleContent>
+  </xsd:complexType>
+  <xsd:complexType name="QuantityType">
+    <xsd:annotation>
+      <xsd:documentation xml:lang="en"/>
+    </xsd:annotation>
+    <xsd:simpleContent>
+      <xsd:extension base="qdt:Quantity">
+        <xsd:attribute name="unitCode" type="xsd:token" use="optional">
+          <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+              <ccts:Acronym>SC</ccts:Acronym>
+              <ccts:DictionaryEntryName>Quantity Unit. Code</ccts:DictionaryEntryName>
+              <ccts:Definition>The unit of the quantity.</ccts:Definition>
+              <ccts:ObjectClassTerm>Quantity Unit</ccts:ObjectClassTerm>
+              <ccts:PropertyTerm>Code</ccts:PropertyTerm>
+            </xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+        <xsd:attribute name="unitCodeListID" type="xsd:token" use="optional">
+          <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+              <ccts:Acronym>SC</ccts:Acronym>
+              <ccts:DictionaryEntryName>Quantity Unit. Code List. Identifier</ccts:DictionaryEntryName>
+              <ccts:Definition>The quantity unit code list.</ccts:Definition>
+              <ccts:ObjectClassTerm>Quantity Unit</ccts:ObjectClassTerm>
+              <ccts:PropertyTerm>Code List</ccts:PropertyTerm>
+            </xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+        <xsd:attribute name="unitCodeListAgencyID" type="xsd:token" use="optional">
+          <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+              <ccts:Acronym>SC</ccts:Acronym>
+              <ccts:DictionaryEntryName>Quantity Unit. Code List Agency. Identifier</ccts:DictionaryEntryName>
+              <ccts:Definition>The identification of the agency which maintains the quantity unit code list.</ccts:Definition>
+              <ccts:ObjectClassTerm>Quantity Unit</ccts:ObjectClassTerm>
+              <ccts:PropertyTerm>Code List Agency</ccts:PropertyTerm>
+            </xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+        <xsd:attribute name="unitCodeListAgencyName" type="xsd:string" use="optional">
+          <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+              <ccts:Acronym>SC</ccts:Acronym>
+              <ccts:DictionaryEntryName>Quantity Unit. Code List Agency Name. Text</ccts:DictionaryEntryName>
+              <ccts:Definition>The name of the agency which maintains the quantity unit code list.</ccts:Definition>
+              <ccts:ObjectClassTerm>Quantity Unit</ccts:ObjectClassTerm>
+              <ccts:PropertyTerm>Code List Agency Name</ccts:PropertyTerm>
+            </xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+      </xsd:extension>
+    </xsd:simpleContent>
+  </xsd:complexType>
+  <xsd:simpleType name="TrueOrFalse">
+    <xsd:restriction base="xsd:boolean"/>
+  </xsd:simpleType>
+  <xsd:complexType name="TISI1099CitySubDivisionName">
+    <xsd:simpleContent>
+      <xsd:extension base="TISI1099CitySubDivision:CitySubDivisionNameCodeContentType"/>
+    </xsd:simpleContent>
+  </xsd:complexType>
+  <xsd:complexType name="TISI1099CityName">
+    <xsd:simpleContent>
+      <xsd:extension base="TISI1099City:CityNameCodeContentType"> </xsd:extension>
+    </xsd:simpleContent>
+  </xsd:complexType>
+  <xsd:complexType name="AllowanceChargeReasonCode">
+    <xsd:simpleContent>
+      <xsd:extension base="clm64465ReasonCode:AllowanceChargeReasonCodeContentType"/>
+    </xsd:simpleContent>
+  </xsd:complexType>
+</xsd:schema>

@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited by Office Of Standard,ETDA  -->
+<!-- ====================================================================== -->
+<!-- =====        ETDA TaxInvoice_ CrossIndustryInvoice Schema    ===== -->
+<!-- ====================================================================== -->
+<!--
+Schema agency:  ETDA
+Schema version: 1.0
+Schema date:    Aug 2015
+
+© Copyright ETDA, 2015
+
+This XML Schema Definition file was developed as a subset profile of the UN/CEFACT CrossIndustryInvoice Schema , version 9.1.
+
+-->
+
+<!-- ====================================================================== -->
+<!-- ===== CrossIndustryInvoice Schema Module                         ===== -->
+<!-- ====================================================================== -->
+<!--
+Schema agency:  UNCEFACT
+Schema version: 9.1
+Schema date:    15 Nov 2014
+
+Copyright (C) UN/CEFACT (2014). All Rights Reserved.
+
+This document and translations of it may be copied and furnished to others, and derivative works that comment on or otherwise explain it or assist in its implementation may be prepared, copied, published and distributed, in whole or in part, without restriction of any kind, provided that the above copyright notice and this paragraph are included on all such copies and derivative works. However, this document itself may not be modified in any way, such as by removing the copyright notice or references to UN/CEFACT, except as needed for the purpose of developing UN/CEFACT specifications, in which case the procedures for copyrights defined in the UN/CEFACT Intellectual Property Rights document must be followed, or as required to translate it into languages other than English.
+
+The limited permissions granted above are perpetual and will not be revoked by UN/CEFACT or its successors or assigns.
+
+This document and the information contained herein is provided on an "AS IS" basis and UN/CEFACT DISCLAIMS ALL WARRANTIES, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO ANY WARRANTY THAT THE USE OF THE INFORMATION HEREIN WILL NOT INFRINGE ANY RIGHTS OR ANY IMPLIED WARRANTIES OF MERCHANTABILITY OR FITNESS FOR A PARTICULAR PURPOSE.
+-->
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+  xmlns:ccts="urn:un:unece:uncefact:documentation:standard:CoreComponentsTechnicalSpecification:2"
+  xmlns:udt="urn:un:unece:uncefact:data:standard:UnqualifiedDataType:16"
+  xmlns:qdt="urn:etda:uncefact:data:standard:QualifiedDataType:1"
+  xmlns:ram="urn:etda:uncefact:data:standard:TaxInvoice_ReusableAggregateBusinessInformationEntity:2"
+  targetNamespace="urn:etda:uncefact:data:standard:TaxInvoice_CrossIndustryInvoice:2"
+  elementFormDefault="qualified" attributeFormDefault="unqualified" version="2.0"
+  xmlns:rsm="urn:etda:uncefact:data:standard:TaxInvoice_CrossIndustryInvoice:2"
+  xmlns:ns1="urn:etda:uncefact:data:standard:TaxInvoice_ReusableAggregateBusinessInformationEntity:2"
+  xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
+  <!-- ======================================================================= -->
+  <!-- ===== Imports                                                     ===== -->
+  <!-- ======================================================================= -->
+  <!-- ======================================================================= -->
+  <!-- ===== Import of Unqualified Data Type Schema Module               ===== -->
+  <!-- ======================================================================= -->
+  <xsd:import namespace="urn:un:unece:uncefact:data:standard:UnqualifiedDataType:16"
+    schemaLocation="UnqualifiedDataType_16p0.xsd"/>
+  <!-- ======================================================================= -->
+  <!-- ===== Import of Qualified Data Type Schema Module                 ===== -->
+  <!-- ======================================================================= -->
+  <xsd:import namespace="urn:etda:uncefact:data:standard:QualifiedDataType:1"
+    schemaLocation="QualifiedDataType_1p0.xsd"/>
+  <!-- ======================================================================= -->
+  <!-- ===== Import of TaxInvoice_ Reusable Aggregate Business Information Entity Schema Module ===== -->
+  <!-- ======================================================================= -->
+  <xsd:import
+    namespace="urn:etda:uncefact:data:standard:TaxInvoice_ReusableAggregateBusinessInformationEntity:2"
+    schemaLocation="TaxInvoice_ReusableAggregateBusinessInformationEntity_2p0.xsd"/>
+  <!-- ======================================================================= -->
+  <!-- ===== Element Declarations                                        ===== -->
+  <!-- ======================================================================= -->
+  <!-- ===== Root Element Declarations                                   ===== -->
+  <!-- ======================================================================= -->
+  <!-- ================================================================== -->
+  <!-- ===== Type Definitions                                       ===== -->
+  <!-- ================================================================== -->
+  <!-- ===== Type Definition: CrossIndustryInvoiceType              ===== -->
+  <!-- ================================================================== -->
+  <xsd:import namespace="http://www.w3.org/2000/09/xmldsig#"
+    schemaLocation="xmldsig-core-schema.xsd"/>
+  <xsd:element name="TaxInvoice_CrossIndustryInvoice" type="rsm:TaxInvoice_CrossIndustryInvoiceType">
+    <xsd:annotation>
+      <xsd:documentation xml:lang="en">
+        <ccts:UniqueID>CII</ccts:UniqueID>
+        <ccts:Acronym>RSM</ccts:Acronym>
+        <ccts:Name>CrossIndustryInvoice</ccts:Name>
+        <ccts:Version>1.0</ccts:Version>
+        <ccts:Definition>A message used as a request for payment, or modification of a request for payment, for the supply of goods or services ordered, delivered, received, consumed.</ccts:Definition>
+        <ccts:BusinessProcessContextValue>Invoicing</ccts:BusinessProcessContextValue>
+        <ccts:GeopoliticalOrRegionContextValue>In All Contexts</ccts:GeopoliticalOrRegionContextValue>
+        <ccts:OfficialConstraintContextValue>None</ccts:OfficialConstraintContextValue>
+        <ccts:ProductContextValue>In All Contexts</ccts:ProductContextValue>
+        <ccts:IndustryContextValue>In All Contexts</ccts:IndustryContextValue>
+        <ccts:BusinessProcessRoleContextValue>In All Contexts</ccts:BusinessProcessRoleContextValue>
+        <ccts:SupportingRoleContextValue>In All Contexts</ccts:SupportingRoleContextValue>
+        <ccts:SystemCapabilitiesContextValue>In All Contexts</ccts:SystemCapabilitiesContextValue>
+      </xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:complexType name="TaxInvoice_CrossIndustryInvoiceType">
+    <xsd:annotation>
+      <xsd:documentation xml:lang="en">
+        <ccts:UniqueID>CII-2</ccts:UniqueID>
+        <ccts:Acronym>MA</ccts:Acronym>
+        <ccts:DictionaryEntryName>Cross Industry_ Invoice. Details</ccts:DictionaryEntryName>
+        <ccts:Version>1.0</ccts:Version>
+        <ccts:Definition>A message used as a request for payment, or modification of a request for payment, for the supply of goods or services ordered, delivered, received, consumed.</ccts:Definition>
+        <ccts:ObjectClassTerm>Invoice</ccts:ObjectClassTerm>
+        <ccts:ObjectClassQualifierTerm>Cross Industry</ccts:ObjectClassQualifierTerm>
+        <ccts:BusinessProcessContextValue>Invoicing</ccts:BusinessProcessContextValue>
+        <ccts:GeopoliticalOrRegionContextValue>In All Contexts</ccts:GeopoliticalOrRegionContextValue>
+        <ccts:OfficialConstraintContextValue>None</ccts:OfficialConstraintContextValue>
+        <ccts:ProductContextValue>In All Contexts</ccts:ProductContextValue>
+        <ccts:IndustryContextValue>In All Contexts</ccts:IndustryContextValue>
+        <ccts:BusinessProcessRoleContextValue>In All Contexts</ccts:BusinessProcessRoleContextValue>
+        <ccts:SupportingRoleContextValue>In All Contexts</ccts:SupportingRoleContextValue>
+        <ccts:SystemCapabilitiesContextValue>In All Contexts</ccts:SystemCapabilitiesContextValue>
+      </xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element name="ExchangedDocumentContext" type="ram:ExchangedDocumentContextType">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="en">
+            <ccts:UniqueID>CII01</ccts:UniqueID>
+            <ccts:Acronym>ASMA</ccts:Acronym>
+            <ccts:DictionaryEntryName>Cross Industry_ Invoice. CI_ Exchanged Document_ Context</ccts:DictionaryEntryName>
+            <ccts:Version>1.0</ccts:Version>
+            <ccts:Definition>The scenario or setting of a Cross Industry Invoice (CII) exchanged document, such as its business process application context.</ccts:Definition>
+            <ccts:Cardinality>1</ccts:Cardinality>
+            <ccts:ObjectClassTerm>Invoice</ccts:ObjectClassTerm>
+            <ccts:ObjectClassQualifierTerm>Cross Industry</ccts:ObjectClassQualifierTerm>
+            <ccts:AssociationType>composition</ccts:AssociationType>
+            <ccts:PropertyTerm/>
+            <ccts:AssociatedObjectClassTerm>Context</ccts:AssociatedObjectClassTerm>
+            <ccts:AssociatedObjectClassQualifierTerm>CI</ccts:AssociatedObjectClassQualifierTerm>
+            <ccts:AssociatedObjectClassQualifierTerm>Exchanged Document</ccts:AssociatedObjectClassQualifierTerm>
+            <ccts:BusinessProcessContextValue>Invoicing</ccts:BusinessProcessContextValue>
+            <ccts:GeopoliticalOrRegionContextValue>In All Contexts</ccts:GeopoliticalOrRegionContextValue>
+            <ccts:OfficialConstraintContextValue>None</ccts:OfficialConstraintContextValue>
+            <ccts:ProductContextValue>In All Contexts</ccts:ProductContextValue>
+            <ccts:IndustryContextValue>In All Contexts</ccts:IndustryContextValue>
+            <ccts:BusinessProcessRoleContextValue>In All Contexts</ccts:BusinessProcessRoleContextValue>
+            <ccts:SupportingRoleContextValue>In All Contexts</ccts:SupportingRoleContextValue>
+            <ccts:SystemCapabilitiesContextValue>In All Contexts</ccts:SystemCapabilitiesContextValue>
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="ExchangedDocument" type="ram:ExchangedDocumentType">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="en">
+            <ccts:UniqueID>CII02</ccts:UniqueID>
+            <ccts:Acronym>ASMA</ccts:Acronym>
+            <ccts:DictionaryEntryName>Cross Industry_ Invoice. Exchanged_ Document</ccts:DictionaryEntryName>
+            <ccts:Version>1.0</ccts:Version>
+            <ccts:Definition>A collection of data for a Cross Industry Invoice Header that is exchanged between two or more parties in written, printed or electronic form.</ccts:Definition>
+            <ccts:Cardinality>1</ccts:Cardinality>
+            <ccts:ObjectClassTerm>Invoice</ccts:ObjectClassTerm>
+            <ccts:ObjectClassQualifierTerm>Cross Industry</ccts:ObjectClassQualifierTerm>
+            <ccts:AssociationType>composition</ccts:AssociationType>
+            <ccts:PropertyTerm/>
+            <ccts:AssociatedObjectClassTerm>Document</ccts:AssociatedObjectClassTerm>
+            <ccts:AssociatedObjectClassQualifierTerm>Header</ccts:AssociatedObjectClassQualifierTerm>
+            <ccts:AssociatedObjectClassQualifierTerm>Exchanged</ccts:AssociatedObjectClassQualifierTerm>
+            <ccts:BusinessProcessContextValue>Invoicing</ccts:BusinessProcessContextValue>
+            <ccts:GeopoliticalOrRegionContextValue>In All Contexts</ccts:GeopoliticalOrRegionContextValue>
+            <ccts:OfficialConstraintContextValue>None</ccts:OfficialConstraintContextValue>
+            <ccts:ProductContextValue>In All Contexts</ccts:ProductContextValue>
+            <ccts:IndustryContextValue>In All Contexts</ccts:IndustryContextValue>
+            <ccts:BusinessProcessRoleContextValue>In All Contexts</ccts:BusinessProcessRoleContextValue>
+            <ccts:SupportingRoleContextValue>In All Contexts</ccts:SupportingRoleContextValue>
+            <ccts:SystemCapabilitiesContextValue>In All Contexts</ccts:SystemCapabilitiesContextValue>
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="SupplyChainTradeTransaction" type="ns1:SupplyChainTradeTransactionType">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="en">
+            <ccts:UniqueID>CII03</ccts:UniqueID>
+            <ccts:Acronym>ASMA</ccts:Acronym>
+            <ccts:DictionaryEntryName>Cross Industry_ Invoice. Supply Chain_ Trade Transaction</ccts:DictionaryEntryName>
+            <ccts:Version>1.0</ccts:Version>
+            <ccts:Definition>The trade line items, trade agreement, trade delivery and trade settlement details included in this Cross Industry Invoice Header (Header).</ccts:Definition>
+            <ccts:Cardinality>1</ccts:Cardinality>
+            <ccts:ObjectClassTerm>Invoice</ccts:ObjectClassTerm>
+            <ccts:ObjectClassQualifierTerm>Cross Industry</ccts:ObjectClassQualifierTerm>
+            <ccts:AssociationType>composition</ccts:AssociationType>
+            <ccts:PropertyTerm/>
+            <ccts:AssociatedObjectClassTerm>Trade Transaction</ccts:AssociatedObjectClassTerm>
+            <ccts:AssociatedObjectClassQualifierTerm>Header</ccts:AssociatedObjectClassQualifierTerm>
+            <ccts:AssociatedObjectClassQualifierTerm>Supply Chain</ccts:AssociatedObjectClassQualifierTerm>
+            <ccts:BusinessProcessContextValue>Invoicing</ccts:BusinessProcessContextValue>
+            <ccts:GeopoliticalOrRegionContextValue>In All Contexts</ccts:GeopoliticalOrRegionContextValue>
+            <ccts:OfficialConstraintContextValue>None</ccts:OfficialConstraintContextValue>
+            <ccts:ProductContextValue>In All Contexts</ccts:ProductContextValue>
+            <ccts:IndustryContextValue>In All Contexts</ccts:IndustryContextValue>
+            <ccts:BusinessProcessRoleContextValue>In All Contexts</ccts:BusinessProcessRoleContextValue>
+            <ccts:SupportingRoleContextValue>In All Contexts</ccts:SupportingRoleContextValue>
+            <ccts:SystemCapabilitiesContextValue>In All Contexts</ccts:SystemCapabilitiesContextValue>
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" ref="ds:Signature"/>
+    </xsd:sequence>
+  </xsd:complexType>
+</xsd:schema>
