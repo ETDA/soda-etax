@@ -18,7 +18,7 @@ dependencies {
 }
 
 clean {
-	delete 'src'
+	delete 'src/main/java/th/or/etda'
 	delete 'build'
 	delete 'schema'
 }
