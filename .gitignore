@@ -1,3 +1,7 @@
+schema/
+src/main/java/th/or/etda/
+
+/
 /node_modules
 /RUNNING_PID
 /conf/localhost.conf
