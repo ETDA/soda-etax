@@ -1,0 +1,434 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!-- ====================================================================== -->
+<!-- ===== 5ISO 3166-1 2A - Code List Schema Module                   ===== -->
+<!-- ====================================================================== -->
+<!--
+Schema agency:      UN/CEFACT
+Schema version:     8.6
+Schema date:        15 Nov 2014
+
+Code list name:     ISO Two-letter Country Code
+Code list agency:   ISO
+Code list version:  Second Edition 2006
+
+Copyright (C) UN/CEFACT (2014). All Rights Reserved.
+
+This document and translations of it may be copied and furnished to others, and derivative works that comment on or otherwise explain it or assist in its implementation may be prepared, copied, published and distributed, in whole or in part, without restriction of any kind, provided that the above copyright notice and this paragraph are included on all such copies and derivative works. However, this document itself may not be modified in any way, such as by removing the copyright notice or references to UN/CEFACT, except as needed for the purpose of developing UN/CEFACT specifications, in which case the procedures for copyrights defined in the UN/CEFACT Intellectual Property Rights document must be followed, or as required to translate it into languages other than English.
+
+The limited permissions granted above are perpetual and will not be revoked by UN/CEFACT or its successors or assigns.
+
+This document and the information contained herein is provided on an "AS IS" basis and UN/CEFACT DISCLAIMS ALL WARRANTIES, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO ANY WARRANTY THAT THE USE OF THE INFORMATION HEREIN WILL NOT INFRINGE ANY RIGHTS OR ANY IMPLIED WARRANTIES OF MERCHANTABILITY OR FITNESS FOR A PARTICULAR PURPOSE.
+-->
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+  xmlns:ids5ISO316612A="urn:un:unece:uncefact:identifierlist:standard:ISO:ISOTwo-letterCountryCode:SecondEdition2006"
+  xmlns:ccts="urn:un:unece:uncefact:documentation:standard:CoreComponentsTechnicalSpecification:2"
+  targetNamespace="urn:un:unece:uncefact:identifierlist:standard:ISO:ISOTwo-letterCountryCode:SecondEdition2006"
+  elementFormDefault="qualified" attributeFormDefault="unqualified" version="8.5">
+  <!-- ======================================================================= -->
+  <!-- ===== Element Declarations                                        ===== -->
+  <!-- ======================================================================= -->
+  <!-- ===== Root Element                                                ===== -->
+  <!-- ======================================================================= -->
+  <xsd:element name="ISOCountrySubdivisionCode"
+    type="ids5ISO316612A:ISOCountrySubdivisionCodeContentType"/>
+  <!-- ================================================================== -->
+  <!-- ===== Type Definitions                                       ===== -->
+  <!-- ================================================================== -->
+  <!-- ===== Type Definition: ISOTwoletterCountryCodeContentType    ===== -->
+  <!-- ================================================================== -->
+  <xsd:simpleType name="ISOCountrySubdivisionCodeContentType">
+    <xsd:restriction base="xsd:token">
+      <xsd:enumeration value="10">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="th"><ccts:Name>กรุงเทพมหานคร</ccts:Name></xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="11">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="th"><ccts:Name>สมุทรปราการ</ccts:Name></xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="12">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="th"><ccts:Name>นนทบุรี</ccts:Name></xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="13">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="th"><ccts:Name>ปทุมธานี</ccts:Name></xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="14">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="th"><ccts:Name>พระนครศรีอยุธยา</ccts:Name></xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="15">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="th"><ccts:Name>อ่างทอง</ccts:Name></xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="16">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="th"><ccts:Name>ลพบุรี</ccts:Name></xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="17">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="th"><ccts:Name>สิงห์บุรี</ccts:Name></xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="18">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="th"><ccts:Name>ชัยนาท</ccts:Name></xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="19">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="th"><ccts:Name>สระบุรี</ccts:Name></xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="20">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="th"><ccts:Name>ชลบุรี</ccts:Name></xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="21">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="th"><ccts:Name>ระยอง</ccts:Name></xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="22">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="th"><ccts:Name>จันทบุรี</ccts:Name></xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="23">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="th"><ccts:Name>ตราด</ccts:Name></xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="24">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="th"><ccts:Name>ฉะเชิงเทรา</ccts:Name></xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="25">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="th"><ccts:Name>ปราจีนบุรี</ccts:Name></xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="26">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="th"><ccts:Name>นครนายก</ccts:Name></xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="27">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="th"><ccts:Name>สระแก้ว</ccts:Name></xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="30">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="th"><ccts:Name>นครราชสีมา</ccts:Name></xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="31">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="th"><ccts:Name>บุรีรัมย์</ccts:Name></xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="32">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="th"><ccts:Name>สุรินทร์</ccts:Name></xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="33">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="th"><ccts:Name>ศรีสะเกษ</ccts:Name></xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="34">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="th"><ccts:Name>อุบลราชธานี</ccts:Name></xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="35">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="th"><ccts:Name>ยโสธร</ccts:Name></xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="36">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="th"><ccts:Name>ชัยภูมิ</ccts:Name></xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="37">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="th"><ccts:Name>อำนาจเจริญ</ccts:Name></xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="38">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="th"><ccts:Name>บึงกาฬ</ccts:Name></xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="39">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="th"><ccts:Name>หนองบัวลำภู</ccts:Name></xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="40">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="th"><ccts:Name>ขอนแก่น</ccts:Name></xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="41">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="th"><ccts:Name>อุดรธานี</ccts:Name></xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="42">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="th"><ccts:Name>เลย</ccts:Name></xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="43">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="th"><ccts:Name>หนองคาย</ccts:Name></xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="44">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="th"><ccts:Name>มหาสารคาม</ccts:Name></xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="45">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="th"><ccts:Name>ร้อยเอ็ด</ccts:Name></xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="46">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="th"><ccts:Name>กาฬสินธุ์</ccts:Name></xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="47">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="th"><ccts:Name>สกลนคร</ccts:Name></xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="48">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="th"><ccts:Name>นครพนม</ccts:Name></xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="49">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="th"><ccts:Name>มุกดาหาร</ccts:Name></xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="50">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="th"><ccts:Name>เชียงใหม่</ccts:Name></xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="51">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="th"><ccts:Name>ลำพูน</ccts:Name></xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="52">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="th"><ccts:Name>ลำปาง</ccts:Name></xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="53">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="th"><ccts:Name>อุตรดิตถ์</ccts:Name></xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="54">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="th"><ccts:Name>แพร่</ccts:Name></xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="55">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="th"><ccts:Name>น่าน</ccts:Name></xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="56">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="th"><ccts:Name>พะเยา</ccts:Name></xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="57">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="th"><ccts:Name>เชียงราย</ccts:Name></xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="58">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="th"><ccts:Name>แม่ฮ่องสอน</ccts:Name></xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="60">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="th"><ccts:Name>นครสวรรค์</ccts:Name></xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="61">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="th"><ccts:Name>อุทัยธานี</ccts:Name></xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="62">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="th"><ccts:Name>กำแพงเพชร</ccts:Name></xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="63">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="th"><ccts:Name>ตาก</ccts:Name></xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="64">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="th"><ccts:Name>สุโขทัย</ccts:Name></xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="65">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="th"><ccts:Name>พิษณุโลก</ccts:Name></xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="66">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="th"><ccts:Name>พิจิตร</ccts:Name></xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="67">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="th"><ccts:Name>เพชรบูรณ์</ccts:Name></xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="70">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="th"><ccts:Name>ราชบุรี</ccts:Name></xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="71">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="th"><ccts:Name>กาญจนบุรี</ccts:Name></xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="72">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="th"><ccts:Name>สุพรรณบุรี</ccts:Name></xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="73">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="th"><ccts:Name>นครปฐม</ccts:Name></xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="74">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="th"><ccts:Name>สมุทรสาคร</ccts:Name></xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="75">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="th"><ccts:Name>สมุทรสงคราม</ccts:Name></xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="76">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="th"><ccts:Name>เพชรบุรี</ccts:Name></xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="77">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="th"><ccts:Name>ประจวบคีรีขันธ์</ccts:Name></xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="80">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="th"><ccts:Name>นครศรีธรรมราช</ccts:Name></xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="81">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="th"><ccts:Name>กระบี่</ccts:Name></xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="82">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="th"><ccts:Name>พังงา</ccts:Name></xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="83">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="th"><ccts:Name>ภูเก็ต</ccts:Name></xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="84">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="th"><ccts:Name>สุราษฎร์ธานี</ccts:Name></xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="85">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="th"><ccts:Name>ระนอง</ccts:Name></xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="86">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="th"><ccts:Name>ชุมพร</ccts:Name></xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="90">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="th"><ccts:Name>สงขลา</ccts:Name></xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="91">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="th"><ccts:Name>สตูล</ccts:Name></xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="92">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="th"><ccts:Name>ตรัง</ccts:Name></xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="93">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="th"><ccts:Name>พัทลุง</ccts:Name></xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="94">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="th"><ccts:Name>ปัตตานี</ccts:Name></xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="95">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="th"><ccts:Name>ยะลา</ccts:Name></xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="96">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="th"><ccts:Name>นราธิวาส</ccts:Name></xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="97">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="th"><ccts:Name/></xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+
+    </xsd:restriction>
+  </xsd:simpleType>
+</xsd:schema>
