@@ -159,7 +159,7 @@ This document and the information contained herein is provided on an "AS IS" bas
   <xsd:import namespace="urn:un:unece:uncefact:codelist:standard:UNECE:DutyTaxFeeTypeCode:D14A"
     schemaLocation="UNECE_DutyTaxFeeTypeCode_D14A.xsd"/>
   <xsd:import namespace="urn:un:unece:uncefact:codelist:standard:UNECE:MessageFunctionCode:D14A"
-    schemaLocation="UNECE_MessageFunctionCode_D14A.xsd"/>
+    schemaLocation="unece/UNECE_MessageFunctionCode_D14A.xsd"/>
   <xsd:import namespace="urn:un:unece:uncefact:codelist:standard:UNECE:PaymentTermsTypeCode:D14A"
     schemaLocation="UNECE_PaymentTermsTypeCode_D14A.xsd"/>
   <xsd:import namespace="urn:un:unece:uncefact:codelist:standard:UNECE:ReferenceTypeCode:D14A"
@@ -168,7 +168,7 @@ This document and the information contained herein is provided on an "AS IS" bas
     namespace="urn:un:unece:uncefact:identifierlist:standard:ISO:ISOTwo-letterCountryCode:SecondEdition2006"
     schemaLocation="ISO_ISOTwo-letterCountryCode_SecondEdition2006.xsd"/>
   <xsd:import namespace="urn:un:unece:uncefact:codelist:standard:ETDA:ThaiMessageFunctionCode:2560"
-    schemaLocation="Thai_MessageFunctionCode_1p0.xsd"/>
+    schemaLocation="th/Thai_MessageFunctionCode_1p0.xsd"/>
   <xsd:import namespace="urn:un:unece:uncefact:identifierlist:standard:UNECE:FreightCostCode:4"
     schemaLocation="UNECE_FreightCostCode_4.xsd"/>
   <xsd:import
