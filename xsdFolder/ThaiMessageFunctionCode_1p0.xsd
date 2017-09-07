@@ -25,13 +25,13 @@ This document and the information contained herein is provided on an "AS IS" bas
 <!-- ======================================================================= -->
 <!-- ===== Root Element                                                ===== -->
 <!-- ======================================================================= -->
-  <xsd:element name="MessageFunctionCode" type="clm61225MessageFunctionTypeCode:MessageFunctionCodeContentType"/>
+  <xsd:element name="ThaiMessageFunctionCode" type="clm61225MessageFunctionTypeCode:ThaiMessageFunctionCodeContentType"/>
 <!-- ================================================================== -->
 <!-- ===== Type Definitions                                       ===== -->
 <!-- ================================================================== -->
 <!-- ===== Type Definition: MessageFunctionCodeContentType        ===== -->
 <!-- ================================================================== -->
-  <xsd:simpleType name="MessageFunctionCodeContentType">
+  <xsd:simpleType name="ThaiMessageFunctionCodeContentType">
     <xsd:restriction base="xsd:token">
       <xsd:enumeration value="1">
         <xsd:annotation>
