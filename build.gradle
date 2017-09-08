@@ -1,0 +1,64 @@
+plugins {
+	id 'com.github.jacobono.jaxb' version '1.3.5'
+}
+
+apply plugin: 'java' 
+
+repositories {
+	jcenter()
+	mavenCentral()
+  }
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+ 
+dependencies {
+	jaxb "org.glassfish.jaxb:jaxb-xjc:${jaxbVersion}"
+	jaxb "org.glassfish.jaxb:jaxb-runtime:${jaxbVersion}"
+}
+
+clean {
+	delete 'src/main/java/th/or/etda'
+	delete 'build'
+	delete 'schema'
+}
+
+jaxb {
+	xsdDir='xsdFolder'
+	xjc { 
+		generatePackage "${jaxbPackageName}"
+	}
+}
+
+jar {
+	archiveName "${rootProject.name}-${jarImplVersion}.jar"
+	manifest {
+		attributes (
+			'Specification-Title': "Generated ${rootProject.name} JAR",
+			'Specification-Vendor': 'Electronic Transactions Development Agency (Public Organization)',
+			'Implementation-Title': rootProject.name,
+			'Implementation-Version': jarImplVersion,
+			'Created-By': org.gradle.internal.jvm.Jvm.current(),
+			'Built-With': GradleVersion.current().toString(),
+			'JAXB-Version': jaxbVersion,
+			'Source-Compatibility': sourceCompatibility,
+			'Target-Compatibility': targetCompatibility,
+			'Build-Time-ISO-8601': new Date().format("yyyy-MM-dd'T'HH:mm:ssZ")
+		)
+	}
+}
+
+task srcjar(type: Jar) {
+	archiveName "${rootProject.name}-${jarImplVersion}-src.jar"
+	from 'src/main/java'
+}
+
+task buildall(dependsOn: ['clean', 'xjc', 'jar', 'srcjar']) {
+	xjc.mustRunAfter clean
+	jar.mustRunAfter xjc
+	srcjar.mustRunAfter jar
+}
+
+task wrapper(type:Wrapper) {
+	gradleVersion = "${gradleVersion}"
+}
