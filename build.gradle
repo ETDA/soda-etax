@@ -35,7 +35,7 @@ jar {
 	manifest {
 		attributes (
 			'Specification-Title': "Generated ${rootProject.name} JAR",
-			'Specification-Vendor': 'Jalamor Software',
+			'Specification-Vendor': 'Electronic Transactions Development Agency (Public Organization)',
 			'Implementation-Title': rootProject.name,
 			'Implementation-Version': jarImplVersion,
 			'Created-By': org.gradle.internal.jvm.Jvm.current(),
@@ -49,7 +49,7 @@ jar {
 }
 
 task srcjar(type: Jar) {
-	archiveName "Generated_${rootProject.name}-${jarImplVersion}-src.jar"
+	archiveName "${rootProject.name}-${jarImplVersion}-src.jar"
 	from 'src/main/java'
 }
 
