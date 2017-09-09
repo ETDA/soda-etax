@@ -8,7 +8,7 @@ We promise to extend courtesy and respect to everyone involved in this project r
 
 If any member of the community violates this code of conduct, the maintainers of the ETDA community project may take action, removing issues, comments, and PRs or blocking accounts as deemed appropriate.
 
-If you are subject to or witness unacceptable behavior, or have any other concerns, please contact us in Facbook Group/email: mahasak@gmail.com.
+If you are subject to or witness unacceptable behavior, or have any other concerns, please contact us in Facbook Group: "ETDA Opensource Community" https://www.facebook.com/groups/etda.opensource.community.
 
 ## <a name="question"></a> Got a Question or Problem?
 
