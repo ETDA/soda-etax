@@ -60,20 +60,15 @@ readable messages** that are easy to follow when looking through the **project h
 
 ### Commit Message Format
 Each commit message consists of a **header**, and a **body**.  The header has a special
-format that includes a **type**, a **scope** and a **subject**:
+format that includes a **type**, a **scope** and a **subject**. The **header** is mandatory and the **scope** of the header is optional.
+Any line of the commit message cannot be longer 100 characters! This allows the message to be easier
+to read on GitHub as well as in various git tools.
 
 ```
 <type>(<scope>): <subject>
 <BLANK LINE>
 <body>
 ```
-
-The **header** is mandatory and the **scope** of the header is optional.
-
-Any line of the commit message cannot be longer 100 characters! This allows the message to be easier
-to read on GitHub as well as in various git tools.
-
-
 ### Type
 Must be one of the following:
 
