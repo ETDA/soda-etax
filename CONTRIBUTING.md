@@ -1,5 +1,4 @@
 # How to contribute !!!
----
 Thanks to every contributor that help making our source code and to make ETDA community project even better than it is
 today! Here are the guidelines we'd like you to follow:
 
