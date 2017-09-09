@@ -13,7 +13,6 @@ today! Here are the guidelines we'd like you to follow:
  - [Commit Message Guidelines](#commit)
  - [Further Info](#info)
 
-
 ## <a name="license"></a>License : MIT
 
 Copyright 2017 ETDA
@@ -59,7 +58,6 @@ would like to implement a new feature then consider what kind of change it is:
   into the project.
 * **Small Changes** can be crafted and submitted to the [GitHub Repository][github] as a Pull
   Request.
-
 
 ## <a name="docs"></a> Want to help on documentation ?
 
