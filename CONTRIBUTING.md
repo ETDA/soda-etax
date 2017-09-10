@@ -7,7 +7,7 @@ today! Here are the guidelines we'd like you to follow:
 - Please have descriptive detail for every Pull Request. 
 - Every Pull Request should have test accompanied the code changes
 - Please +1 the comment you like rather than post "me too"
-- Please comment LGTM if you read the PR and it is good to you so the contributor knows
+- Please comment LGTM if you read the PR and it is good to you so the contributor knows ( LGTM: Looks good to me, Let's get that moving, Let's get this merged :D )
 - Please wait for review 1-2 days or 2 LGTM to get merge
 
 ## A longer version guide for contributors
