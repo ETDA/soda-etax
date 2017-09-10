@@ -1,10 +1,10 @@
 # How to contribute !!!
-Thanks to every contributor that help making our source code and to make ETDA community project even better than it is
+Thanks to every contributors that help making our source code and to make ETDA community project even better than it is
 today! Here are the guidelines we'd like you to follow:
 
 ## Rule of thumbs !!!
 - Please communicate in English :D
-- Please have descriptive for every Pull Request. 
+- Please have descriptive detail for every Pull Request. 
 - Every Pull Request should have test accompanied the code changes
 - Please +1 the comment you like rather than post "me too"
 - Please comment LGTM if you read the PR and it is good to you so the contributor knows
