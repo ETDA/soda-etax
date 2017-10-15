@@ -1,0 +1,104 @@
+{
+   "DocumentDetail": {
+    "ID": "TIV000012",
+    "CreationDateTime": "2016-06-06T13:59:30.000",
+    "IssueDateTime": "2016-06-06T00:00:00.000",
+    "SpecifiedCIDocument": "ETDA",
+    "Name": "ใบกำกับภาษี",
+    "TypeCode": "388",
+    "Purpose": "การลงราคาต่อหน่วยผิดพลาด",
+    "Note": {
+      "Subject": "หมายเหตุ",
+      "Content": "A2BcyVpQ"
+    }
+  },
+  "SellerTradeParty": {
+    "PostalCITradeAddress": {
+      "LineOne": "3/107 ถนนศรีนครินทร์",
+      "LineTwo": "ซอยศรีนครินทร์ 5",
+      "CountryID": "TH",
+      "PostcodeCode": "10260",
+      "CountrySubDivisionID": "10",
+      "CityID": "1032",
+      "CitySubDivisionID": "103202",
+      "Address": "กกก จขขข ศรีนครินทร์ รามคำแหง กรุงเทพฯ"
+    },
+    "Name": "บริษัท สัพเพเหระ จำกัด",
+    "TaxID": "1234567890123",
+    "BranchCode": "00000",
+    "CompleteNumber": "Accountant1@sphr.co.th",
+    "URIID": "www.gsoftbiz.com",
+    "Telephone": "+66-21231234",
+    "Fax": "+66-21231234(2)"
+  },
+  "BuyerTradeParty": {
+    "PersonName": "วิชัย ธรรมมา",
+    "Name": "บริษัท ทำมาค้าขาย จำกัด",
+    "TaxID": "3210987654321",
+    "BranchCode": "00017",
+    "CompleteNumber": "Accountant1@ithamma.co.th",
+    "URIID": "www.abc.com",
+    "Telephone": "+66-29437799(1234)",
+    "Fax": "+66-29437799(5678)",
+    "PostalTradeAddress": {
+      "CountryID": "TH",
+      "LineOne": "12/65 ถนนสุขุมวิท 64",
+      "LineTwo": "ซอย สุขุมวิท 4 แยก 12",
+      "PostcodeCode": "10260",
+      "CountrySubDivisionID": "10",
+      "CityID": "1009",
+      "CitySubDivisionID": "100902",
+      "Address": "12/65 ถนนสุขุมวิท 64 ซอย สุขุมวิท 4 แยก 12 รามคำแหง กรุงเทพฯ"
+    }
+  },
+  "IncludedSupplyChainTradeLineItem": [{
+      "LineID": "1",
+      "Name": "นวดอโรมา",
+      "ChargeAmount": "900",
+      "BilledQuantity": "2",
+      "UnitCode": "ZZ",
+      "UnitName": "กล่อง",
+      "ChargeIndicator": "false",
+      "ActualAmount": "270",
+      "NetLineTotalAmount": "1530",
+      "GlobalID": "12345678901234",
+      "ProductID": "AS100000"
+    },
+    {
+      "LineID": "2",
+      "Name": "ดินสอสี",
+      "ChargeAmount": "70",
+      "BilledQuantity": "5",
+      "UnitCode": "XCS",
+      "UnitName": "กล่อง",
+      "ChargeIndicator": "false",
+      "ActualAmount": "60",
+      "NetLineTotalAmount": "290",
+      "GlobalID": "12345678901235",
+      "ProductID": "AS100001"
+    }
+  ],
+  "ReferencedDocument": [{
+    "IssuerAssignedID": "TIV000005",
+    "IssueDateTime": "2016-06-01T00:00:00.000",
+    "ReferenceTypeCode": "388"
+  }],
+  "ApplicableHeaderTradeSettlement": {
+    "SpecifiedTradeAllowanceCharge": {
+      "ChargeIndicator": "false",
+      "ActualAmount": "1000.00"
+    },
+    "InvoiceCurrencyCode": "THB",
+    "ApplicableTradeTax": {
+      "CalculatedRate": "7.00",
+      "BasisAmount": "1000.0",
+      "TypeCode": "VAT"
+    },
+    "SpecifiedTradeSettlementHeaderMonetarySummation": {
+      "LineTotalAmount": "2000.00",
+      "GrandTotalAmountCharactor": "หนึ่งพันเจ็ดสิบบาทถ้วน",
+      "TaxTotalAmount": "70.00",
+      "GrandTotalAmount": "1070.00"
+    }
+  }
+}
