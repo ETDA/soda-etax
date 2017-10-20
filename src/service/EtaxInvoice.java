@@ -459,7 +459,7 @@ public class EtaxInvoice {
 			String xmlString = sw.toString();
 			//PDFACreator creator = new PDFACreator();
 			//creator.convert2PDF(invoice, xmlString);
-			try (PrintWriter out = new PrintWriter("resources/data.xml")) {
+			try (PrintWriter out = new PrintWriter("target/data.xml")) {
 				out.println(xmlString);
 			} catch (FileNotFoundException e) {
 				e.printStackTrace();
