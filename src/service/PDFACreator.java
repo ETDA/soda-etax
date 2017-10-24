@@ -27,7 +27,6 @@ import org.apache.pdfbox.pdmodel.common.filespecification.PDComplexFileSpecifica
 import org.apache.pdfbox.pdmodel.common.filespecification.PDEmbeddedFile;
 import org.apache.pdfbox.pdmodel.font.PDFont;
 import org.apache.pdfbox.pdmodel.font.PDType0Font;
-import org.apache.pdfbox.pdmodel.font.PDType1Font;
 import org.apache.pdfbox.pdmodel.graphics.color.PDOutputIntent;
 import org.apache.pdfbox.util.Matrix;
 import org.apache.xmpbox.XMPMetadata;
@@ -69,15 +68,16 @@ public class PDFACreator {
 		
 	}
 
-	public void convert2PDF(TaxInvoiceCrossIndustryInvoiceType invoice, String xml,String outputPath) {
-		try (PDDocument doc = new PDDocument()) {
+	public void convert2PDF(TaxInvoiceCrossIndustryInvoiceType invoice, String xml,String outputPath) throws IOException {
+		PDDocument doc = new PDDocument();
+		try {
 			PDPage page = new PDPage();
 			doc.addPage(page);
 
 			font = PDType0Font.load(doc, new File(BASE_FOLDER + FONT_FILE));
 			font_bold = PDType0Font.load(doc, new File(BASE_FOLDER + BOLD_FONT_FILE));
-
-			try (PDPageContentStream content = new PDPageContentStream(doc, page)) {
+			PDPageContentStream content = new PDPageContentStream(doc, page);
+			try {
 				ExchangedDocumentType document = invoice.getExchangedDocument();
 
 				String title = document.getName().getValue().toString();
@@ -249,22 +249,26 @@ public class PDFACreator {
 
 				content.endText();
 				content.saveGraphicsState();
+
+				if (!font.isEmbedded()) {
+					throw new IllegalStateException("PDF/A compliance requires that all fonts used for"
+							+ " text rendering in rendering modes other than rendering mode 3 are embedded.");
+				}
+	
+				makeA3compliant(doc, xml);
+	
+				//doc.save(BASE_FOLDER + FILENAME);
+				doc.save(outputPath);
+
+			}finally{
 				content.close();
-
 			}
 
-			if (!font.isEmbedded()) {
-				throw new IllegalStateException("PDF/A compliance requires that all fonts used for"
-						+ " text rendering in rendering modes other than rendering mode 3 are embedded.");
-			}
-
-			makeA3compliant(doc, xml);
-
-			//doc.save(BASE_FOLDER + FILENAME);
-			doc.save(outputPath);
-			doc.close();
 		} catch (Exception e) {
 			e.printStackTrace();
+		}
+		finally{
+			doc.close();
 		}
 
 	}
@@ -431,7 +435,7 @@ public class PDFACreator {
 		PDEmbeddedFilesNameTreeNode treeNode = new PDEmbeddedFilesNameTreeNode();
 		treeNode.setNames(Collections.singletonMap("My first attachment", fs));
 		// add the new node as kid to the root node
-		List<PDEmbeddedFilesNameTreeNode> kids = new ArrayList<>();
+		List<PDEmbeddedFilesNameTreeNode> kids = new ArrayList<PDEmbeddedFilesNameTreeNode>();
 		kids.add(treeNode);
 		efTree.setKids(kids);
 		// add the tree to the document catalog
