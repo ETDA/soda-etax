@@ -8,11 +8,6 @@
 
 package un.unece.uncefact.identifierlist.standard.citysubdivisionnamefromtisi1099_2548;
 
-import java.util.EnumSet;
-import java.util.Map;
-import java.util.TreeMap;
-
-import javax.swing.Icon;
 import javax.xml.bind.annotation.XmlEnum;
 import javax.xml.bind.annotation.XmlEnumValue;
 import javax.xml.bind.annotation.XmlType;
