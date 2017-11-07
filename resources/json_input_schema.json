@@ -1,0 +1,463 @@
+{
+  "DocumentDetail": {
+    "SchemaAgencyID": {
+      "type": "string",
+      "value": "ETDA",
+      "required": true
+    },
+    "SchemaVersionID":{
+      "type": "string",
+      "value": "ER3-2560",
+      "required": true
+    },
+    "DocumentID": {
+      "description": "เลขที่เอกสาร",
+      "type": "string",
+      "maximum": 35,
+      "required": true
+    },
+    "Name": {
+      "type": "string",
+      "value": ["ใบกำกับภาษี","ใบเพิ่มหนี้","ใบลดหนี้"],
+      "maximum": 35,
+      "required": true,
+      "note": "อ้างอิงถึง ขมธอ. 3-2560 ภาคผนวก ข.2"
+    },
+    "TypeCode": {
+      "type": "string",
+      "value": ["80","81","388"],
+      "required": true,
+      "note": "อ้างอิงถึง ขมธอ. 3-2560 ภาคผนวก ข.2"
+    },
+    "IssueDateTime": {
+      "type": "datetime",
+      "format": "YYYY-MM-DDThh:mm:ss.sss",
+      "required": true
+    },
+    "CreationDateTime": {
+      "type": "datetime",
+      "format": "YYYY-MM-DDThh:mm:ss.sss",
+      "required": true
+    },
+    "Purpose": {
+      "description": "สาเหตุการออกเอกสาร",
+      "type": "string",
+      "maximum": 256,
+      "required": false
+    },
+    "Note": {
+      "Subject": {
+        "type": "string",
+        "maximum": 500,
+        "required": false
+      },
+      "Content": {
+        "type": "string",
+        "maximum": 500,
+        "required": false
+      }
+    }
+  },
+  "SellerTradeParty": {
+    "Name": {
+      "description": "ชื่อผู้ขาย",
+      "type": "string",
+      "maximum": 256,
+      "required": true
+    },
+    "PersonName": {
+      "description": "ชื่อผู้ติดต่อ",
+      "type": "string",
+      "maximum": 140,
+      "required": false
+    },
+    "DepartmentName": {
+      "description": "ชื่อแผนก",
+      "type": "string",
+      "maximum": 140,
+      "required": false
+    },
+    "TaxID": {
+      "type": "string",
+      "maximum": 35,
+      "required": true
+    },
+    "BranchCode": {
+      "type": "string",
+      "size": 5,
+      "required": true
+    },
+    "URIID": {
+      "type": "string",
+      "maximum": 256,
+      "required": false
+    },
+    "Telephone": {
+      "type": "string",
+      "maximum": 35,
+      "required": true
+    },
+    "PostalTradeAddress": {
+      "BuildingName": {
+        "description": "ชื่ออาคาร",
+        "type": "string",
+        "maximum": 70,
+        "required": false
+      },
+      "PostcodeCode": {
+        "description": "รหัสไปรษณีย์",
+        "type": "string",
+        "maximum": 16,
+        "required": true,
+        "note": "required with TH CountryID"
+      },
+      "LineOne": {
+        "description": "ที่อยู่บรรทัดที่ 1",
+        "type": "string",
+        "maximum": 256,
+        "required": false
+      },
+      "LineTwo": {
+        "description": "ที่อยู่บรรทัดที่ 2",
+        "type": "string",
+        "maximum": 256,
+        "required": false
+      },
+      "LineThree": {
+        "description": "ที่อยู่บรรทัดที่ 3",
+        "type": "string",
+        "maximum": 256,
+        "required": false
+      },
+      "LineFour": {
+        "description": "ที่อยู่บรรทัดที่ 4",
+        "type": "string",
+        "maximum": 256,
+        "required": false
+      },
+      "LineFive": {
+        "description": "ที่อยู่บรรทัดที่ 5",
+        "type": "string",
+        "maximum": 256,
+        "required": false
+      },
+      "CitySubDivisionID":{
+        "description": "รหัสตำบล",
+        "type": "string",
+        "maximum": 70,
+        "required": true,
+        "note": "required with TH CountryID {อ้างอิงถึง ขมธอ. 3-2560 ภาคผนวก ข.5}"
+      },
+      "CityID": {
+        "description": "รหัสอำเภอ",
+        "type": "string",
+        "maximum": 70,
+        "required": true,
+        "note": "required with TH CountryID {อ้างอิงถึง ขมธอ. 3-2560 ภาคผนวก ข.5}"
+      },
+      "CountrySubDivisionID": {
+        "description": "รหัสจังหวัด",
+        "type": "string",
+        "maximum": 70,
+        "required": true,
+        "note": "required with TH CountryID {อ้างอิงถึง ขมธอ. 3-2560 ภาคผนวก ข.5}"
+      },
+      "CountryID": {
+        "description": "รหัสประเทศ",
+        "type": "string",
+        "value": "TH",
+        "required": true
+      }
+    }
+  },
+  "BuyerTradeParty": {
+    "Name": {
+      "description": "ชื่อผู้ขาย",
+      "type": "string",
+      "maximum": 256,
+      "required": true
+    },
+    "PersonName": {
+      "description": "ชื่อผู้ติดต่อ",
+      "type": "string",
+      "maximum": 140,
+      "required": false
+    },
+    "DepartmentName": {
+      "type": "string",
+      "maximum": 140,
+      "required": false
+    },
+    "TaxID": {
+      "type": "string",
+      "maximum": 35,
+      "required": true
+    },
+    "BranchCode": {
+      "type": "string",
+      "size": 5,
+      "required": true
+    },
+    "URIID": {
+      "type": "string",
+      "maximum": 256,
+      "required": false
+    },
+    "Telephone": {
+      "type": "string",
+      "maximum": 35,
+      "required": true
+    },
+    "PostalTradeAddress": {
+      "BuildingName": {
+        "description": "ชื่ออาคาร",
+        "type": "string",
+        "maximum": 70,
+        "required": false
+      },
+      "PostcodeCode": {
+        "description": "รหัสไปรษณีย์",
+        "type": "string",
+        "maximum": 16
+      },
+      "LineOne": {
+        "description": "ที่อยู่บรรทัดที่ 1",
+        "type": "string",
+        "maximum": 256,
+        "required": false
+      },
+      "LineTwo": {
+        "description": "ที่อยู่บรรทัดที่ 2",
+        "type": "string",
+        "maximum": 256,
+        "required": false
+      },
+      "LineThree": {
+        "description": "ที่อยู่บรรทัดที่ 3",
+        "type": "string",
+        "maximum": 256,
+        "required": false
+      },
+      "LineFour": {
+        "description": "ที่อยู่บรรทัดที่ 4",
+        "type": "string",
+        "maximum": 256,
+        "required": false
+      },
+      "LineFive": {
+        "description": "ที่อยู่บรรทัดที่ 5",
+        "type": "string",
+        "maximum": 256,
+        "required": false
+      },
+      "CitySubDivisionID":{
+        "description": "รหัสตำบล",
+        "type": "string",
+        "maximum": 70,
+        "required": true,
+        "note": "required with TH CountryID {อ้างอิงถึง ขมธอ. 3-2560 ภาคผนวก ข.5}"
+      },
+      "CityID": {
+        "description": "รหัสอำเภอ",
+        "type": "string",
+        "maximum": 70,
+        "required": true,
+        "note": "required with TH CountryID {อ้างอิงถึง ขมธอ. 3-2560 ภาคผนวก ข.5}"
+      },
+      "CountrySubDivisionID": {
+        "description": "รหัสจังหวัด",
+        "type": "string",
+        "maximum": 70,
+        "required": true,
+        "note": "required with TH CountryID {อ้างอิงถึง ขมธอ. 3-2560 ภาคผนวก ข.5}"
+      },
+      "CountryID": {
+        "description": "รหัสประเทศ",
+        "type": "string",
+        "value": "TH",
+        "required": true
+      }
+    }
+  },
+  "IncludedSupplyChainTradeLineItem": [
+    {
+      "LineID": {
+        "description": "ลำดับรายการ",
+        "type": "string",
+        "maximum": 35,
+        "required": true
+      },
+      "ProductID": {
+        "description": "รหัสสินค้า",
+        "type": "string",
+        "maximum": 70,
+        "required": true
+      },
+      "GlobalID": {
+        "description": "รหัสสินค้าสากล",
+        "type": "string",
+        "maximum": 70,
+        "required": false
+      },
+      "Name": {
+        "description": "ชื่อสินค้า",
+        "type": "string",
+        "maximum": 256,
+        "required": true
+      },
+      "ChargeAmount": {
+        "description": "ราคาต่อหน่วย",
+        "type": "double",
+        "required": true
+      },
+      "ActualAmount": {
+        "description": "มูลค่าส่วนลดหรือค่าธรรมเนียม",
+        "type": "double",
+        "required": false
+      },
+      "BilledQuantity": {
+        "description": "จำนวนสินค้า",
+        "type": "integer",
+        "required": false
+      },
+      "UnitCode": {
+        "description": "รหัสหน่วยสินค้า",
+        "type": "string",
+        "required": false
+      },
+      "UnitName": {
+        "description": "หน่วยสินค้า",
+        "type": "string",
+        "required": false
+      },
+      "ChargeIndicator": {
+        "description": "ตัวบอกส่วนลดหรือค่าธรรมเนียม",
+        "type": "boolean",
+        "required": false
+      },
+      "NetLineTotalAmount": {
+        "description": "จำนวนเงินรวมก่อนภาษี",
+        "type": "double",
+        "required": true
+      }
+    }
+  ],
+  "ReferencedDocument": [
+    {
+      "IssuerAssignedID": {
+        "description": "เลขที่ใบสั่งซื้อ",
+        "type": "string",
+        "maximum": "35",
+        "required": false
+      },
+      "IssueDateTime": {
+        "description": "วันเดือนปี ที่ออกใบสั่งซื้อ",
+        "type": "datetime",
+        "format": "yyyy-MM-dd'T'HH:mm:ss'.000'",
+        "required": false
+      },
+      "ReferenceTypeCode": {
+        "description": "รหัสเอกสารอ้างอิง",
+        "type": "string",
+        "value": ["ALT","DL","CD"],
+        "required": false,
+        "note": "อ้างอิงถึง ขมธอ. 3-2560 ภาคผนวก ข.9"
+      }
+    }
+  ],
+  "ApplicableHeaderTradeSettlement": {
+    "InvoiceCurrencyCode": {
+      "description": "รหัสสกุลเงินตรา",
+      "type": "string",
+      "value": "THB",
+      "required": false
+    },
+    "ApplicableTradeTax": {
+      "TypeCode": {
+        "description": "รหัสประเภทภาษี",
+        "type": "string",
+        "value": "VAT",
+        "required": true
+      },
+      "CalculatedRate": {
+        "description": "อัตราภาษี",
+        "type": "string",
+        "required": true
+      },
+      "BasisAmount": {
+        "description": "มูลค่าสินค้า/บริการ(ไม่รวมภาษีมูลค่าเพิ่ม ทศนิยม 2 ตำแหน่ง)",
+        "type": "double",
+        "required": true
+      }
+    },
+    "SpecifiedTradeAllowanceCharge": {
+      "ChargeIndicator": {
+        "description": "ตัวบอกส่วนลดหรือค่าธรรมเนียม",
+        "type": "boolean",
+        "required": false
+      },
+      "ActualAmount": {
+        "description": "มูลค่าส่วนลดหรือค่าธรรมเนียม",
+        "type": "double",
+        "required": false
+      },
+      "ReasonCode": {
+        "description": "รหัสเหตุผลในการคิดส่วนลดหรือค่าธรรมเนียม",
+        "type": "string",
+        "maximum": "16",
+        "required": false
+      },
+      "Reason": {
+        "description": "เหตุผลในการคิดส่วนลดหรือค่าธรรมเนียม",
+        "type": "string",
+        "maximum": "256",
+        "required": false
+      },
+      "TypeCode": {
+        "description": "รหัสประเภทส่วนลดหรือค่าธรรมเนียม",
+        "type": "string",
+        "maximum": "16",
+        "required": false
+      }
+    },
+    "SpecifiedTradeSettlementHeaderMonetarySummation": {
+      "OriginalInformationAmount": {
+        "description": "รวมมูลค่าตามเอกสารเดิม",
+        "type": "double",
+        "required": false,
+        "note": "required with DCN document"
+      },
+      "LineTotalAmount": {
+        "description": "รวมมูลค่าตามรายการ/มูลค่าที่ถูกต้อง",
+        "type": "double",
+        "required": true
+      },
+      "DifferenceInformationAmount": {
+        "description": "มูลค่าผลต่าง",
+        "type": "double",
+        "required": true,
+        "note": "required with DCN document"
+      },
+      "ChargeTotalAmount": {
+        "description": "ค่าธรรมเนียมทั้งหมด",
+        "type": "double",
+        "required": false
+      },
+      "AllowanceTotalAmount": {
+        "description": "ส่วนลดทั้งหมด",
+        "type": "double",
+        "required": false
+      },
+      "TaxTotalAmount": {
+        "description": "จำนวนภาษีมูลค่าเพิ่ม(รวมทศนิยม 2 ตำแหน่ง)",
+        "type": "double",
+        "required": false
+      },
+      "GrandTotalAmount": {
+        "description": "ยอดเงินรวม/ยอดเงินรวมภาษีมูลค่าเพิ่ม",
+        "type": "double",
+        "required": true
+      }
+    }
+  }
+}

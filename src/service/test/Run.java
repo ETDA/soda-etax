@@ -10,9 +10,9 @@ public class Run {
 
 	public static void main(String args[]) {
 		try {
-			String xmlString = new String(Files.readAllBytes(Paths.get("resources/json_input.json")),
+			String jsonString = new String(Files.readAllBytes(Paths.get("resources/json_input.json")),
 					StandardCharsets.UTF_8);
-			EtaxInvoice invoice = new EtaxInvoice(xmlString);
+			EtaxInvoice invoice = new EtaxInvoice(jsonString);
 			System.out.println(invoice.getXML());
 		} catch (Exception e) {
 			e.printStackTrace();
