@@ -18,7 +18,7 @@ public class DateHelper {
 		
 	}
 	
-	public XMLGregorianCalendar Convert2XmlGregorianDate(String dateInString) throws ParseException, DatatypeConfigurationException{
+	public XMLGregorianCalendar convert2XmlGregorianCalendar(String dateInString) throws ParseException, DatatypeConfigurationException{
 		//TODO แสดงปีไม่ถูก
 		GregorianCalendar c = new GregorianCalendar();
 		TimeZone thaiTimeZone = TimeZone.getTimeZone("US");
@@ -26,12 +26,15 @@ public class DateHelper {
 		c.setTimeZone(thaiTimeZone);
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:sss");
 		//sdf.setTimeZone(TimeZone.getTimeZone("GMT+7"));
-		Date date = null;
-		try {
-			date = sdf.parse(dateInString);
-		} catch (Exception e) {
-			e.printStackTrace();
-		} 
+		Date date = sdf.parse(dateInString);
+		c.setTime(date);
+		XMLGregorianCalendar gregorianDate = DatatypeFactory.newInstance().newXMLGregorianCalendar(c);
+		return gregorianDate;
+	}
+
+	public XMLGregorianCalendar convert2XmlGregorianCalendar(Date date) throws DatatypeConfigurationException{
+
+		GregorianCalendar c = new GregorianCalendar();
 		c.setTime(date);
 		XMLGregorianCalendar gregorianDate = DatatypeFactory.newInstance().newXMLGregorianCalendar(c);
 		return gregorianDate;

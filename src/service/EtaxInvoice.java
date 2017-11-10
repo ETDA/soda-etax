@@ -134,9 +134,9 @@ public class EtaxInvoice {
 				.setValue(ThaiDocumentNameCodeInvoiceContentType.fromValue((String) documentDetailObj.get("TypeCode")));
 		exchangeDocumentType.setTypeCode(invoiceDocumentCodeType);
 		exchangeDocumentType
-				.setIssueDateTime(dateHelper.Convert2XmlGregorianDate((String) documentDetailObj.get("IssueDateTime")));
+				.setIssueDateTime(dateHelper.convert2XmlGregorianCalendar((String) documentDetailObj.get("IssueDateTime")));
 		exchangeDocumentType.setCreationDateTime(
-				dateHelper.Convert2XmlGregorianDate((String) documentDetailObj.get("CreationDateTime")));
+				dateHelper.convert2XmlGregorianCalendar((String) documentDetailObj.get("CreationDateTime")));
 		// System.out.println("issue date: " + (String)
 		// documentDetailObj.get("IssueDateTime"));
 		Max256TextType purpose = new Max256TextType();
@@ -241,7 +241,7 @@ public class EtaxInvoice {
 		tradeProductType.getName().add(stringHelper.ConvertMax256String((String) productObj.get("Name")));
 		// TradeProductInstanceType tradeProductInstanceType = new
 		// TradeProductInstanceType();
-		// tradeProductInstanceType.setExpiryDateTime(dateHelper.Convert2XmlGregorianDate("1970-01-01T07:00:00.0"));
+		// tradeProductInstanceType.setExpiryDateTime(dateHelper.convert2XmlGregorianCalendar("1970-01-01T07:00:00.0"));
 		// tradeProductType.getIndividualTradeProductInstance().add(tradeProductInstanceType);
 		supplyChainTradeLineItemType.setSpecifiedTradeProduct(tradeProductType);
 

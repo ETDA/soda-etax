@@ -65963,22 +65963,6 @@ public enum CitySubDivisionNameCodeContentType implements ICitySubDivisionNameCo
         throw new IllegalArgumentException(v);
     }
     
-//    private static Map <String,ICitySubDivisionNameCodeContentType> map = new TreeMap<String,ICitySubDivisionNameCodeContentType>();
-//    static {
-//        for (ICitySubDivisionNameCodeContentType en : values()){
-//            map.put(en.value(),en);
-//        }
-//    }
-//    
-//    public static ICitySubDivisionNameCodeContentType findValue(String v){
-//		return map.get(v);
-//    }
-//
-//    public static void addEnum(ICitySubDivisionNameCodeContentType en){
-//    	if(!map.containsKey(en.value())){
-//    		map.put(en.value(), en);
-//    	}
-//    }
     
     public static CitySubDivisionNameCodeContentType setValue(String v){
     	CitySubDivisionNameCodeContentType c = VALUE_100;

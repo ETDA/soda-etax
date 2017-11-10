@@ -381,7 +381,7 @@
       },
       "CalculatedRate": {
         "description": "อัตราภาษี",
-        "type": "string",
+        "type": "double",
         "required": true
       },
       "BasisAmount": {

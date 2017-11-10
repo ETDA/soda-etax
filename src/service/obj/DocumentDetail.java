@@ -16,7 +16,7 @@ public class DocumentDetail {
 	private Date issueDateTime;
 	private Date creationDateTime;
 	private String purpose;
-	private String note;
+	private Note note;
 	/**
 	 * @return the schemeAgencyID
 	 */
@@ -116,13 +116,13 @@ public class DocumentDetail {
 	/**
 	 * @return the note
 	 */
-	public String getNote() {
+	public Note getNote() {
 		return note;
 	}
 	/**
 	 * @param note the note to set
 	 */
-	public void setNote(String note) {
+	public void setNote(Note note) {
 		this.note = note;
 	}
 }

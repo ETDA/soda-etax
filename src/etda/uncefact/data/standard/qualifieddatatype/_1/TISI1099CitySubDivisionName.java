@@ -13,7 +13,6 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.bind.annotation.XmlValue;
 import un.unece.uncefact.identifierlist.standard.citysubdivisionnamefromtisi1099_2548.CitySubDivisionNameCodeContentType;
-import un.unece.uncefact.identifierlist.standard.citysubdivisionnamefromtisi1099_2548.ICitySubDivisionNameCodeContentType;
 
 
 /**

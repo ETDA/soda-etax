@@ -27,7 +27,7 @@
     "TaxID": "1234567890123",
     "BranchCode": "00000",
     "CompleteNumber": "Accountant1@sphr.co.th",
-    "URIID": "www.gsoftbiz.com",
+    "URIID": "www.abc.com",
     "Telephone": "+66-21231234",
     "Fax": "+66-21231234(2)"
   },
@@ -37,7 +37,7 @@
     "TaxID": "3210987654321",
     "BranchCode": "00017",
     "CompleteNumber": "Accountant1@ithamma.co.th",
-    "URIID": "www.abc.com",
+    "URIID": "www.cdf.com",
     "Telephone": "+66-29437799(1234)",
     "Fax": "+66-29437799(5678)",
     "PostalTradeAddress": {
