@@ -3,12 +3,14 @@ package service.test;
 import java.util.ArrayList;
 import java.util.Date;
 
+import javax.xml.datatype.DatatypeConfigurationException;
+
 import service.obj.*;
 import service.obj.TradeTax;
 import etda.uncefact.codelist.standard.thaidocumentnamecode_invoice._1.ThaiDocumentNameCodeInvoiceContentType;
 import etda.uncefact.data.standard.qualifieddatatype._1.*;
 import etda.uncefact.data.standard.taxinvoice_crossindustryinvoice._2.ObjectFactory;
-import etda.uncefact.data.standard.taxinvoice_crossindustryinvoice._2.TaxInvoiceCrossIndustryInvoiceType;;
+import etda.uncefact.data.standard.taxinvoice_crossindustryinvoice._2.TaxInvoiceCrossIndustryInvoiceType;
 import etda.uncefact.data.standard.taxinvoice_reusableaggregatebusinessinformationentity._2.*;
 import un.unece.uncefact.codelist.standard.iso.iso3alphacurrencycode._2012_08_31.ISO3AlphaCurrencyCodeContentType;
 import un.unece.uncefact.codelist.standard.unece.dutytaxfeetypecode.d14a.DutyTaxFeeTypeCodeContentType;
@@ -123,7 +125,7 @@ public class RunWithObj {
 		tradeTax.setCalculatedRate(7.00);
 		tradeTax.setTypeCode("VAT");
 		tradeSettlement.setTradeTax(tradeTax);
-		
+
 		TradeAllowanceCharge tradeAllowanceCharge = new TradeAllowanceCharge();
 		tradeAllowanceCharge.setChargeIndicator(false);
 		tradeAllowanceCharge.setActualAmount(10000.00);
@@ -141,18 +143,24 @@ public class RunWithObj {
 
 	public static void RunWithObj(Invoice invoice) {
 		TaxInvoiceCrossIndustryInvoiceType taxInvoiceCrossIndustryInvoiceType = new TaxInvoiceCrossIndustryInvoiceType();
-		
-		setDocDetail(invoice.getDocumentDetail(),taxInvoiceCrossIndustryInvoiceType);
-		
+		try {
+
+			setDocDetail(invoice.getDocumentDetail(), taxInvoiceCrossIndustryInvoiceType);
+		} catch (Exception ex) {
+			ex.printStackTrace();
+		}
+
 	}
 
-	private static void setDocDetail(DocumentDetail documentDetail,TaxInvoiceCrossIndustryInvoiceType taxInvoiceCrossIndustryInvoiceType){
+	private static void setDocDetail(DocumentDetail documentDetail,
+			TaxInvoiceCrossIndustryInvoiceType taxInvoiceCrossIndustryInvoiceType)
+			throws DatatypeConfigurationException {
 		ExchangedDocumentContextType exchangeDocumentContext = new ExchangedDocumentContextType();
 		DocumentContextParameterType documentContextParameter = new DocumentContextParameterType();
 
 		Max35IDType guidelineID = new Max35IDType();
 		guidelineID.setSchemeAgencyID(documentDetail.getSchemeAgencyID());
-		guidelineID.setSchemeVersionID(documentDetail.getSchemeVersionID();
+		guidelineID.setSchemeVersionID(documentDetail.getSchemeVersionID());
 		guidelineID.setValue("ER3-2560");
 		documentContextParameter.setID(guidelineID);
 		exchangeDocumentContext.setGuidelineSpecifiedDocumentContextParameter(documentContextParameter);
@@ -171,8 +179,8 @@ public class RunWithObj {
 		exchangeDocumentType.setTypeCode(invoiceDocumentCodeType);
 		exchangeDocumentType
 				.setIssueDateTime(dateHelper.convert2XmlGregorianCalendar(documentDetail.getIssueDateTime()));
-		exchangeDocumentType.setCreationDateTime(
-				dateHelper.convert2XmlGregorianCalendar(documentDetail.getCreationDateTime()));
+		exchangeDocumentType
+				.setCreationDateTime(dateHelper.convert2XmlGregorianCalendar(documentDetail.getCreationDateTime()));
 		// System.out.println("issue date: " + (String)
 		// documentDetailObj.get("IssueDateTime"));
 		Max256TextType purpose = new Max256TextType();
