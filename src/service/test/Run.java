@@ -5,6 +5,7 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 
 import service.EtaxInvoice;
+import service.PDFACreator;
 
 public class Run {
 
@@ -14,6 +15,10 @@ public class Run {
 					StandardCharsets.UTF_8);
 			EtaxInvoice invoice = new EtaxInvoice(xmlString);
 			System.out.println(invoice.getXML());
+			
+			// Create PDFA with Pdfbox
+			PDFACreator pdfACreator = new PDFACreator();
+			pdfACreator.convert2PDF(invoice.invoice, invoice.getXML(), "E:/test.pdf");
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

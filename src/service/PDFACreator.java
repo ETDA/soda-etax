@@ -1,9 +1,7 @@
 package service;
 
-import java.awt.Color;
 import java.awt.geom.Point2D;
 import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
@@ -14,9 +12,13 @@ import java.util.Collections;
 import java.util.GregorianCalendar;
 import java.util.List;
 
-import javax.xml.transform.TransformerException;
-
+import org.apache.jempbox.xmp.XMPMetadata;
+import org.apache.jempbox.xmp.XMPSchema;
+import org.apache.jempbox.xmp.XMPSchemaBasic;
+import org.apache.jempbox.xmp.XMPSchemaPDF;
+import org.apache.jempbox.xmp.pdfa.XMPSchemaPDFAId;
 import org.apache.pdfbox.pdmodel.PDDocument;
+import org.apache.pdfbox.pdmodel.PDDocumentInformation;
 import org.apache.pdfbox.pdmodel.PDDocumentNameDictionary;
 import org.apache.pdfbox.pdmodel.PDEmbeddedFilesNameTreeNode;
 import org.apache.pdfbox.pdmodel.PDPage;
@@ -25,33 +27,23 @@ import org.apache.pdfbox.pdmodel.common.PDMetadata;
 import org.apache.pdfbox.pdmodel.common.PDRectangle;
 import org.apache.pdfbox.pdmodel.common.filespecification.PDComplexFileSpecification;
 import org.apache.pdfbox.pdmodel.common.filespecification.PDEmbeddedFile;
+import org.apache.pdfbox.pdmodel.documentinterchange.logicalstructure.PDMarkInfo;
 import org.apache.pdfbox.pdmodel.font.PDFont;
 import org.apache.pdfbox.pdmodel.font.PDType0Font;
-import org.apache.pdfbox.pdmodel.font.PDType1Font;
 import org.apache.pdfbox.pdmodel.graphics.color.PDOutputIntent;
 import org.apache.pdfbox.util.Matrix;
-import org.apache.xmpbox.XMPMetadata;
-import org.apache.xmpbox.schema.DublinCoreSchema;
-import org.apache.xmpbox.schema.PDFAIdentificationSchema;
-import org.apache.xmpbox.type.BadFieldValueException;
-import org.apache.xmpbox.xml.XmpSerializer;
 import org.vandeseer.pdfbox.easytable.Cell;
 import org.vandeseer.pdfbox.easytable.Cell.HorizontalAlignment;
 import org.vandeseer.pdfbox.easytable.Row.RowBuilder;
 import org.vandeseer.pdfbox.easytable.Table.TableBuilder;
 import org.vandeseer.pdfbox.easytable.TableDrawer;
+import org.w3c.dom.Element;
 
 import etda.uncefact.data.standard.taxinvoice_crossindustryinvoice._2.TaxInvoiceCrossIndustryInvoiceType;
-
-//import org.apache.jempbox.xmp.XMPMetadata;
-//import org.apache.jempbox.xmp.XMPSchemaBasic;
-//import org.apache.jempbox.xmp.XMPSchemaDublinCore;
-//import org.apache.jempbox.xmp.XMPSchemaPDF;
-//import org.apache.jempbox.xmp.pdfa.XMPSchemaPDFAId;
 import etda.uncefact.data.standard.taxinvoice_reusableaggregatebusinessinformationentity._2.ExchangedDocumentType;
+import etda.uncefact.data.standard.taxinvoice_reusableaggregatebusinessinformationentity._2.HeaderTradeSettlementType;
 import etda.uncefact.data.standard.taxinvoice_reusableaggregatebusinessinformationentity._2.SupplyChainTradeLineItemType;
 import etda.uncefact.data.standard.taxinvoice_reusableaggregatebusinessinformationentity._2.TradePartyType;
-import etda.uncefact.data.standard.taxinvoice_reusableaggregatebusinessinformationentity._2.HeaderTradeSettlementType;
 import util.PdfHelper;
 
 public class PDFACreator {
@@ -66,10 +58,10 @@ public class PDFACreator {
 	private int fontSize = 14;
 
 	public PDFACreator() {
-		
+
 	}
 
-	public void convert2PDF(TaxInvoiceCrossIndustryInvoiceType invoice, String xml,String outputPath) {
+	public void convert2PDF(TaxInvoiceCrossIndustryInvoiceType invoice, String xml, String outputPath) {
 		try (PDDocument doc = new PDDocument()) {
 			PDPage page = new PDPage();
 			doc.addPage(page);
@@ -259,8 +251,9 @@ public class PDFACreator {
 			}
 
 			makeA3compliant(doc, xml);
+			doc.setVersion(1.7f);
 
-			//doc.save(BASE_FOLDER + FILENAME);
+			// doc.save(BASE_FOLDER + FILENAME);
 			doc.save(outputPath);
 			doc.close();
 		} catch (Exception e) {
@@ -397,10 +390,10 @@ public class PDFACreator {
 		boolean rotated = false;
 		float pageWidth = rotated ? pageSize.getHeight() : pageSize.getWidth();
 		float pageHeight = rotated ? pageSize.getWidth() : pageSize.getHeight();
-//		System.out.println("Page Width : " + pageWidth);
-//		System.out.println("Page Height : " + pageHeight);
-//		System.out.println("CenterPage Width : " + pageWidth / 2f);
-//		System.out.println("CenterPage Height : " + pageHeight / 2f);
+		// System.out.println("Page Width : " + pageWidth);
+		// System.out.println("Page Height : " + pageHeight);
+		// System.out.println("CenterPage Width : " + pageWidth / 2f);
+		// System.out.println("CenterPage Height : " + pageHeight / 2f);
 
 		// return new Point2D.Float(pageWidth / 2F, pageHeight / 2F);
 		return new Point2D.Float(pageWidth / 2F, pageHeight - 40);
@@ -410,19 +403,22 @@ public class PDFACreator {
 		return font.getStringWidth(text) * fontSize / 1000F;
 	}
 
-	private PDDocument makeA3compliant(PDDocument doc, String xml) throws IOException, TransformerException {
+	private PDDocument makeA3compliant(PDDocument doc, String xml) throws Exception {
 		// embed file
 		PDEmbeddedFilesNameTreeNode efTree = new PDEmbeddedFilesNameTreeNode();
+		PDMetadata metadata = new PDMetadata(doc);
+		doc.getDocumentCatalog().setMetadata(metadata);
 
 		// first create the file specification, which holds the embedded file
 		PDComplexFileSpecification fs = new PDComplexFileSpecification();
-		fs.setFile(BASE_FOLDER + "data.xml");
-		// create a dummy file stream, this would probably normally be a FileInputStream
+		fs.setFile("ETDA-invoice.xml");
+		// create a dummy file stream, this would probably normally be a
+		// FileInputStream
 		byte[] data = xml.getBytes("utf-8");
 		ByteArrayInputStream dataFile = new ByteArrayInputStream(data);
 		PDEmbeddedFile ef = new PDEmbeddedFile(doc, dataFile);
 		// now lets some of the optional parameters
-		ef.setSubtype("test/plain");
+		ef.setSubtype("text/xml");
 		ef.setSize(data.length);
 		ef.setCreationDate(new GregorianCalendar());
 		fs.setEmbeddedFile(ef);
@@ -439,30 +435,54 @@ public class PDFACreator {
 		names.setEmbeddedFiles(efTree);
 		doc.getDocumentCatalog().setNames(names);
 
-		// add XMP metadata
-		XMPMetadata xmp = XMPMetadata.createXMPMetadata();
+		XMPMetadata xmp = new XMPMetadata();
+		XMPSchemaPDFAId pdfaid = new XMPSchemaPDFAId(xmp);
+		xmp.addSchema(pdfaid);
+		
 
-		try {
-			DublinCoreSchema dc = xmp.createAndAddDublinCoreSchema();
-			dc.setTitle("TEST");
+		XMPSchemaBasic xsb = xmp.addBasicSchema();
+		xsb.setAbout("");
+		// Set Application Name
+		xsb.setCreatorTool("pdfbox");
+		xsb.setCreateDate(GregorianCalendar.getInstance());
 
-			PDFAIdentificationSchema id = xmp.createAndAddPFAIdentificationSchema();
-			id.setPart(3);
-			id.setConformance("U");
+		PDDocumentInformation pdi = new PDDocumentInformation();
+		pdi.setProducer("ผู้เขียน");
+		pdi.setAuthor("ผู้แต่ง");
+		pdi.setTitle("ทดสอบ");
+		pdi.setSubject("เพื่อทดสอบ");
+		pdi.setKeywords("PDFA3");
+		doc.setDocumentInformation(pdi);
 
-			XmpSerializer serializer = new XmpSerializer();
-			ByteArrayOutputStream baos = new ByteArrayOutputStream();
-			serializer.serialize(xmp, baos, true);
+		XMPSchema xsm = new XMPSchema(xmp, "rsm", "urn:etda:uncefact:data:standard:Invoice_CrossIndustryInvoice:2#");
 
-			PDMetadata metadata = new PDMetadata(doc);
-			metadata.importXMPMetadata(baos.toByteArray());
-			doc.getDocumentCatalog().setMetadata(metadata);
-		} catch (BadFieldValueException e) {
-			// won't happen here, as the provided value is valid
-			throw new IllegalArgumentException(e);
-		} catch (TransformerException e) {
-			throw new TransformerException(e);
-		}
+		Element e = xsm.getElement();
+		Element docFileNode = e.getOwnerDocument().createElement("rsm:DocumentFileName");
+		docFileNode.setTextContent("ETDA-invoice.xml");
+		e.appendChild(docFileNode);
+		Element docTypeNode = e.getOwnerDocument().createElement("rsm:DocumentType");
+		docTypeNode.setTextContent("TAX INVOICE");
+		e.appendChild(docTypeNode);
+		Element docVerNode = e.getOwnerDocument().createElement("rsm:Version");
+		docVerNode.setTextContent("2.0");
+		e.appendChild(docVerNode);
+
+		xmp.addSchema(xsm);
+
+		XMPSchemaPDF pdf = xmp.addPDFSchema();
+		pdf.setPDFVersion("1.7");
+		pdf.setAbout("");
+		
+		PDMarkInfo markinfo = new PDMarkInfo();
+		markinfo.setMarked(true);
+		doc.getDocumentCatalog().setMarkInfo(markinfo);
+		pdfaid.setPart(3);
+		pdfaid.setConformance("U");
+		pdfaid.setAbout("");
+		
+		byte[] temp = xmp.asByteArray();
+
+		metadata.importXMPMetadata(temp);
 
 		// sRGB output intent
 		InputStream colorProfile = PdfHelper.class.getResourceAsStream("/sRGB Color Space Profile.icm");
@@ -473,7 +493,7 @@ public class PDFACreator {
 		intent.setRegistryName("http://www.color.org");
 		doc.getDocumentCatalog().addOutputIntent(intent);
 
-		doc.save(BASE_FOLDER + FILENAME);
+		//doc.save(BASE_FOLDER + FILENAME);
 		return null;
 
 	}
