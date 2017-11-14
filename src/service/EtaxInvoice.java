@@ -264,7 +264,7 @@ public class EtaxInvoice {
 
 		lineTradeSettlement.getApplicableTradeTax().add(tradeTaxType);
 		TradeAllowanceChargeType tradeAllowanceCharge = new TradeAllowanceChargeType();
-		tradeAllowanceCharge.setChargeIndicator(Boolean.valueOf((String) productObj.get("ActualAmount")));
+		tradeAllowanceCharge.setChargeIndicator(Boolean.valueOf((String) productObj.get("ChargeIndicator")));
 		AmountType actualAmountType = new AmountType();
 		actualAmountType.setValue(new BigDecimal((String) productObj.get("ActualAmount")));
 		tradeAllowanceCharge.getActualAmount().add(actualAmountType);
