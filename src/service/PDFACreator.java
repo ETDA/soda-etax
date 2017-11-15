@@ -2,6 +2,7 @@ package service;
 
 import java.awt.geom.Point2D;
 import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
@@ -61,7 +62,7 @@ public class PDFACreator {
 
 	}
 
-	public void convert2PDF(TaxInvoiceCrossIndustryInvoiceType invoice, String xml, String outputPath) {
+	public byte[] convert2PDF(TaxInvoiceCrossIndustryInvoiceType invoice, String xml) {
 		try (PDDocument doc = new PDDocument()) {
 			PDPage page = new PDPage();
 			doc.addPage(page);
@@ -254,11 +255,15 @@ public class PDFACreator {
 			doc.setVersion(1.7f);
 
 			// doc.save(BASE_FOLDER + FILENAME);
-			doc.save(outputPath);
+			//doc.save(outputPath);
+			ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
+			doc.save(byteArrayOutputStream);
 			doc.close();
+			return byteArrayOutputStream.toByteArray();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
+		return null;
 
 	}
 
@@ -403,7 +408,7 @@ public class PDFACreator {
 		return font.getStringWidth(text) * fontSize / 1000F;
 	}
 
-	private PDDocument makeA3compliant(PDDocument doc, String xml) throws Exception {
+	private void makeA3compliant(PDDocument doc, String xml) throws Exception {
 		// embed file
 		PDEmbeddedFilesNameTreeNode efTree = new PDEmbeddedFilesNameTreeNode();
 		PDMetadata metadata = new PDMetadata(doc);
@@ -494,7 +499,6 @@ public class PDFACreator {
 		doc.getDocumentCatalog().addOutputIntent(intent);
 
 		//doc.save(BASE_FOLDER + FILENAME);
-		return null;
 
 	}
 }

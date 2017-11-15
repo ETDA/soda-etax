@@ -1,5 +1,6 @@
 package service.test;
 
+import java.io.File;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Paths;
@@ -18,7 +19,8 @@ public class Run {
 			
 			// Create PDFA with Pdfbox
 			PDFACreator pdfACreator = new PDFACreator();
-			pdfACreator.convert2PDF(invoice.invoice, invoice.getXML(), "E:/test.pdf");
+			byte[] result = pdfACreator.convert2PDF(invoice.invoice, invoice.getXML());
+			Files.write(new File("E:/test.pdf").toPath(), result);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

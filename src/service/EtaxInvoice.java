@@ -75,7 +75,7 @@ public class EtaxInvoice {
 	private static DateHelper dateHelper = new util.DateHelper();
 	private static JSONObject jsonObj;
 	private static HeaderTradeSettlementType headerTradeSettlementType;
-	public static TaxInvoiceCrossIndustryInvoiceType invoice;
+	public TaxInvoiceCrossIndustryInvoiceType invoice;
 	// private static SupplyChainTradeTransactionType
 	// supplyChainTransactionType;
 	private static DecimalFormat df = new DecimalFormat("#.##");
