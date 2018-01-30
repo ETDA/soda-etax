@@ -3,6 +3,7 @@ package service;
 import java.io.FileNotFoundException;
 import java.io.PrintWriter;
 import java.io.StringWriter;
+import java.io.UnsupportedEncodingException;
 import java.math.BigDecimal;
 import java.text.DecimalFormat;
 
@@ -186,7 +187,7 @@ public class EtaxInvoice {
 		TradeAllowanceChargeType tradeAllowType = new TradeAllowanceChargeType();
 		tradeAllowType.setChargeIndicator(Boolean.valueOf((String) tradeAllowObj.get("ChargeIndicator")));
 		AmountType actualAmountType = new AmountType();
-		// TODO ตรวจสอบใหม่
+		// TODO เธ•เธฃเธงเธ�เธชเธญเธ�เน�เธซเธกเน�
 		actualAmountType.setValue(new BigDecimal((String) tradeAllowObj.get("ActualAmount")));
 		tradeAllowType.getActualAmount().add(actualAmountType);
 
@@ -203,7 +204,7 @@ public class EtaxInvoice {
 		grandTotalAmount.setValue(new BigDecimal((String) settleMonetarySummationObj.get("GrandTotalAmount")));
 		settleMonetarySummationType.getGrandTotalAmount().add(grandTotalAmount);
 
-		// TODO หาวิธีคำนวณ & เช็คกับพี่ตั้น
+		// TODO เธซเธฒเธงเธดเธ�เธตเธ�เธณเธ�เธงเธ“ & เน€เธ�เน�เธ�เธ�เธฑเธ�เธ�เธตเน�เธ•เธฑเน�เธ�
 		// settleMonetarySummationType.getAllowanceTotalAmount().add(actualAmountType);
 		AmountType taxBasisTotalAmount = new AmountType();
 		taxBasisTotalAmount.setValue(
@@ -444,7 +445,7 @@ public class EtaxInvoice {
 		return buyerPartyType;
 	}
 	
-	public String getXML() throws JAXBException {
+	public String getXML(String path) throws JAXBException, UnsupportedEncodingException {
 		StringWriter sw = new StringWriter();
 		JAXBContext jaxbContext;
 		try {
@@ -457,9 +458,7 @@ public class EtaxInvoice {
 			jaxbMarshaller.marshal(taxinvoice, sw);
 
 			String xmlString = sw.toString();
-			//PDFACreator creator = new PDFACreator();
-			//creator.convert2PDF(invoice, xmlString);
-			try (PrintWriter out = new PrintWriter("target/data.xml")) {
+			try (PrintWriter out = new PrintWriter(path,"UTF8")) {
 				out.println(xmlString);
 			} catch (FileNotFoundException e) {
 				e.printStackTrace();

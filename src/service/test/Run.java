@@ -6,21 +6,27 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 
 import service.EtaxInvoice;
-import service.PDFACreator;
 
 public class Run {
 
 	public static void main(String args[]) {
 		try {
-			String xmlString = new String(Files.readAllBytes(Paths.get("resources/json_input.json")),
+			
+			/**** Sample Input ****/
+			/*String inputFilePath = "resources/json_input.json";
+			String embbedFilePath = "target/ETDA-invoice.xml";
+			*/
+			
+			String inputFilePath = args[0];
+			String outputFilePath = args[1];
+			
+			String xmlString = new String(Files.readAllBytes(Paths.get(inputFilePath)),
 					StandardCharsets.UTF_8);
 			EtaxInvoice invoice = new EtaxInvoice(xmlString);
-			System.out.println(invoice.getXML());
 			
-			// Create PDFA with Pdfbox
-			PDFACreator pdfACreator = new PDFACreator();
-			byte[] result = pdfACreator.convert2PDF(invoice.invoice, invoice.getXML());
-			Files.write(new File("E:/test.pdf").toPath(), result);
+			System.out.println(invoice.getXML(outputFilePath));			
+			System.out.println("Write XML to :"+ outputFilePath);	
+
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
