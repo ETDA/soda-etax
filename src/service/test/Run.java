@@ -23,8 +23,7 @@ public class Run {
 			String xmlString = new String(Files.readAllBytes(Paths.get(inputFilePath)),
 					StandardCharsets.UTF_8);
 			EtaxInvoice invoice = new EtaxInvoice(xmlString);
-			
-			System.out.println(invoice.getXML(outputFilePath));			
+		
 			System.out.println("Write XML to :"+ outputFilePath);	
 
 		} catch (Exception e) {
