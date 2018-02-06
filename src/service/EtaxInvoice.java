@@ -327,7 +327,7 @@ public class EtaxInvoice {
 		lineTwo.setValue((String) addressObj.get("LineTwo"));
 		tradeAddressType.setLineTwo(lineTwo);
 
-		CountryIDType countryIDType = new CountryIDType();
+		/*CountryIDType countryIDType = new CountryIDType();
 		countryIDType.setValue(ISOTwoletterCountryCodeContentType.valueOf((String) addressObj.get("CountryID")));
 		tradeAddressType.setCountryID(countryIDType);
 
@@ -336,8 +336,19 @@ public class EtaxInvoice {
 		tradeAddressType.setCityName(cityName);
 
 		TISI1099CitySubDivisionName citySubDivisionName = new TISI1099CitySubDivisionName();
-		citySubDivisionName
-				.setValue(CitySubDivisionNameCodeContentType.fromValue((String) addressObj.get("CitySubDivisionID")));
+		citySubDivisionName	.setValue(CitySubDivisionNameCodeContentType.fromValue((String) addressObj.get("CitySubDivisionID")));
+		tradeAddressType.setCitySubDivisionName(citySubDivisionName);*/
+		
+		Max35IDType countryIDType = new Max35IDType();
+		countryIDType.setValue((String) addressObj.get("CountryID"));
+		tradeAddressType.setCountryID(countryIDType);
+
+		Max35IDType cityName = new Max35IDType();
+		cityName.setValue((String) addressObj.get("CityID"));
+		tradeAddressType.setCityName(cityName);
+
+		Max35IDType citySubDivisionName = new Max35IDType();
+		citySubDivisionName	.setValue((String) addressObj.get("CitySubDivisionID"));
 		tradeAddressType.setCitySubDivisionName(citySubDivisionName);
 
 		TelephoneUniversalCommunicationType teleUniversalCommType = new TelephoneUniversalCommunicationType();
@@ -397,8 +408,8 @@ public class EtaxInvoice {
 		Max256TextType lineTwo = new Max256TextType();
 		lineTwo.setValue((String) addressObj.get("LineTwo"));
 		tradeAddressType.setLineTwo(lineTwo);
-
-		CountryIDType countryIDType = new CountryIDType();
+		
+		/*CountryIDType countryIDType = new CountryIDType();
 		countryIDType.setValue(ISOTwoletterCountryCodeContentType.valueOf((String) addressObj.get("CountryID")));
 		tradeAddressType.setCountryID(countryIDType);
 
@@ -407,8 +418,19 @@ public class EtaxInvoice {
 		tradeAddressType.setCityName(cityName);
 
 		TISI1099CitySubDivisionName citySubDivisionName = new TISI1099CitySubDivisionName();
-		citySubDivisionName
-				.setValue(CitySubDivisionNameCodeContentType.fromValue((String) addressObj.get("CitySubDivisionID")));
+		citySubDivisionName	.setValue(CitySubDivisionNameCodeContentType.fromValue((String) addressObj.get("CitySubDivisionID")));
+		tradeAddressType.setCitySubDivisionName(citySubDivisionName);*/
+		
+		Max35IDType countryIDType = new Max35IDType();
+		countryIDType.setValue((String) addressObj.get("CountryID"));
+		tradeAddressType.setCountryID(countryIDType);
+
+		Max35IDType cityName = new Max35IDType();
+		cityName.setValue((String) addressObj.get("CityID"));
+		tradeAddressType.setCityName(cityName);
+
+		Max35IDType citySubDivisionName = new Max35IDType();
+		citySubDivisionName	.setValue((String) addressObj.get("CitySubDivisionID"));
 		tradeAddressType.setCitySubDivisionName(citySubDivisionName);
 
 		TelephoneUniversalCommunicationType teleUniversalCommType = new TelephoneUniversalCommunicationType();
@@ -464,7 +486,6 @@ public class EtaxInvoice {
 				e.printStackTrace();
 			}
 			
-			System.out.println(xmlString);
 			return xmlString;
 		} catch (JAXBException e) {
 			e.printStackTrace();

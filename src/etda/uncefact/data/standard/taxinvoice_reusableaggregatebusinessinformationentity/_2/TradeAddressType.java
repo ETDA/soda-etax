@@ -153,12 +153,20 @@ public class TradeAddressType {
     protected Max70TextType lineFive;
     @XmlElement(name = "StreetName")
     protected Max70TextType streetName;
-    @XmlElement(name = "CityName")
+    /*@XmlElement(name = "CityName")
     protected TISI1099CityName cityName;
     @XmlElement(name = "CitySubDivisionName")
     protected TISI1099CitySubDivisionName citySubDivisionName;
     @XmlElement(name = "CountryID")
     protected CountryIDType countryID;
+    @XmlElement(name = "CountrySubDivisionID")
+    protected Max35IDType countrySubDivisionID;*/
+    @XmlElement(name = "CityName")
+    protected Max35IDType cityName;
+    @XmlElement(name = "CitySubDivisionName")
+    protected Max35IDType citySubDivisionName;
+    @XmlElement(name = "CountryID")
+    protected Max35IDType countryID;
     @XmlElement(name = "CountrySubDivisionID")
     protected Max35IDType countrySubDivisionID;
     @XmlElement(name = "BuildingNumber")
@@ -364,7 +372,11 @@ public class TradeAddressType {
      *     {@link TISI1099CityName }
      *     
      */
-    public TISI1099CityName getCityName() {
+   /* public TISI1099CityName getCityName() {
+        return cityName;
+    }*/
+    
+    public Max35IDType getCityName() {
         return cityName;
     }
 
@@ -376,8 +388,12 @@ public class TradeAddressType {
      *     {@link TISI1099CityName }
      *     
      */
-    public void setCityName(TISI1099CityName value) {
+    /*public void setCityName(TISI1099CityName value) {
         this.cityName = value;
+    }*/
+    
+    public void setCityName(Max35IDType value) {
+    this.cityName = value;
     }
 
     /**
@@ -388,9 +404,13 @@ public class TradeAddressType {
      *     {@link TISI1099CitySubDivisionName }
      *     
      */
-    public TISI1099CitySubDivisionName getCitySubDivisionName() {
+   /* public TISI1099CitySubDivisionName getCitySubDivisionName() {
         return citySubDivisionName;
-    }
+    }*/
+    
+    public Max35IDType getCitySubDivisionName() {
+    return citySubDivisionName;
+	}
 
     /**
      * Sets the value of the citySubDivisionName property.
@@ -400,8 +420,12 @@ public class TradeAddressType {
      *     {@link TISI1099CitySubDivisionName }
      *     
      */
-    public void setCitySubDivisionName(TISI1099CitySubDivisionName value) {
+   /* public void setCitySubDivisionName(TISI1099CitySubDivisionName value) {
         this.citySubDivisionName = value;
+    }*/
+    
+    public void setCitySubDivisionName(Max35IDType value) {
+    	this.citySubDivisionName = value;
     }
 
     /**
@@ -412,7 +436,11 @@ public class TradeAddressType {
      *     {@link CountryIDType }
      *     
      */
-    public CountryIDType getCountryID() {
+    /*public CountryIDType getCountryID() {
+        return countryID;
+    }*/
+    
+    public Max35IDType getCountryID() {
         return countryID;
     }
 
@@ -424,7 +452,11 @@ public class TradeAddressType {
      *     {@link CountryIDType }
      *     
      */
-    public void setCountryID(CountryIDType value) {
+    /*public void setCountryID(CountryIDType value) {
+        this.countryID = value;
+    }*/
+    
+    public void setCountryID(Max35IDType value) {
         this.countryID = value;
     }
 
