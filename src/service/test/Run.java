@@ -14,7 +14,7 @@ public class Run {
 			
 			/**** Sample Input ****/
 			/*String inputFilePath = "resources/json_input.json";
-			String embbedFilePath = "target/ETDA-invoice.xml";
+			String outputFilePath = "target/ETDA-invoice.xml";
 			*/
 			
 			String inputFilePath = args[0];
@@ -24,6 +24,7 @@ public class Run {
 					StandardCharsets.UTF_8);
 			EtaxInvoice invoice = new EtaxInvoice(xmlString);
 		
+			
 			System.out.println("Write XML to :"+ outputFilePath);	
 
 		} catch (Exception e) {
