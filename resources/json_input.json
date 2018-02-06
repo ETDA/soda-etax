@@ -16,11 +16,11 @@
     "PostalCITradeAddress": {
       "LineOne": "3/107 ถนนศรีนครินทร์",
       "LineTwo": "ซอยศรีนครินทร์ 5",
-      "CountryID": "9999999",
-      "PostcodeCode": "9999999",
-      "CountrySubDivisionID": "9999999",
+      "CountryID": "TH",
+      "PostcodeCode": "10260",
+      "CountrySubDivisionID": "10",
       "CityID": "1032",
-      "CitySubDivisionID": "9999999",
+      "CitySubDivisionID": "103202",
       "Address": "กกก จขขข ศรีนครินทร์ รามคำแหง กรุงเทพฯ"
     },
     "Name": "บริษัท สัพเพเหระ จำกัด",
@@ -33,15 +33,15 @@
   },
   "BuyerTradeParty": {
       "PostalTradeAddress": {
-      "CountryID": "9999999",
+      "CountryID": "TH",
       "LineOne": "12/65 ถนนสุขุมวิท 64",
       "LineTwo": "ซอย สุขุมวิท 4 แยก 12",
       "PostcodeCode": "10260",
-      "CountrySubDivisionID": "9999999",
-      "CityID": "9999999",
-      "CitySubDivisionID": "9999999",
+      "CountrySubDivisionID": "10",
+      "CityID": "1009",
+      "CitySubDivisionID": "100902",
       "Address": "12/65 ถนนสุขุมวิท 64 ซอย สุขุมวิท 4 แยก 12 รามคำแหง กรุงเทพฯ"
-    },
+    }
     "PersonName": "วิชัย ธรรมมา",
     "Name": "บริษัท ทำมาค้าขาย จำกัด",
     "TaxID": "3210987654321",
@@ -49,7 +49,8 @@
     "CompleteNumber": "Accountant1@ithamma.co.th",
     "URIID": "www.abc.com",
     "Telephone": "+66-29437799(1234)",
-    "Fax": "+66-29437799(5678)"
+    "Fax": "+66-29437799(5678)",
+
   },
   "IncludedSupplyChainTradeLineItem": [{
       "LineID": "1",
