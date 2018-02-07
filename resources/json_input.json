@@ -41,7 +41,7 @@
       "CityID": "1009",
       "CitySubDivisionID": "100902",
       "Address": "12/65 ถนนสุขุมวิท 64 ซอย สุขุมวิท 4 แยก 12 รามคำแหง กรุงเทพฯ"
-    }
+    },
     "PersonName": "วิชัย ธรรมมา",
     "Name": "บริษัท ทำมาค้าขาย จำกัด",
     "TaxID": "3210987654321",
@@ -49,8 +49,7 @@
     "CompleteNumber": "Accountant1@ithamma.co.th",
     "URIID": "www.abc.com",
     "Telephone": "+66-29437799(1234)",
-    "Fax": "+66-29437799(5678)",
-
+    "Fax": "+66-29437799(5678)"
   },
   "IncludedSupplyChainTradeLineItem": [{
       "LineID": "1",
