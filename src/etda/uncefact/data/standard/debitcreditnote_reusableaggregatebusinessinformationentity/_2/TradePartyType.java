@@ -17,6 +17,8 @@ import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.bind.annotation.adapters.CollapsedStringAdapter;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+
+import etda.uncefact.data.standard.qualifieddatatype._1.Max256TextType;
 import etda.uncefact.data.standard.qualifieddatatype._1.Max35IDType;
 import etda.uncefact.data.standard.qualifieddatatype._1.Max70IDType;
 
@@ -127,9 +129,7 @@ public class TradePartyType {
     @XmlElement(name = "GlobalID")
     protected List<Max70IDType> globalID;
     @XmlElement(name = "Name")
-    @XmlJavaTypeAdapter(CollapsedStringAdapter.class)
-    @XmlSchemaType(name = "token")
-    protected String name;
+    protected Max256TextType name;
     @XmlElement(name = "SpecifiedTaxRegistration")
     protected SpecifiedTaxRegistrationType specifiedTaxRegistration;
     @XmlElement(name = "DefinedTradeContact")
@@ -203,7 +203,7 @@ public class TradePartyType {
      *     {@link String }
      *     
      */
-    public String getName() {
+    public Max256TextType getName() {
         return name;
     }
 
@@ -215,7 +215,7 @@ public class TradePartyType {
      *     {@link String }
      *     
      */
-    public void setName(String value) {
+    public void setName(Max256TextType value) {
         this.name = value;
     }
 

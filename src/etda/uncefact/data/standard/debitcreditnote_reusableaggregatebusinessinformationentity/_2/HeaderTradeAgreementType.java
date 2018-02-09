@@ -15,6 +15,8 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 
+import etda.uncefact.data.standard.debitcreditnote_reusableaggregatebusinessinformationentity._2.ReferencedDocumentType;
+
 
 /**
  * 
@@ -123,9 +125,21 @@ public class HeaderTradeAgreementType {
     protected TradeDeliveryTermsType applicableTradeDeliveryTerms;
     @XmlElement(name = "BuyerOrderReferencedDocument")
     protected ReferencedDocumentType buyerOrderReferencedDocument;
-    @XmlElement(name = "AdditionalReferencedDocument", required = true)
-    protected List<ReferencedDocumentType> additionalReferencedDocument;
+    
+    /*
+     * Change List<ReferencedDocumentType> to normal
+     * */
+    @XmlElement(name = "AdditionalReferencedDocument")
+    protected ReferencedDocumentType additionalReferencedDocument;
 
+    /*
+     * Customfield to add ReferencedDocument Type listed 
+     * */
+    public  void   setAdditionalReferencedDocument(ReferencedDocumentType value) {       
+        this.additionalReferencedDocument = value;
+    }
+    
+    
     /**
      * Gets the value of the sellerTradeParty property.
      * 
@@ -244,10 +258,7 @@ public class HeaderTradeAgreementType {
      * 
      * 
      */
-    public List<ReferencedDocumentType> getAdditionalReferencedDocument() {
-        if (additionalReferencedDocument == null) {
-            additionalReferencedDocument = new ArrayList<ReferencedDocumentType>();
-        }
+    public ReferencedDocumentType getAdditionalReferencedDocument() {    
         return this.additionalReferencedDocument;
     }
 

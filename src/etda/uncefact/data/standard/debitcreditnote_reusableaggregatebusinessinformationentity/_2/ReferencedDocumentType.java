@@ -117,7 +117,7 @@ public class ReferencedDocumentType {
     protected Max35IDType issuerAssignedID;
     @XmlElement(name = "IssueDateTime")
     @XmlSchemaType(name = "dateTime")
-    protected XMLGregorianCalendar issueDateTime;
+    protected String issueDateTime;
     @XmlElement(name = "ReferenceTypeCode")
     protected ReferenceCodeType referenceTypeCode;
 
@@ -153,7 +153,7 @@ public class ReferencedDocumentType {
      *     {@link XMLGregorianCalendar }
      *     
      */
-    public XMLGregorianCalendar getIssueDateTime() {
+    public String getIssueDateTime() {
         return issueDateTime;
     }
 
@@ -165,7 +165,7 @@ public class ReferencedDocumentType {
      *     {@link XMLGregorianCalendar }
      *     
      */
-    public void setIssueDateTime(XMLGregorianCalendar value) {
+    public void setIssueDateTime(String value) {
         this.issueDateTime = value;
     }
 

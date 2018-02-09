@@ -12,13 +12,13 @@ import javax.xml.bind.JAXBElement;
 import javax.xml.bind.JAXBException;
 import javax.xml.bind.Marshaller;
 import javax.xml.datatype.DatatypeConfigurationException;
-import javax.xml.datatype.XMLGregorianCalendar;
 
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.ParseException;
 
 import etda.uncefact.codelist.standard.thaidocumentnamecode_invoice._1.ThaiDocumentNameCodeInvoiceContentType;
+import etda.uncefact.codelist.standard.thaimessagefunctioncode._1.ThaiMessageFunctionCodeContentType;
 import etda.uncefact.data.standard.qualifieddatatype._1.AmountType;
 import etda.uncefact.data.standard.qualifieddatatype._1.CountryIDType;
 import etda.uncefact.data.standard.qualifieddatatype._1.CurrencyCodeType;
@@ -37,61 +37,59 @@ import etda.uncefact.data.standard.qualifieddatatype._1.TISI1099CitySubDivisionN
 import etda.uncefact.data.standard.qualifieddatatype._1.TaxTypeCodeType;
 import etda.uncefact.data.standard.qualifieddatatype._1.ThaiInvoiceDocumentCodeType;
 import etda.uncefact.data.standard.qualifieddatatype._1.ThaiMessageFunctionCodeType;
-import etda.uncefact.data.standard.taxinvoice_crossindustryinvoice._2.ObjectFactory;
-import etda.uncefact.data.standard.taxinvoice_crossindustryinvoice._2.TaxInvoiceCrossIndustryInvoiceType;
-import etda.uncefact.data.standard.taxinvoice_reusableaggregatebusinessinformationentity._2.DocumentContextParameterType;
-import etda.uncefact.data.standard.taxinvoice_reusableaggregatebusinessinformationentity._2.DocumentLineDocumentType;
-import etda.uncefact.data.standard.taxinvoice_reusableaggregatebusinessinformationentity._2.ExchangedDocumentContextType;
-import etda.uncefact.data.standard.taxinvoice_reusableaggregatebusinessinformationentity._2.ExchangedDocumentType;
-import etda.uncefact.data.standard.taxinvoice_reusableaggregatebusinessinformationentity._2.HeaderTradeAgreementType;
-import etda.uncefact.data.standard.taxinvoice_reusableaggregatebusinessinformationentity._2.HeaderTradeDeliveryType;
-import etda.uncefact.data.standard.taxinvoice_reusableaggregatebusinessinformationentity._2.HeaderTradeSettlementType;
-import etda.uncefact.data.standard.taxinvoice_reusableaggregatebusinessinformationentity._2.LineTradeAgreementType;
-import etda.uncefact.data.standard.taxinvoice_reusableaggregatebusinessinformationentity._2.LineTradeDeliveryType;
-import etda.uncefact.data.standard.taxinvoice_reusableaggregatebusinessinformationentity._2.LineTradeSettlementType;
-import etda.uncefact.data.standard.taxinvoice_reusableaggregatebusinessinformationentity._2.NoteType;
-import etda.uncefact.data.standard.taxinvoice_reusableaggregatebusinessinformationentity._2.SupplyChainTradeLineItemType;
-import etda.uncefact.data.standard.taxinvoice_reusableaggregatebusinessinformationentity._2.SupplyChainTradeTransactionType;
-import etda.uncefact.data.standard.taxinvoice_reusableaggregatebusinessinformationentity._2.TaxRegistrationType;
-import etda.uncefact.data.standard.taxinvoice_reusableaggregatebusinessinformationentity._2.TelephoneUniversalCommunicationType;
-import etda.uncefact.data.standard.taxinvoice_reusableaggregatebusinessinformationentity._2.TradeAddressType;
-import etda.uncefact.data.standard.taxinvoice_reusableaggregatebusinessinformationentity._2.TradeAllowanceChargeType;
-import etda.uncefact.data.standard.taxinvoice_reusableaggregatebusinessinformationentity._2.TradeContactType;
-import etda.uncefact.data.standard.taxinvoice_reusableaggregatebusinessinformationentity._2.TradePartyType;
-import etda.uncefact.data.standard.taxinvoice_reusableaggregatebusinessinformationentity._2.TradePriceType;
-import etda.uncefact.data.standard.taxinvoice_reusableaggregatebusinessinformationentity._2.TradeProductType;
-import etda.uncefact.data.standard.taxinvoice_reusableaggregatebusinessinformationentity._2.TradeSettlementHeaderMonetarySummationType;
-import etda.uncefact.data.standard.taxinvoice_reusableaggregatebusinessinformationentity._2.TradeSettlementMonetarySummationType;
-import etda.uncefact.data.standard.taxinvoice_reusableaggregatebusinessinformationentity._2.TradeTaxType;
-import etda.uncefact.data.standard.taxinvoice_reusableaggregatebusinessinformationentity._2.UniversalCommunicationType;
-import etda.uncefact.data.standard.taxinvoice_reusableaggregatebusinessinformationentity._2.ReferencedDocumentType;
+import etda.uncefact.data.standard.debitcreditnote_crossindustryinvoice._2.ObjectFactory;
+import etda.uncefact.data.standard.debitcreditnote_crossindustryinvoice._2.DebitCreditNoteCrossIndustryInvoiceType; /*diff from invoice*/
+import etda.uncefact.data.standard.debitcreditnote_reusableaggregatebusinessinformationentity._2.CIUniversalCommunicationType;
+import etda.uncefact.data.standard.debitcreditnote_reusableaggregatebusinessinformationentity._2.DocumentContextParameterType;
+import etda.uncefact.data.standard.debitcreditnote_reusableaggregatebusinessinformationentity._2.DocumentLineDocumentType;
+import etda.uncefact.data.standard.debitcreditnote_reusableaggregatebusinessinformationentity._2.EmailUniversalCommunicationType;
+import etda.uncefact.data.standard.debitcreditnote_reusableaggregatebusinessinformationentity._2.ExchangedDocumentContextType;
+import etda.uncefact.data.standard.debitcreditnote_reusableaggregatebusinessinformationentity._2.ExchangedDocumentType;
+import etda.uncefact.data.standard.debitcreditnote_reusableaggregatebusinessinformationentity._2.HeaderTradeAgreementType;
+import etda.uncefact.data.standard.debitcreditnote_reusableaggregatebusinessinformationentity._2.HeaderTradeDeliveryType;
+import etda.uncefact.data.standard.debitcreditnote_reusableaggregatebusinessinformationentity._2.HeaderTradeSettlementType;
+import etda.uncefact.data.standard.debitcreditnote_reusableaggregatebusinessinformationentity._2.LineSettlementMonetarySummationType;
+import etda.uncefact.data.standard.debitcreditnote_reusableaggregatebusinessinformationentity._2.LineTradeAgreementType;
+import etda.uncefact.data.standard.debitcreditnote_reusableaggregatebusinessinformationentity._2.LineTradeDeliveryType;
+import etda.uncefact.data.standard.debitcreditnote_reusableaggregatebusinessinformationentity._2.LineTradeSettlementType;
+import etda.uncefact.data.standard.debitcreditnote_reusableaggregatebusinessinformationentity._2.NoteType;
+import etda.uncefact.data.standard.debitcreditnote_reusableaggregatebusinessinformationentity._2.SupplyChainTradeLineItemType;
+import etda.uncefact.data.standard.debitcreditnote_reusableaggregatebusinessinformationentity._2.SupplyChainTradeTransactionType;
+import etda.uncefact.data.standard.debitcreditnote_reusableaggregatebusinessinformationentity._2.SpecifiedTaxRegistrationType; /*TaxRegistrationType*/
+import etda.uncefact.data.standard.debitcreditnote_reusableaggregatebusinessinformationentity._2.TelephoneUniversalCommunicationType;
+import etda.uncefact.data.standard.debitcreditnote_reusableaggregatebusinessinformationentity._2.TradeAddressType;
+import etda.uncefact.data.standard.debitcreditnote_reusableaggregatebusinessinformationentity._2.TradeAllowanceChargeType;
+import etda.uncefact.data.standard.debitcreditnote_reusableaggregatebusinessinformationentity._2.TradeContactType;
+import etda.uncefact.data.standard.debitcreditnote_reusableaggregatebusinessinformationentity._2.TradePartyType;
+import etda.uncefact.data.standard.debitcreditnote_reusableaggregatebusinessinformationentity._2.TradePriceType;
+import etda.uncefact.data.standard.debitcreditnote_reusableaggregatebusinessinformationentity._2.TradeProductType;
+import etda.uncefact.data.standard.debitcreditnote_reusableaggregatebusinessinformationentity._2.TradeSettlementMonetaryHeaderSummationType; /**/
+import etda.uncefact.data.standard.debitcreditnote_reusableaggregatebusinessinformationentity._2.TradeTaxType;
+import etda.uncefact.data.standard.debitcreditnote_reusableaggregatebusinessinformationentity._2.ReferencedDocumentType;
 import un.unece.uncefact.codelist.standard.iso.iso3alphacurrencycode._2012_08_31.ISO3AlphaCurrencyCodeContentType;
 import un.unece.uncefact.codelist.standard.unece.dutytaxfeetypecode.d14a.DutyTaxFeeTypeCodeContentType;
 import un.unece.uncefact.codelist.standard.unece.referencetypecode.d14a.ReferenceTypeCodeContentType;
-import un.unece.uncefact.identifierlist.standard.citynamefromtisi1099_2548.CityNameCodeContentType;
-import un.unece.uncefact.identifierlist.standard.citysubdivisionnamefromtisi1099_2548.CitySubDivisionNameCodeContentType;
-import un.unece.uncefact.identifierlist.standard.iso.isotwo_lettercountrycode.secondedition2006.ISOTwoletterCountryCodeContentType;
 import util.DateHelper;
 import util.JsonHelper;
 import util.StringHelper;
 
-public class EtaxInvoice {
+public class EtaxDebitCreditnote {
 
 	private static StringHelper stringHelper = new util.StringHelper();
 	private static DateHelper dateHelper = new util.DateHelper();
 	private static JSONObject jsonObj;
 	private static HeaderTradeSettlementType headerTradeSettlementType;
-	public TaxInvoiceCrossIndustryInvoiceType invoice;
+	public DebitCreditNoteCrossIndustryInvoiceType debitCreditNote;
 	// private static SupplyChainTradeTransactionType
 	// supplyChainTransactionType;
 	private static DecimalFormat df = new DecimalFormat("#.##");
 
-	public EtaxInvoice(String data) {
+	public EtaxDebitCreditnote(String data) {
 		try {
 			jsonObj = new JsonHelper().parseString(data);
-			invoice = new TaxInvoiceCrossIndustryInvoiceType();
+			debitCreditNote = new DebitCreditNoteCrossIndustryInvoiceType();
 			// Set Document Detail
-			setDocDetail(invoice);
+			setDocDetail(debitCreditNote);
 			// Add settlement type
 			headerTradeSettlementType = getSettlement();
 
@@ -101,7 +99,6 @@ public class EtaxInvoice {
 			headerTradeAgreementType.setSellerTradeParty(setSeller(headerTradeDeliveryType));
 			headerTradeAgreementType.setBuyerTradeParty(setBuyer(headerTradeDeliveryType));
 			headerTradeAgreementType.setAdditionalReferencedDocument(addReference());
-						
 			
 			SupplyChainTradeTransactionType supplyChainTransactionType = new SupplyChainTradeTransactionType();
 			supplyChainTransactionType.setApplicableHeaderTradeAgreement(headerTradeAgreementType);
@@ -109,14 +106,14 @@ public class EtaxInvoice {
 			supplyChainTransactionType.setApplicableHeaderTradeSettlement(headerTradeSettlementType);
 			addItems(supplyChainTransactionType);
 			
-			invoice.setSupplyChainTradeTransaction(supplyChainTransactionType);
+			debitCreditNote.setSupplyChainTradeTransaction(supplyChainTransactionType);
 			
 		} catch (Exception ex) {
 			ex.printStackTrace();
 		}
 	}
 
-	private static void setDocDetail(TaxInvoiceCrossIndustryInvoiceType invoice)
+	private static void setDocDetail(DebitCreditNoteCrossIndustryInvoiceType invoice2)
 			throws ParseException, DatatypeConfigurationException, java.text.ParseException {
 		JSONObject documentDetailObj = (JSONObject) jsonObj.get("DocumentDetail");
 
@@ -145,6 +142,17 @@ public class EtaxInvoice {
 				.setIssueDateTime(dateHelper.Convert2XmlGregorianDate((String) documentDetailObj.get("IssueDateTime")));
 		exchangeDocumentType.setCreationDateTime(
 				dateHelper.Convert2XmlGregorianDate((String) documentDetailObj.get("CreationDateTime")));
+		// System.out.println("issue date: " + (String)
+		// documentDetailObj.get("IssueDateTime"));
+		Max256TextType purpose = new Max256TextType();
+		purpose.setValue((String) documentDetailObj.get("Purpose"));
+		exchangeDocumentType.setPurpose(purpose);
+
+		ThaiMessageFunctionCodeType  purposeCode = new ThaiMessageFunctionCodeType();		
+		String purposeCode_str = (String) documentDetailObj.get("PurposeCode");
+		un.unece.uncefact.codelist.standard.etda.thaimessagefunctioncode._2560.ThaiMessageFunctionCodeContentType purposeCode_content =un.unece.uncefact.codelist.standard.etda.thaimessagefunctioncode._2560.ThaiMessageFunctionCodeContentType.fromValue(purposeCode_str);		
+		purposeCode.setValue(purposeCode_content);
+		exchangeDocumentType.setPurposeCode(purposeCode);
 		
 		JSONObject noteObj = (JSONObject) documentDetailObj.get("Note");
 		NoteType note = new NoteType();
@@ -156,8 +164,8 @@ public class EtaxInvoice {
 		note.getContent().add(content);
 		exchangeDocumentType.getIncludedNote().add(note);
 
-		invoice.setExchangedDocumentContext(exchangeDocumentContext);
-		invoice.setExchangedDocument(exchangeDocumentType);
+		invoice2.setExchangedDocumentContext(exchangeDocumentContext);
+		invoice2.setExchangedDocument(exchangeDocumentType);
 	}
 
 	private static HeaderTradeSettlementType getSettlement() {
@@ -195,7 +203,8 @@ public class EtaxInvoice {
 
 		JSONObject settleMonetarySummationObj = (JSONObject) monetaryObj
 				.get("SpecifiedTradeSettlementHeaderMonetarySummation");
-		TradeSettlementHeaderMonetarySummationType settleMonetarySummationType = new TradeSettlementHeaderMonetarySummationType();
+		TradeSettlementMonetaryHeaderSummationType settleMonetarySummationType = new TradeSettlementMonetaryHeaderSummationType();   
+		
 		AmountType lineTotalAmount = new AmountType();
 		lineTotalAmount.setValue(new BigDecimal((String) settleMonetarySummationObj.get("LineTotalAmount")));
 		settleMonetarySummationType.getLineTotalAmount().add(lineTotalAmount);
@@ -205,7 +214,13 @@ public class EtaxInvoice {
 		AmountType grandTotalAmount = new AmountType();
 		grandTotalAmount.setValue(new BigDecimal((String) settleMonetarySummationObj.get("GrandTotalAmount")));
 		settleMonetarySummationType.getGrandTotalAmount().add(grandTotalAmount);
-
+		AmountType originInformationAmount = new AmountType();
+		originInformationAmount.setValue(new BigDecimal((String) settleMonetarySummationObj.get("OriginalInformationAmount")));
+		settleMonetarySummationType.getOriginalInformationAmount().add(originInformationAmount);
+		AmountType differenceInformationAmount = new AmountType();
+		differenceInformationAmount.setValue(new BigDecimal((String) settleMonetarySummationObj.get("DifferenceInformationAmount")));
+		settleMonetarySummationType.getDifferenceInformationAmount().add(differenceInformationAmount);
+		
 		// TODO เธซเธฒเธงเธดเธ�เธตเธ�เธณเธ�เธงเธ“ & เน€เธ�เน�เธ�เธ�เธฑเธ�เธ�เธตเน�เธ•เธฑเน�เธ�
 		// settleMonetarySummationType.getAllowanceTotalAmount().add(actualAmountType);
 		AmountType taxBasisTotalAmount = new AmountType();
@@ -242,6 +257,10 @@ public class EtaxInvoice {
 
 		TradeProductType tradeProductType = new TradeProductType();
 		tradeProductType.getName().add(stringHelper.ConvertMax256String((String) productObj.get("Name")));
+		// TradeProductInstanceType tradeProductInstanceType = new
+		// TradeProductInstanceType();
+		// tradeProductInstanceType.setExpiryDateTime(dateHelper.Convert2XmlGregorianDate("1970-01-01T07:00:00.0"));
+		// tradeProductType.getIndividualTradeProductInstance().add(tradeProductInstanceType);
 		supplyChainTradeLineItemType.setSpecifiedTradeProduct(tradeProductType);
 
 		LineTradeAgreementType lineTradeAgreementType = new LineTradeAgreementType();
@@ -271,9 +290,10 @@ public class EtaxInvoice {
 
 		Float netLineTotal = Float.valueOf((String) productObj.get("NetLineTotalAmount"));
 		float taxTotal = (tradeTaxType.getCalculatedRate().floatValue() * netLineTotal) / 100;
+
 		float netIncludeTax = taxTotal + netLineTotal;
 
-		TradeSettlementMonetarySummationType tradeSettlementMonetarySummation = new TradeSettlementMonetarySummationType();
+		LineSettlementMonetarySummationType tradeSettlementMonetarySummation = new LineSettlementMonetarySummationType();
 		AmountType taxTotalAmountType = new AmountType();
 
 		taxTotalAmountType.setValue(new BigDecimal(df.format(taxTotal)));
@@ -303,10 +323,10 @@ public class EtaxInvoice {
 		Max256TextType sellerName = new Max256TextType();
 		sellerName.setValue((String) sellerObj.get("Name"));
 		sellerPartyType.setName(sellerName);
-		TaxRegistrationType taxRegistration = new TaxRegistrationType(); 
+		SpecifiedTaxRegistrationType taxRegistration = new SpecifiedTaxRegistrationType();
 		Max35IDType sellerTaxID = new Max35IDType();
 		sellerTaxID.setValue((String) sellerObj.get("TaxID") + (String) sellerObj.get("BranchCode"));
-		 sellerTaxID.setSchemeID("TXID");
+		sellerTaxID.setSchemeID("TXID");
 		taxRegistration.setID(sellerTaxID);
 
 		JSONObject addressObj = (JSONObject) sellerObj.get("PostalCITradeAddress");
@@ -359,7 +379,7 @@ public class EtaxInvoice {
 		countrySubDivionID.setValue((String) addressObj.get("CountrySubDivisionID"));
 		tradeAddressType.setCountrySubDivisionID(countrySubDivionID);
 
-		UniversalCommunicationType universalCommType = new UniversalCommunicationType();
+		EmailUniversalCommunicationType universalCommType = new EmailUniversalCommunicationType();
 		Max256IDType uriId = new Max256IDType();
 		uriId.setValue((String) sellerObj.get("URIID"));
 		universalCommType.setURIID(uriId);
@@ -387,7 +407,7 @@ public class EtaxInvoice {
 		buyerName.setValue((String) buyerObj.get("Name"));
 		buyerPartyType.setName(buyerName);
 
-		TaxRegistrationType taxRegistration = new TaxRegistrationType();
+		SpecifiedTaxRegistrationType taxRegistration = new SpecifiedTaxRegistrationType();
 		Max35IDType buyerTaxID = new Max35IDType();
 		buyerTaxID.setValue((String) buyerObj.get("TaxID") + (String) buyerObj.get("BranchCode"));
 		buyerTaxID.setSchemeID("TXID");
@@ -442,7 +462,7 @@ public class EtaxInvoice {
 		countrySubDivionID.setValue((String) addressObj.get("CountrySubDivisionID"));
 		tradeAddressType.setCountrySubDivisionID(countrySubDivionID);
 
-		UniversalCommunicationType universalCommType = new UniversalCommunicationType();
+		EmailUniversalCommunicationType universalCommType = new EmailUniversalCommunicationType();
 		Max256IDType uriId = new Max256IDType();
 		uriId.setValue((String) buyerObj.get("URIID"));
 		universalCommType.setURIID(uriId);
@@ -464,7 +484,7 @@ public class EtaxInvoice {
 		return buyerPartyType;
 	}
 	
-	private static ReferencedDocumentType addReference() {
+private static ReferencedDocumentType addReference() {
 		
 		JSONObject referenceObj = null ;
 		
@@ -496,11 +516,11 @@ public class EtaxInvoice {
 		JAXBContext jaxbContext;
 		try {
 
-			jaxbContext = JAXBContext.newInstance(TaxInvoiceCrossIndustryInvoiceType.class);
+			jaxbContext = JAXBContext.newInstance(DebitCreditNoteCrossIndustryInvoiceType.class);
 			Marshaller jaxbMarshaller = jaxbContext.createMarshaller();
 			jaxbMarshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, Boolean.TRUE);
 			ObjectFactory objFactory = new ObjectFactory();
-			JAXBElement<TaxInvoiceCrossIndustryInvoiceType> taxinvoice = objFactory.createTaxInvoiceCrossIndustryInvoice(invoice);
+			JAXBElement<DebitCreditNoteCrossIndustryInvoiceType> taxinvoice = objFactory.createDebitCreditNoteCrossIndustryInvoice(debitCreditNote);
 			jaxbMarshaller.marshal(taxinvoice, sw);
 
 			String xmlString = sw.toString();

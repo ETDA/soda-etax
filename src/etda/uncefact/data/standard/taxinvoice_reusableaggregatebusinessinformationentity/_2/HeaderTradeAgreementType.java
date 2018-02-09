@@ -123,8 +123,20 @@ public class HeaderTradeAgreementType {
     protected TradeDeliveryTermsType applicableTradeDeliveryTerms;
     @XmlElement(name = "BuyerOrderReferencedDocument")
     protected ReferencedDocumentType buyerOrderReferencedDocument;
+    
+    /*
+     * Change List<ReferencedDocumentType> to normal
+     * */
     @XmlElement(name = "AdditionalReferencedDocument")
-    protected List<ReferencedDocumentType> additionalReferencedDocument;
+    protected ReferencedDocumentType additionalReferencedDocument;
+    
+    /*
+     * Customfield to add ReferencedDocument Type listed 
+     * */
+    public  void   setAdditionalReferencedDocument(ReferencedDocumentType value) {       
+        this.additionalReferencedDocument = value;
+    }
+    
 
     /**
      * Gets the value of the sellerTradeParty property.
@@ -244,11 +256,8 @@ public class HeaderTradeAgreementType {
      * 
      * 
      */
-    public List<ReferencedDocumentType> getAdditionalReferencedDocument() {
-        if (additionalReferencedDocument == null) {
-            additionalReferencedDocument = new ArrayList<ReferencedDocumentType>();
-        }
+    public ReferencedDocumentType getAdditionalReferencedDocument() {
         return this.additionalReferencedDocument;
     }
-
+  
 }

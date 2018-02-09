@@ -5,5 +5,11 @@
 // Generated on: 2017.09.14 at 02:43:46 PM ICT 
 //
 
-@javax.xml.bind.annotation.XmlSchema(namespace = "urn:etda:uncefact:data:standard:DebitCreditNote_ReusableAggregateBusinessInformationEntity:2", elementFormDefault = javax.xml.bind.annotation.XmlNsForm.QUALIFIED)
+@javax.xml.bind.annotation.XmlSchema(namespace = "urn:etda:uncefact:data:standard:DebitCreditNote_ReusableAggregateBusinessInformationEntity:2", elementFormDefault = javax.xml.bind.annotation.XmlNsForm.QUALIFIED
+,xmlns = {
+        @XmlNs(prefix="ram", namespaceURI="urn:etda:uncefact:data:standard:DebitCreditNote_ReusableAggregateBusinessInformationEntity:2")
+    }
+		)
 package etda.uncefact.data.standard.debitcreditnote_reusableaggregatebusinessinformationentity._2;
+
+import javax.xml.bind.annotation.XmlNs;

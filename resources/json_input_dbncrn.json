@@ -4,9 +4,10 @@
     "CreationDateTime": "2016-06-06T13:59:30.000",
     "IssueDateTime": "2016-06-06T00:00:00.000",
     "SpecifiedCIDocument": "ETDA",
-    "Name": "ใบกำกับภาษี",
-    "TypeCode": "388",
-    "Purpose": "การลงราคาต่อหน่วยผิดพลาด",
+    "Name": "ใบเพิ่มหนี้",
+    "TypeCode": "80",
+    "Purpose": "สินค้าขาดจำนวนตามที่ตกลงซื้อขาย",
+	"PurposeCode": "DBNG01",
     "Note": {
       "Subject": "หมายเหตุ",
       "Content": "A2BcyVpQ"
@@ -98,7 +99,9 @@
       "LineTotalAmount": "2000.00",
       "GrandTotalAmountCharactor": "หนึ่งพันเจ็ดสิบบาทถ้วน",
       "TaxTotalAmount": "70.00",
-      "GrandTotalAmount": "1070.00"
+      "GrandTotalAmount": "1070.00",
+	  "OriginalInformationAmount":"2070.00",
+	  "DifferenceInformationAmount":"1000.00"
     }
   }
 }

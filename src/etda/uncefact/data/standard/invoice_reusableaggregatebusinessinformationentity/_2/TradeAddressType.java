@@ -153,11 +153,11 @@ public class TradeAddressType {
     @XmlElement(name = "StreetName")
     protected Max70TextType streetName;
     @XmlElement(name = "CityName")
-    protected TextType cityName;
+    protected Max35IDType cityName;
     @XmlElement(name = "CitySubDivisionName")
-    protected TextType citySubDivisionName;
+    protected Max35IDType citySubDivisionName;
     @XmlElement(name = "CountryID")
-    protected CountryIDType countryID;
+    protected Max35IDType countryID;
     @XmlElement(name = "CountrySubDivisionID")
     protected Max35IDType countrySubDivisionID;
     @XmlElement(name = "BuildingNumber")
@@ -363,7 +363,7 @@ public class TradeAddressType {
      *     {@link TextType }
      *     
      */
-    public TextType getCityName() {
+    public Max35IDType getCityName() {
         return cityName;
     }
 
@@ -375,7 +375,7 @@ public class TradeAddressType {
      *     {@link TextType }
      *     
      */
-    public void setCityName(TextType value) {
+    public void setCityName(Max35IDType value) {
         this.cityName = value;
     }
 
@@ -387,7 +387,7 @@ public class TradeAddressType {
      *     {@link TextType }
      *     
      */
-    public TextType getCitySubDivisionName() {
+    public Max35IDType getCitySubDivisionName() {
         return citySubDivisionName;
     }
 
@@ -399,7 +399,7 @@ public class TradeAddressType {
      *     {@link TextType }
      *     
      */
-    public void setCitySubDivisionName(TextType value) {
+    public void setCitySubDivisionName(Max35IDType value) {
         this.citySubDivisionName = value;
     }
 
@@ -411,7 +411,7 @@ public class TradeAddressType {
      *     {@link CountryIDType }
      *     
      */
-    public CountryIDType getCountryID() {
+    public Max35IDType getCountryID() {
         return countryID;
     }
 
@@ -423,7 +423,7 @@ public class TradeAddressType {
      *     {@link CountryIDType }
      *     
      */
-    public void setCountryID(CountryIDType value) {
+    public void setCountryID(Max35IDType value) {
         this.countryID = value;
     }
 

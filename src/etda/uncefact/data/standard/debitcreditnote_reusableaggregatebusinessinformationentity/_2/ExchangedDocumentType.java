@@ -18,6 +18,8 @@ import javax.xml.bind.annotation.XmlType;
 import javax.xml.bind.annotation.adapters.CollapsedStringAdapter;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import javax.xml.datatype.XMLGregorianCalendar;
+
+import etda.uncefact.data.standard.qualifieddatatype._1.Max256TextType;
 import etda.uncefact.data.standard.qualifieddatatype._1.Max35IDType;
 import etda.uncefact.data.standard.qualifieddatatype._1.Max35TextType;
 import etda.uncefact.data.standard.qualifieddatatype._1.Max70IDType;
@@ -142,9 +144,7 @@ public class ExchangedDocumentType {
     @XmlSchemaType(name = "dateTime")
     protected XMLGregorianCalendar issueDateTime;
     @XmlElement(name = "Purpose")
-    @XmlJavaTypeAdapter(CollapsedStringAdapter.class)
-    @XmlSchemaType(name = "token")
-    protected String purpose;
+    protected Max256TextType purpose;
     @XmlElement(name = "PurposeCode", required = true)
     protected ThaiMessageFunctionCodeType purposeCode;
     @XmlElement(name = "GlobalID")
@@ -259,7 +259,7 @@ public class ExchangedDocumentType {
      *     {@link String }
      *     
      */
-    public String getPurpose() {
+    public Max256TextType getPurpose() {
         return purpose;
     }
 
@@ -271,7 +271,7 @@ public class ExchangedDocumentType {
      *     {@link String }
      *     
      */
-    public void setPurpose(String value) {
+    public void setPurpose(Max256TextType value) {
         this.purpose = value;
     }
 
